@@ -1,21 +1,73 @@
 \documentclass{article}
-\usepackage{graphicx} % Required for inserting images
+\usepackage{graphicx}
 \usepackage{mathtools}
 \usepackage{enumitem}
+\usepackage{a4wide}
+\usepackage{float}
+\usepackage{amssymb}
+\usepackage{xcolor}
+\usepackage{centernot}
+\usepackage{cancel}
 
+\pagenumbering{arabic}
+\graphicspath{{./}{images/}}
 
+\title{
+\includegraphics[scale=0.5]{Logo_Politecnico_Milano.png}\\ [\bigskipamount]
+\vspace{1 cm}
+\Huge RASD}
 
-\title{ Ballabio, Benelle, Cavallotti}
-\author{Ballabio Giacomo, Benelle Francesco, Cavallotti Alberto}
-\date{October 2023}
+\author{Ballabio Giacomo - \\ Benelle Francesco - \\ Cavallotti Alberto - 10721275}
+\date{Academic year 2023/2024}
 
 
 
 \begin{document}
 
 \maketitle
+\tableofcontents
+
+\pagebreak
+
+ \addtocontents{toc}{\vspace{2em}} % Add a gap in the Contents, for aesthetics
+    \mainmatter % Begin numeric (1,2,3...) page numbering
 
 
+    \chapter{Introduction}
+    \label{ch:introduction}%
+    \input{Chapters/1_-_Introduction}
+
+
+    \chapter{Overall Description}
+    \label{ch:overall_description}%
+    \input{Chapters/2_-_Overall_Description}
+
+
+    \chapter{Specific Requirements}
+    \label{ch:specific_requirements}%
+    \input{Chapters/3_-_Specific_Requirements}
+
+
+    \chapter{Formal Analysis Using Alloy}
+    \label{ch:formal_analysis_using_alloy}%
+    \input{Chapters/4_-_Formal_Analysis_Using_Alloy}
+
+
+    \chapter{Effort Spent}
+    \label{ch:effort_spent}%
+    \input{Chapters/5_-_Effort_Spent}
+
+
+    \chapter{References}
+    \label{ch:references}%
+    \input{Chapters/6_-_References}
+
+% LIST OF FIGURES
+    \listoffigures
+
+% LIST OF TABLES
+    \listoftables
+    \cleardoublepage
 
 
 \end{document}
