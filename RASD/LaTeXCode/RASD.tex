@@ -1,33 +1,171 @@
-\documentclass{article}
+\documentclass{ConfigurationFiles/configuration}
+
+
+
+% CONFIGURATIONS
+\usepackage{parskip} % For paragraph layout
+\usepackage{setspace} % For using single or double spacing
+\usepackage{emptypage} % To insert empty pages
+\usepackage{multicol} % To write in multiple columns (executive summary)
+\setlength\columnsep{15pt} % Column separation in executive summary
+\setlength\parindent{0pt} % Indentation
+\raggedbottom
+
+% PACKAGES FOR TITLES
+\usepackage{titlesec}
+% \titlespacing{\section}{left spacing}{before spacing}{after spacing}
+\titlespacing{\section}{0pt}{3.3ex}{2ex}
+\titlespacing{\subsection}{0pt}{3.3ex}{1.65ex}
+\titlespacing{\subsubsection}{0pt}{3.3ex}{1ex}
+\usepackage{color}
+
+% PACKAGES FOR LANGUAGE AND FONT
+\usepackage[english]{babel} % The document is in English  
+\usepackage[utf8]{inputenc} % UTF8 encoding
+\usepackage[T1]{fontenc} % Font encoding
+\usepackage[11pt]{moresize} % Big fonts
+
+% PACKAGES FOR IMAGES
 \usepackage{graphicx}
-\usepackage{mathtools}
-\usepackage{enumitem}
-\usepackage{a4wide}
-\usepackage{float}
-\usepackage{amssymb}
+\usepackage{transparent} % Enables transparent images
+\usepackage{eso-pic} % For the background picture on the title page
+\usepackage{subfig} % Numbered and caption subfigures using \subfloat.
+\usepackage{tikz} % A package for high-quality hand-made figures.
+\usetikzlibrary{}
+\graphicspath{{./Images/}} % Directory of the images
+\usepackage{amsthm} % Coloured "Theorem"
+\usepackage{thmtools}
 \usepackage{xcolor}
-\usepackage{centernot}
-\usepackage{cancel}
+\usepackage{float}
+
+% STANDARD MATH PACKAGES
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{bm}
+\usepackage[overload]{empheq} % For braced-style systems of equations.
+\usepackage{fix-cm} % To override original LaTeX restrictions on sizes
+
+% PACKAGES FOR TABLES
+\usepackage{tabularx}
+\usepackage{longtable} % Tables that can span several pages
+\usepackage{colortbl}
+
+% PACKAGES FOR ALGORITHMS (PSEUDO-CODE)
+\usepackage{algorithm}
+\usepackage{algorithmic}
+
 
 \pagenumbering{arabic}
-\graphicspath{{./}{images/}}
 
-\title{
-\includegraphics[scale=0.5]{Logo_Politecnico_Milano.png}\\ [\bigskipamount]
-\vspace{1 cm}
-\Huge RASD}
+% PACKAGES FOR REFERENCES & BIBLIOGRAPHY
+\usepackage[
+    colorlinks=true,
+    linkcolor=black,
+    anchorcolor=black,
+    citecolor=black,
+    filecolor=black,
+    menucolor=black,
+    runcolor=black,
+    urlcolor=black
+]{hyperref} % Adds clickable links at references
+\usepackage{cleveref}
+\usepackage[square, numbers, sort&compress]{natbib} % Square brackets, citing references with numbers, citations sorted by appearance in the text and compressed
+\bibliographystyle{abbrvnat} % You may use a different style adapted to your field
 
-\author{Ballabio Giacomo - \\ Benelle Francesco - \\ Cavallotti Alberto - 10721275}
-\date{Academic year 2023/2024}
+% OTHER PACKAGES
+\usepackage{pdfpages} % To include a pdf file
+\usepackage{afterpage}
+\usepackage{lipsum} % DUMMY PACKAGE
+\usepackage{fancyhdr}
+\usepackage{wasysym} % For the headers
+\usepackage{rotating}
+\usepackage{listings}
+\input{ConfigurationFiles/alloy.sty}
+\fancyhf{}
+
+% Input of configuration file. Do not change config.tex file unless you really know what you are doing. 
+\input{ConfigurationFiles/config}
+
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\lstset{frame=tb,
+    language=alloy,
+    aboveskip=3mm,
+    belowskip=3mm,
+    showstringspaces=false,
+    columns=flexible,
+    basicstyle={\small\ttfamily},
+    numbers=none,
+    numberstyle=\tiny\color{gray},
+    keywordstyle=\bf\color{blue},
+    commentstyle=\it\color{dkgreen},
+    stringstyle=\color{mauve},
+    breaklines=true,
+    breakatwhitespace=true,
+    tabsize=3
+}
+
+
+
+
+
+
+
+%----------------------------------------------------------------------------
+%	BEGIN OF YOUR DOCUMENT
+%----------------------------------------------------------------------------
 
 
 
 \begin{document}
+    \fancypagestyle{plain}{%
+        \fancyhf{} % Clear all header and footer fields
+        \fancyhead[RO,RE]{\thepage} %RO=right odd, RE=right even
+        \renewcommand{\headrulewidth}{0pt}
+        \renewcommand{\footrulewidth}{0pt}}
 
-\maketitle
-\tableofcontents
+        
+    \pagestyle{empty} % No page numbers
+    \frontmatter % Use roman page numbering style (i, ii, iii, iv...) for the preamble pages
 
-\pagebreak
+    \puttitle{
+        title=Software Engineering 2\\Requirements Analysis and\\Specification Document,
+        name1=Ballabio Giacomo - xxxxxxxx, % Author Name and Surname
+        name2=Benelle Francesco - 10727489,
+        name3=Cavallotti Alberto - 107212758,
+        academicyear=2023-2024,
+    }
+    
+    
+    \startpreamble
+    \setcounter{page}{1} % Set page counter to 1
+
+%--
+%    \title{
+ %   \includegraphics[scale=0.5]{Logo_Politecnico_Milano.png}\\ [\bigskipamount]
+%    \vspace{1 cm}
+ %   \Huge RASD}
+
+%    \author{Ballabio Giacomo - \\ Benelle Francesco - \\ Cavallotti Alberto - 10721275}
+%    \date{Academic year 2023/2024}
+
+
+
+
+%\maketitle
+%\tableofcontents
+
+% TABLE OF CONTENTS
+    \thispagestyle{empty}
+    \tableofcontents % Table of contents
+    \thispagestyle{empty}
+    \cleardoublepage
+
+%\pagebreak
 
  \addtocontents{toc}{\vspace{2em}} % Add a gap in the Contents, for aesthetics
     \mainmatter % Begin numeric (1,2,3...) page numbering

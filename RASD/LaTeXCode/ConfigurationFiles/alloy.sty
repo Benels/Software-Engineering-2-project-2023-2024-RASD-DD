@@ -1,0 +1,27 @@
+%%
+% Alloy language definition for using with the listings package.
+%
+% 2017, Daniel Andrade
+% BSD 3-Clause License
+%%
+\lstdefinelanguage{alloy}{
+    morekeywords={
+        module, open, as,
+        private, abstract, sig, extends, in,
+        lone, some, one, disj,
+        fact, pred, fun, assert,
+        run, check,
+        for, but, exactly,
+        this, not, implies, else, let,
+        not, no, set, all, sum,
+        iff, or, Int, and,
+        none, univ, iden
+    },
+    sensitive=true,
+    morecomment=[l]{//},
+    morecomment=[l]{--},
+    morecomment=[s]{/*}{*/},
+    morestring=[b]{"},
+%literate={->}{$\rightarrow$}1
+% replacing characters can cause problems when copying from PDF to editor
+}[keywords,comments,strings]
