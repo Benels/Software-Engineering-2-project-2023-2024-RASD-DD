@@ -20,7 +20,86 @@ dddddddddddddddddddddddd
 
 \subsection{Shared phenomena}
 \label{subsec:shared_phenomena}%
-eeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+\newcounter{sp}
+\setcounter{sp}{1}
+\newcommand{\csp} {\thesp\stepcounter{sp}}
+\begin{center}
+    \begin{longtable}{ |l|p{0.5\linewidth}|l|l| }
+        \hline
+        \textbf{ID} & \textbf{Description}                                                                                                       & \textbf{Controller} & \textbf{Observer} \\
+        \hline
+        SP\csp      & The ED creates an account in the CKB system      & ED       & CKB  \\
+        \hline
+        SP\csp      & The ED logs in his account in the CKB system     & ED         & CKB           \\
+        \hline
+        SP\csp      & The ED creates a tournament  & ED         & CKB           \\
+        \hline
+        SP\csp      & CKB adds the tournament to the ED's tournament list  & CKB         & ED           \\
+        \hline
+        SP\csp      & The ED can checks his tournament list  & ED         & CKB           \\
+        \hline
+        SP\csp      & The ED grants other EDs the permission to create battles within a tournament  & ED         & CKB           \\
+        \hline
+        SP\csp      & The ED creates a battle in a specific tournament  & ED         & CKB           \\
+        \hline
+        SP\csp      & CBK adds the battle to the ED's battle list  & CKB         & ED           \\
+        \hline
+        SP\csp      & The ED can checks his battle list  & ED         & CKB           \\
+        \hline
+        SP\csp      & The ED uploads the code kata in the battle  & ED         & CKB           \\
+        \hline
+        SP\csp      & The ED sets the minimum and the maximum number of students per group for the battle  & ED         & CKB           \\
+        \hline
+        SP\csp      & The ED sets a registration deadline to the battle  & ED         & CKB           \\
+        \hline
+        SP\csp      & The ED sets a final submission deadline to the battle  & ED         & CKB           \\
+        \hline
+        SP\csp      & The ED sets additional configurations for scoring in the battle  & ED         & CKB           \\
+        \hline
+        SP\csp      & The ED sets the badges that STs could gain in the battle  & ED         & CKB           \\
+        \hline
+        SP\csp      & The ST creates an account in the CKB system  & ST         & CKB           \\
+        \hline
+        SP\csp      & The ST logs in his account in the CKB system  & ST         & CKB           \\
+        \hline
+        SP\csp      & CKB notifies STs that a tournament has been created  & CKB         & ST          \\
+        \hline
+        SP\csp      & CKB notifies STs that a battle has been created & CKB         & ST           \\
+        \hline
+        SP\csp      & The ST subscribes to a specific battle before the registration deadline  & ST         & CKB           \\
+        \hline
+        SP\csp      & CKB adds the tournament to the ST's battle list  & CKB         & ST           \\
+        \hline
+        SP\csp      & The ST invites other STs to the battle  & ST         & CKB           \\
+        \hline
+        SP\csp      & CKB sends a notification to the ST to join the STG  & CKB         & ST           \\
+        \hline
+        SP\csp      & CKB adds the STs to the STG  & CKB         & ST           \\
+        \hline
+        SP\csp      & CKB creates a GH repository containing the code kata and sends the lik to all STs registered in the battle  & CKB         & ST           \\
+        \hline
+        SP\csp      & When the ST commits a new version o his code, the CKB platform runs the tests on the sources  & ST        & CKB           \\
+        \hline
+        SP\csp      & CKB updates the score of the STG  & CKB         & ST           \\
+        \hline
+        SP\csp      & STs and EDs can view the current rank evolving during the battle  & ST, ED         & CKB           \\
+        \hline
+        SP\csp      & During the consolidation stage, EDs can manually modify the scores  & ED         & CKB           \\
+        \hline
+        SP\csp      & CKB notifies all STs when the final battle ranks are available  & CKB         & ST           \\
+        \hline
+        SP\csp      & CKB updates the personal tournament score of each ST  & CKB         & ST           \\
+        \hline
+        SP\csp      & The ED closes the tournament  & ED         & CKB           \\
+        \hline
+        SP\csp      & CKB notifies all the STs involved in the tournament when the final ranks of the tournament are available  & CKB         & ST           \\
+        \hline
+        SP\csp      & CKB assigns the badges to the STs  & CKB         & ST           \\
+        \hline
+        \caption{Shared Phenomenas.}
+        \label{tab:sharedph_tab}%
+    \end{longtable}
+\end{center}
 
 
 \section{Definition, Acronyms, Abbreviations}
