@@ -1,4 +1,9 @@
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+Online coding challenges and platforms have become an essential resource for programmers and developers in the modern tech landscape. These platforms provide a versatile means to enhance coding skills, offer practical learning experiences, and promote a competitive and engaging approach to problem-solving. Additionally, participation in such platforms can prepare individuals for tech industry job interviews, as many companies utilize similar coding challenges during their recruitment processes. 
+In summary, these online coding challenge platforms are invaluable tools for skill development, community engagement, and professional growth in the ever-evolving field of programming.
+
+What makes the CodeKataBattle platform even more compelling is the involvement of experienced educators who create coding battles. These experts design challenges that are not only instructive but also thought-provoking, ensuring a rich and educational experience for participants.
+
+Moreover, these platforms often facilitate the creation of groups, enabling collaborative problem-solving and enhancing team working skills. Users can form teams, tackle challenges together, and learn from one another's approaches. This group dynamic adds an extra layer of motivation and shared learning experiences, enhancing the value of these platforms for participants.
 
 \newpage
 
@@ -26,7 +31,7 @@ dddddddddddddddddddddddd
 \begin{center}
     \begin{longtable}{ |l|p{0.5\linewidth}|l|l| }
         \hline
-        \textbf{ID} & \textbf{Description}                                                                                                       & \textbf{Controller} & \textbf{Observer} \\
+        \textbf{ID} & \textbf{Description} & \textbf{Controller} & \textbf{Observer} \\
         \hline
         SP\csp      & The ED creates an account in the CKB system      & ED       & CKB  \\
         \hline
@@ -38,7 +43,7 @@ dddddddddddddddddddddddd
         \hline
         SP\csp      & The ED can checks his tournament list  & ED         & CKB           \\
         \hline
-        SP\csp      & The ED grants other EDs the permission to create battles within a tournament  & ED         & CKB           \\
+        SP\csp      & The ED grants other EDs the permission to create battles within a tournament  & ED         & CKB |\
         \hline
         SP\csp      & The ED creates a battle in a specific tournament  & ED         & CKB           \\
         \hline
@@ -48,7 +53,7 @@ dddddddddddddddddddddddd
         \hline
         SP\csp      & The ED uploads the code kata in the battle  & ED         & CKB           \\
         \hline
-        SP\csp      & The ED sets the minimum and the maximum number of students per group for the battle  & ED         & CKB           \\
+        SP\csp      & The ED sets the minimum and the maximum number of students per group for the battle  & ED & CKB \\
         \hline
         SP\csp      & The ED sets a registration deadline to the battle  & ED         & CKB           \\
         \hline
@@ -66,7 +71,7 @@ dddddddddddddddddddddddd
         \hline
         SP\csp      & CKB notifies STs that a battle has been created & CKB         & ST           \\
         \hline
-        SP\csp      & The ST subscribes to a specific battle before the registration deadline  & ST         & CKB           \\
+        SP\csp      & The ST subscribes to a specific battle before the registration deadline  & ST         & CKB    \\
         \hline
         SP\csp      & CKB adds the tournament to the ST's battle list  & CKB         & ST           \\
         \hline
@@ -82,7 +87,7 @@ dddddddddddddddddddddddd
         \hline
         SP\csp      & CKB updates the score of the STG  & CKB         & ST           \\
         \hline
-        SP\csp      & STs and EDs can view the current rank evolving during the battle  & ST, ED         & CKB           \\
+        SP\csp      & STs and EDs can view the current rank evolving during the battle  & ST, ED         & CKB      \\
         \hline
         SP\csp      & During the consolidation stage, EDs can manually modify the scores  & ED         & CKB           \\
         \hline
@@ -96,6 +101,10 @@ dddddddddddddddddddddddd
         \hline
         SP\csp      & CKB assigns the badges to the STs  & CKB         & ST           \\
         \hline
+        SP\csp      & The ST can visualize the profile of other ST or ED  & ST        & CKB           \\
+        \hline
+        SP\csp      & The ED can visualize the profile of other ST or ED  & ED        & CKB           \\
+        \hline
         \caption{Shared Phenomenas.}
         \label{tab:sharedph_tab}%
     \end{longtable}
@@ -104,7 +113,29 @@ dddddddddddddddddddddddd
 
 \section{Definition, Acronyms, Abbreviations}
 \label{sec:definition_acronyms_abbreviations}%
-fffffffffffffff
+\begin{table}[H]
+    \begin{center}
+        \begin{tabular}{ |l|l| }
+            \hline
+            \textbf{Acronyms} & \textbf{Definition}                              \\
+            \hline
+            RASD             & Requirements Analysis & Specification Document                      \\
+            \hline
+            ST              & Student                         \\
+            \hline
+            ED              & Educator                         \\
+            \hline
+            STG             & Student Group                    \\
+            \hline
+            CKB             & CodaKataBattle                   \\
+            \hline
+            GH              & GitHub
+            \hline
+         \end{tabular}
+        \caption{Acronyms used in the document.}
+        \label{tab:acronyms}%
+    \end{center}
+\end{table}
 
 
 \section{Revision history}
