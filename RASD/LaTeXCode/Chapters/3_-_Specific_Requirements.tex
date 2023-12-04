@@ -25,7 +25,7 @@ bbbbbbbbbbbbbbbb
 \label{sec:functional_requirements}%
 
 \subsection{Requirements}
-\label{subsec:requirements}%
+\label{subsec:requirements3}%
 bbbbbbbbbbbbbbbb
 
 \subsection{Mapping on goals}
@@ -39,43 +39,50 @@ bbbbbbbbbbbbbbbb
 \section{Performance requirements}
 \label{sec:performance_requirements}%
 
+
 \section{Design constraints}
 \label{sec:design_constraints}%
 
 \subsection{Standard compliance}
-\label{subsec:standard compliance}%
-bbbbbbbbbbbbbbbb
+\label{subsec:standard compliance}%%
+The system must be compliant to the EU's GDPR (General Data Protection Regulation), a set of regulations that is designed in order to protect the personal data, the privacy and security of the EU's citizens. 
 
 \subsection{Hardware limitations}
 \label{subsec:hardware_limitations}%
-bbbbbbbbbbbbbbbb
+The only hardware limitations are the support for a reliable internet connection and for a Web Browser.
 
 \subsection{Any other constraints}
-\label{subsec:software_interfaces}%
-bbbbbbbbbbbbbbbb
+\label{subsec:other_constraints}%
+QESTA SEZIONE POTREMMO ANCHE TOGLIERLA DAL PDF
+
 
 \section{Software system attributes}
-\label{sec:software system_attributes}%
-.
+\label{sec:software_system_attributes}%
+
 \subsection{Reliability}
 \label{subsec:reliability}%
-bbbbbbbbbbbbbbbb
+The system has to be fault tolerant in order to prevent the propagation of errors and to guarantee a continuous usability of the system.
 
 \subsection{Availability}
 \label{subsec:availability}%
-bbbbbbbbbbbbbbbb
+The system must be available the most time possible, with a minimum value of 99.9\% (three-nines) of time. In this way the system will be unavailable for only 8.76 hours a year. \\
+It shall be prevented a case scenario in which a mainta break occurs near to Battle's end, therefore there must be as few maintenance breaks as possible, with them possibly at nightime.
 
 \subsection{Security}
 \label{subsec:security}%
-bbbbbbbbbbbbbbbb
+The system must control the access rights of the users. The system shall grant both authentication, verifying the identity of the users that attempt to login and authorization, verifying the permission of the already logged users to perform certain requested actions. \\
+Measures to protect the database will be adopted, such as defense against query injections, and password and users' personal data stored will be encrypted.
+
 
 \subsection{Maintainability}
 \label{subsec:maintainability}%
-bbbbbbbbbbbbbbbb
+The system must be designed using scalable and reusable models in order to permit future addition of features with minimum effort. 
+Ordinary maintenance has to be scheduled at nightime, in order to keep the services available when the user traffic is high.
 
 \subsection{Portability}
 \label{subsec:portability}%
-bbbbbbbbbbbbbbbb
+The system must be accessible by the users from every kind of Web Browser. 
+There are no particular portability requirements server side.
 
 
 
