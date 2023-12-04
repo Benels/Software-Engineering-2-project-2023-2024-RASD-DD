@@ -1,4 +1,5 @@
-\documentclass{ConfigurationFiles/configuration}
+%\documentclass{ConfigurationFiles/configuration}
+\documentclass{ConfigurationFiles/PoliMi3i_thesis}
 
 
 % CONFIGURATIONS
@@ -31,7 +32,7 @@
 \usepackage{subfig} % Numbered and caption subfigures using \subfloat.
 \usepackage{tikz} % A package for high-quality hand-made figures.
 \usetikzlibrary{}
-\graphicspath{{./Images/}} % Directory of the images
+\graphicspath{{./images/}} % Directory of the images
 \usepackage{amsthm} % Coloured "Theorem"
 \usepackage{thmtools}
 \usepackage{xcolor}
@@ -54,8 +55,6 @@
 \usepackage{algorithm}
 \usepackage{algorithmic}
 
-
-\pagenumbering{arabic}
 
 % PACKAGES FOR REFERENCES & BIBLIOGRAPHY
 \usepackage[
@@ -137,26 +136,12 @@
         name2=Benelle Francesco - 10727489,
         name3=Cavallotti Alberto - 10721275,
         academicyear=2023-2024,
-    }
+        }
     
     
     \startpreamble
     \setcounter{page}{1} % Set page counter to 1
 
-%--
-%    \title{
- %   \includegraphics[scale=0.5]{Logo_Politecnico_Milano.png}\\ [\bigskipamount]
-%    \vspace{1 cm}
- %   \Huge RASD}
-
-%    \author{Ballabio Giacomo - \\ Benelle Francesco - \\ Cavallotti Alberto - 10721275}
-%    \date{Academic year 2023/2024}
-
-
-
-
-%\maketitle
-%\tableofcontents
 
 % TABLE OF CONTENTS
     \thispagestyle{empty}
@@ -164,9 +149,8 @@
     \thispagestyle{empty}
     \cleardoublepage
 
-%\pagebreak
-
- \addtocontents{toc}{\vspace{2em}} % Add a gap in the Contents, for aesthetics
+    
+    \addtocontents{toc}{\vspace{2em}} % Add a gap in the Contents, for aesthetics
     \mainmatter % Begin numeric (1,2,3...) page numbering
 
 
