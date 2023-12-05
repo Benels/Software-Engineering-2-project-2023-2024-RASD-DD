@@ -26,7 +26,109 @@ bbbbbbbbbbbbbbbb
 
 \subsection{Requirements}
 \label{subsec:requirements3}%
-bbbbbbbbbbbbbbbb
+\newcounter{req}
+\setcounter{req}{1}
+\newcommand{\creq}{\thereq\stepcounter{req}}
+\begin{center}
+    \begin{longtable}{|l|p{0.9\linewidth}|}
+        \hline
+        \textbf{ID} & \textbf{Description}                                                                                                                             \\
+        \hline
+        R\creq      & CKB allows unregistered Users to sign up                                                                    \\
+        \hline
+        R\creq      & CKB allows registered EDs to login                                                                    \\
+        \hline
+        R\creq      & CKB allows registered STs to login                                                                    \\
+        \hline
+        R\creq      & CKB allows EDs to create tournaments                                                                    \\
+        \hline
+        R\creq      & CKB allows EDs to grant the permissions of a tournament to other EDs                                                                 \\
+        \hline
+        R\creq      & CKB allows EDs to create battles                                                                    \\
+        \hline
+        R\creq      & CKB allows EDs to uploads the code kata of a battle                                                                   \\
+        \hline
+        R\creq      & CKB allows EDs to set the minimun and the maximum number of STs per group of a battle                                                                    \\
+        \hline
+        R\creq      & CKB allows EDs to set a registration deadline of a battle                                                                 \\
+        \hline
+        R\creq      & CKB allows EDs to set a submission deadline of a battle                                                                \\
+        \hline
+        R\creq      & CKB allows EDs to set additional configuration for the scoring system of a battle                                                                \\
+        \hline
+        R\creq      & CKB allows EDs to set functional aspects for the scoring system of a battle                                                               \\
+        \hline
+        R\creq      & CKB allows EDs to create new badges                                                               \\
+        \hline
+        R\creq      & CKB allows EDs to choose the rules realtes to the awrdubg of badges                                                               \\
+        \hline
+        R\creq      & CKB allows EDs to choose which badges to award in a certain tournament                                                               \\
+        \hline
+        R\creq      & CKB allows EDs to assing a score manually during the consolidationstage                                                               \\
+        \hline
+        R\creq      & CKB allows EDs to close a tournament                                                               \\
+        \hline
+        R\creq      & CKB allows EDs to visualize the profile of another User                                                               \\
+        \hline
+        R\creq      & CKB allows STs to visualize the profile of another User \\
+        \hline
+        R\creq      & CKB allows STs to join a tournament \\
+        \hline
+        R\creq      & CKB allows STs to join a battle \\
+        \hline
+        R\creq      & CKB allows STs to create a new STG \\
+        \hline
+        R\creq      & CKB allows STs to join a STG \\
+        \hline
+        R\creq      & CKB allows STs to invite other STs in their STG \\
+        \hline
+        R\creq      & CKB stores the informations about the Users \\
+        \hline
+        R\creq      & CKB shall ensure security of data \\
+        \hline
+        R\creq      & CKB sends notifications to every ST when a new tournament is created \\
+        \hline
+        R\creq      & CKB sends notifications when a new battle is created to every ST which is participating in the tournament that the battle is part of \\
+        \hline
+        R\creq      & CKB sends notifications to a ST when he receives an invitation to be part of STG \\
+        \hline
+        R\creq      & CKB creates a GH repository of the code kata when the registration deadline for the battle expires \\
+        \hline
+        R\creq      & CKB sends the link of the GH repository to every STG that participates in the battle \\
+        \hline
+        R\creq      & CKB evaluates the STG's work every time a push is made on GH and calculates battle score for the STG \\
+        \hline
+        R\creq      & CKB updates both the battle leaderboard and the tournament leaderboard once a new score is registered \\
+        \hline
+        R\creq      & CKB allows STs to check the leaderboard of a battle \\
+        \hline
+        R\creq      & CKB allows EDs to check the leaderboard of a battle \\
+        \hline
+        R\creq      & CKB allows EDs to analyze the code of a STG \\
+        \hline
+        R\creq      & CKB sends notifications to every STs participating in the battle once the consolidation stage ends \\
+        \hline
+        R\creq      & CKB allows STs to check the list of ongoing tournaments \\
+        \hline
+        R\creq      & CKB allows EDs to check the list of ongoing tournaments \\
+        \hline
+        R\creq      & CKB allows STs to check the leaderboard of a tournaments \\
+        \hline
+        R\creq      & CKB allows EDs to check the leaderboard of a tournaments \\
+        \hline
+        R\creq      & CKB sends notification to every ST involved in a tournament when the tournament is closed and the final ranks are available \\
+        \hline
+        R\creq      & CKB shall communicate with the GH API in order to calculate a new score every time a push action is made by a STG \\
+        \hline
+        R\creq      & CKB shall communicate with the external tool in order to calculate the score of a STG \\
+        \hline
+        R\creq      & CKB shall communicate with the mailing system in order to allow Users to register their account\\
+        \hline
+        \caption{Requirements.}
+        \label{tab: req}%
+    \end{longtable}
+\end{center}
+
 
 \subsection{Mapping on goals}
 \label{subsec:mapping_on_goals}%
@@ -34,7 +136,38 @@ bbbbbbbbbbbbbbbb
 
 \subsection{Use case diagrams}
 \label{subsec:use_case_diagrams}%
-bbbbbbbbbbbbbbbb
+\subsection{Use cases}
+\label{subsec: use_cases}%
+\newcounter{uc}
+\setcounter{uc}{1}
+\newcommand{\cuc}{\theuc\stepcounter{uc}}
+%sistemare
+In this section, they are explained and represented the main identified use cases.
+There is a table with entry conditions, event flow, exit conditions and exception for each of them, and a sequence diagram
+that shows the messages exchanged between the entities and the called functions. \\
+
+\subsubsection*{UC\cuc . Login}
+\begin{center}
+    \begin{longtable}{|l|p{0.9\linewidth}|}
+        \hline
+        \textbf{Actor}            & Users                                                                                                                                                                                        \\
+        \hline
+        \textbf{Entry conditions} & The User should be registered in CKB and has to search the CKB URL in the browser search bar                                                                                                                   \\
+        \hline
+        \textbf{Event Flow}       & 1-\ The application shows the login form                                                     \\
+        & 2-\ The User insert his mail and password in the form \\
+        & 3-\ The User clicks on the "Login" button       \\                                                                                                                      
+        & 4-\ The system check the credentials  \\                                                                                                                                                                                                                                     \\
+        \hline
+        \textbf{Exit condition}   & The application allows the user to access to the CKB system \\                                                                                                                                                                                \\
+        \hline
+        \textbf{Exceptions}       & Incorrect email or password. An error message is shown and the User is redirected back to the Login page                                                                                                                        \\
+        \hline
+        \caption{Login use case}
+        \label{tab: login_use_case}
+    \end{longtable}
+\end{center}
+
 
 \section{Performance requirements}
 \label{sec:performance_requirements}%

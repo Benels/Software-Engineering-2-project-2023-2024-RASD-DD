@@ -37,6 +37,8 @@ dddddddddddddddddddddddd
         \hline
         SP\csp      & The ED logs in his account in the CKB system     & ED         & CKB           \\
         \hline
+        SP\csp      & The ED logs out of his account from the CKB system     & ED         & CKB           \\
+        \hline
         SP\csp      & The ED creates a tournament  & ED         & CKB           \\
         \hline
         SP\csp      & CKB adds the tournament to the ED's tournament list  & CKB         & ED           \\
@@ -61,11 +63,15 @@ dddddddddddddddddddddddd
         \hline
         SP\csp      & The ED sets additional configurations for scoring in the battle  & ED         & CKB           \\
         \hline
-        SP\csp      & The ED sets the badges that STs could gain in the battle  & ED         & CKB           \\
+        SP\csp      & The ED sets the badges that STs could be awarded in the battle  & ED         & CKB           \\
+        \hline
+        SP\csp      & The ED sets the parameters of the badges that STs could be awarded in the battle  & ED         & CKB           \\
         \hline
         SP\csp      & The ST creates an account in the CKB system  & ST         & CKB           \\
         \hline
         SP\csp      & The ST logs in his account in the CKB system  & ST         & CKB           \\
+        \hline
+        SP\csp      & The ST logs out of his account from the CKB system     & ED         & CKB           \\
         \hline
         SP\csp      & CKB notifies STs that a tournament has been created  & CKB         & ST          \\
         \hline
@@ -75,29 +81,41 @@ dddddddddddddddddddddddd
         \hline
         SP\csp      & CKB adds the tournament to the ST's battle list  & CKB         & ST           \\
         \hline
-        SP\csp      & The ST invites other STs to the battle  & ST         & CKB           \\
+        SP\csp      & The ST creates a STg for the battle  & ST         & CKB           \\
         \hline
-        SP\csp      & CKB sends a notification to the ST to join the STG  & CKB         & ST           \\
+        SP\csp      & The ST invites other STs to join his STG for a battle  & ST         & CKB           \\
+        \hline
+        SP\csp      & CKB sends a notification to the ST when he receives ain invitation to join a STG  & CKB         & ST           \\
+        \hline
+        SP\csp      & The ST accepts other ST's invitations to join their STG fot a battle  & ST         & CKB           \\
         \hline
         SP\csp      & CKB adds the STs to the STG  & CKB         & ST           \\
         \hline
         SP\csp      & CKB creates a GH repository containing the code kata and sends the lik to all STs registered in the battle  & CKB         & ST           \\
         \hline
-        SP\csp      & When the ST commits a new version o his code, the CKB platform runs the tests on the sources  & ST        & CKB           \\
+        SP\csp      & The ST commits a new version of his code & ST         & CKB           \\
         \hline
-        SP\csp      & CKB updates the score of the STG  & CKB         & ST           \\
+        SP\csp      & CKB runs the tests on the source code & CKB      & ST           \\
         \hline
-        SP\csp      & STs and EDs can view the current rank evolving during the battle  & ST, ED         & CKB      \\
+        SP\csp      & CKB updates the score of the STG on the battle's leaderboard  & CKB         & ST           \\
+        \hline
+        SP\csp      & CKB updates the score of the ST on the tournament's leaderboard  & CKB         & ST           \\
+        \hline
+        SP\csp      & STs can view the current ranks evolving during the battle  & ST        & CKB      \\
+        \hline
+        SP\csp      & EDs can view the current ranks evolving during the battle  & ED      & CKB      \\
         \hline
         SP\csp      & During the consolidation stage, EDs can manually modify the scores  & ED         & CKB           \\
         \hline
         SP\csp      & CKB notifies all STs when the final battle ranks are available  & CKB         & ST           \\
         \hline
-        SP\csp      & CKB updates the personal tournament score of each ST  & CKB         & ST           \\
-        \hline
         SP\csp      & The ED closes the tournament  & ED         & CKB           \\
         \hline
         SP\csp      & CKB notifies all the STs involved in the tournament when the final ranks of the tournament are available  & CKB         & ST           \\
+        \hline
+        SP\csp      & STs can view the current ranks evolving during the tournament  & ST        & CKB      \\
+        \hline
+        SP\csp      & EDs can view the current ranks evolving during the tournament  & ED        & CKB      \\
         \hline
         SP\csp      & CKB assigns the badges to the STs  & CKB         & ST           \\
         \hline
@@ -162,4 +180,11 @@ hhhhhhhhhhhhhhhhhhhhhhhh
 
 \section{Document Structure}
 \label{sec:document_structure}%
-iiiiiiiiiiiiiiiiiiiiiiiiii
+\noindent The document is divided into six sections, each with its unique focus, as outlined below.\\\\
+\textbf{Introduction:} In the first section, we lay out the project's objectives, purposes, and offer a concise examination of global and shared phenomena. This section also includes a compilation of abbreviations and definitions that are essential for comprehending the problem.\\\\
+\textbf{Overall Description:} The second section provides a comprehensive overview of the problem. It delves into further details about the domain and various scenarios involved, in addition to discussing product and user characteristics, assumptions, dependencies and constraints.\\\\
+\textbf{Specific Requirements:} The third section is dedicated to an in-depth analysis of the specific requirements. It offers detailed insights into external interface requirements, functional requirements, and performance requirements.\\\\
+\textbf{Formal Analysis Using Alloy:} The fourth section employs Alloy to conduct a formal analysis. This chapter's primary purpose is to validate the accuracy of the model described in the preceding sections. It focuses on presenting the results of the conducted checks and meaningful assertions.\\\\
+\textbf{Effort Spent:} Section five outlines the individual efforts contributed by each group member to compose this document.\\\\
+\textbf{References:} The final section serves as a bibliography, listing the references and additional resources used in the creation of this document.
+
