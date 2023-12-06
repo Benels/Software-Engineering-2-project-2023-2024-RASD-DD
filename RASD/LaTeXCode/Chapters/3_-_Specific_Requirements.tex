@@ -146,6 +146,67 @@ In this section, they are explained and represented the main identified use case
 There is a table with entry conditions, event flow, exit conditions and exception for each of them, and a sequence diagram
 that shows the messages exchanged between the entities and the called functions. \\
 
+
+\subsubsection*{UC\cuc . Signup as ED}
+\begin{center}
+    \begin{longtable}{|l|p{0.9\linewidth}|}
+        \hline
+        \textbf{Actor}            & ED, email provider                                                                                                                                                                                        \\
+        \hline
+        \textbf{Entry conditions} & The ED is not already registered in CKB and has to search the CKB URL in the browser search bar                                                                                                                   \\
+        \hline
+        \textbf{Event Flow}       & 1 - The application shows the login form  \\
+        & 2 - The ED clicks on “create an account” button   \\
+        & 3 - The application shows the signup form    \\
+        & 4 - The ED inserts his name, surname, nickname, email and password in the form and also ticks on the “Signup as Educator” checkbox  \\
+        & 5 - The ED clicks on the “Register” button  \\
+        & 6 - The application checks all the credentials  \\
+        & 7 - If credentials are correct the application sends a confirmation email to the ED through the email provider.  \\
+        & 8 - The ED clicks on the confirmation link                                                                         \\                                                                                                                                                            \\
+        \hline
+        \textbf{Exit condition}   & The application allows the ED to access to the CKB system \\                                                                                                                                                                                \\
+        \hline
+        \textbf{Exceptions}       & \begin{itemize}
+            \item The email address is already linked to an account. In this case an error message is shown and the ED is redirected to the profile creation settings.
+            \item Invalid password if it is shorter than 8 characters, if it doesn’t have at least 1 number and/or 1 capital letter and/or a special character. In this case an error message is shown and the ED is redirected to the profile creation settings.
+            \item  The nickname is already used. An error is shown and the ED is redirected to the profile creation settings.
+        \end{itemize}  \\
+        \hline
+        \caption{Signup as ED use case}
+        \label{tab: signup_as_ED_use_case}
+    \end{longtable}
+\end{center}
+
+\subsubsection*{UC\cuc . Signup as ST}
+\begin{center}
+    \begin{longtable}{|l|p{0.9\linewidth}|}
+        \hline
+        \textbf{Actor}            & ST, email provider                                                                                                                                                                                      \\
+        \hline
+        \textbf{Entry conditions} & The ST is not already registered in CKB and has to search the CKB URL in the browser search bar                                                                                                                   \\
+        \hline
+        \textbf{Event Flow}       & 1 - The application shows the login form  \\
+        & 2 - The ST clicks on “create an account” button  \\
+        & 3 - The application shows the signup form  \\
+        & 4 - the ST inserts his name,surname, nickname and password in the form  \\
+        & 5 - The ST clicks on the “Register” button  \\
+        & 6 - The application checks all the credentials  \\
+        & 7 - if credentials are correct the application sends a confirmation email to the ST through an email provider.  \\
+        & 8 - The ST clicks on the confirmation link                                                                        \\                                                                                                                                                                    \\
+        \hline
+        \textbf{Exit condition}   & The application allows the ST to access to the CKB system \\                                                                                                                                                                                \\
+        \hline
+        \textbf{Exceptions}       & \begin{itemize}
+            \item The email address is already linked to an account. In this case an error message is shown and the ST is redirected to the profile creation settings.
+            \item Invalid password if it is shorter than 8 characters, if it doesn’t have at least 1 number and/or 1 capital letter and/or a special character. In this case an error message is shown and the ST is redirected to the profile creation settings.
+            \item The nickname is already used. An error is shown and the ST is redirected to the profile creation settings.
+        \end{itemize}    \\
+        \hline
+        \caption{Signup as ST use case}
+        \label{tab: signup_as_ST_use_case}
+    \end{longtable}
+\end{center}
+
 \subsubsection*{UC\cuc . Login}
 \begin{center}
     \begin{longtable}{|l|p{0.9\linewidth}|}
@@ -167,6 +228,162 @@ that shows the messages exchanged between the entities and the called functions.
         \label{tab: login_use_case}
     \end{longtable}
 \end{center}
+
+\subsubsection*{UC\cuc . Join a tournament}
+\begin{center}
+    \begin{longtable}{|l|p{0.9\linewidth}|}
+        \hline
+        \textbf{Actor}            & ST                                                                                                                                                                                        \\
+        \hline
+        \textbf{Entry conditions} & The Student is correctly logged in. The Student has decided to join a Tournament.                                                                                                                   \\
+        \hline
+        \textbf{Event Flow}       & 1-\ The Student search the name or the code of a Tournament into the search box \\
+        & 2-\ CKB returns the result from the search. \\
+        & 3-\ The Student clicks on the new Tournament’s name.        \\
+        & 4-\ CKB redirects the Student to the main page of the Tournament. \\
+        & 5-\ The Student clicks on the “Join Tournament” button. \\
+        & 6-\ CKB saves the Student as one of the competitors of the Tournamen \\
+        & 7-\ CKB shows a confirm message and redirects the Student to the page that contains the current Leaderboard of the Tournament. \\
+        \hline
+        \textbf{Exit condition}   & The Student is now part of the Tournament and will be notified whenever a new Battle will be available.        \\                                                                                                                                                                                \\
+        \hline
+        \textbf{Exceptions}        & \begin{itemize}
+            \item The Tournament already ended. In this case is shown an error message, the User is redirected to the final leaderboard of the Tournament.
+            \item The student already joined the Tournament. In this case CKB will not show any error messages, but will redirect the Student to the current Leaderboard of the Tournament.
+            \item The Deadline already expired. An error message is shown and the ST is redirected back to the Home Page.
+        \end{itemize}    \\
+        \hline
+        \caption{Join a tournament use case}
+        \label{tab: join_a_tournament_use_case}
+    \end{longtable}
+\end{center}
+
+
+\subsubsection*{UC\cuc . Join a battle}
+\begin{center}
+    \begin{longtable}{|l|p{0.9\linewidth}|}
+        \hline
+        \textbf{Actor}            & ST                                                                                                                                                                                        \\
+        \hline
+        \textbf{Entry conditions} & The Student is correctly logged in and it is in the Tournament main page (the one with the leaderboard). The Student has decided to join a Battle.        \\
+        \hline
+        \textbf{Event Flow}       & 1-\ The Student click on the button “Go to battles”        \\
+        & 2-\ CKB redirects the student to the page that has the list of all the Battles of the Tournament.        \\
+        & 3-\ The Student clicks on the “subscribe” button near the battle name.        \\
+        & 4-\ CKB redirects the Student to the CreateGroup page of the Battle.        \\
+        & 5-\ CKB redirects the Student to the CreateGroup page of the Battle.        \\
+        \hline
+        \textbf{Exit condition}   & The Student, after the subscription deadline end, will be able to create a group and then confirm the participation to the battle        \\
+        \hline
+        \textbf{Exceptions}        & \begin{itemize}
+            \item The Student isn’t in the Tournament that this Battle is part of. In this case CKB shows an error message, the User is redirected back to his main page/dashboard
+            \item The Battle already ended or already started. In this case  CKB shows an error message, the User is redirected to the final leaderboard of the Battle.
+            \item The student already joined the Battle. In this case CKB will not show any error messages, but will redirect the Student to the CreateGroup page.
+         \end{itemize}    \\
+        \hline
+        \caption{Join a battle use case}
+        \label{tab: join_a_battle_use_case}
+    \end{longtable}
+\end{center}
+
+\subsubsection*{UC\cuc . Create a group and battle confirmation}
+\begin{center}
+    \begin{longtable}{|l|p{0.9\linewidth}|}
+        \hline
+        \textbf{Actor}            & ST                                                                                                                                                                                        \\
+        \hline
+        \textbf{Entry conditions} & The Student is correctly logged in and it is in the CreateGroup page. The Student has decided to join a Battle.        \\
+        \hline
+        \textbf{Event Flow}       & 1-\ The Student clicks on the “invite” button and then inserts another student’s nickname.        \\
+        & 2-\ CBK checks if the student joined the competition and notifies other students of an invitation.          \\
+        & 3-\ the other student can decide to accept or reject the invitation clicking on the “accept” or “reject” button inside the notification.        \\
+        & 4-\ CKB shows to the Student that creates the group the different state of the various invitation requests (3 state : accepted, rejected, pending)(only the first n-invited players that accept the invite are considered part of the group)(where n is the upper bound threshold).         \\
+        & 5-\ The Student can click on the “Join Battle” button.        \\
+        & 6-\ CKB checks if the number of members respect the limits given by educators during the battle creation.         \\
+        & 7-\ CKB saves the Student and the group as one of the competitors of the Battle        \\
+        & 8-\ CKB shows a confirmation message and redirects all the Students to the group to the main page of the Battle (the one with the leaderboard).        \\
+        \hline
+        \textbf{Exit condition}   & The Student is now a competitor in the Battle and he can starts committing after the creation group deadline expires        \\
+        \hline
+        \textbf{Exceptions}        & \begin{itemize}
+            \item The group already joined the Battle. In this case CKB will not show any error messages, but will redirect the Student to the current Leaderboard of the Battle.
+            \item The number of students in the group is wrong. CKB will show an error and redirect the students to the CreateGroup page.
+            \item If the creation group deadline and all the students without group or all the groups not confirmed will be kicked out from the battle
+            \item if the invited student isn’t already joined in the competition or if the nickname does not exist, CKB sends an error and redirects the students to the CreateGroup page.
+         \end{itemize}    \\
+        \hline
+        \caption{Create a group and battle confirmation use case}
+        \label{tab: create_a_group_and_battle_confirmation_use_case}
+    \end{longtable}
+\end{center}
+
+\subsubsection*{UC\cuc . Create a tournament}
+\begin{center}
+    \begin{longtable}{|l|p{0.9\linewidth}|}
+        \hline
+        \textbf{Actor}            & ED                                                                                                                                                                                       \\
+        \hline
+        \textbf{Entry conditions} & ED is correctly logged in. The ED has decided to create a tournament. The ED is on his profile page.        \\
+        \hline
+        \textbf{Event Flow}       & 1-\ The ED clicks on “Create a Tournament” button        \\
+        & 2-\ CKB return the create tournament form        \\
+        & 3-\ The ED writes the Tournament name, sets the deadline for STs to subscribe and chooses and writes the other EDs nicknames to grant them permissions to create new battles        \\
+        & 4-\ CKB stores the data of the Tournament        \\
+        & 5-\ CKB sends a notification to the chosen EDs        \\
+        & 6-\ CKB notifies all the STs of the creation of the Tournament        \\
+        & 7-\ CKB return the Tournament main page        \\
+        \hline
+        \textbf{Exit condition}   & The tournament is correctly created and a confirmation message is shown to the ED        \\
+        \hline
+        \textbf{Exceptions}        & \begin{itemize}
+            \item The Tournament’s name is null or already exists. An error message is shown and the ED is redirected back to create tournament settings.
+            \item The EDs chosen are non-existent, or the creator chooses other ED that have already permission in this Tournament. An error message is shown to the ED and the ED is redirected to create tournament settings.
+            \item The Deadline is a date before the day the Tournament is created. An error message is shown to the ED and a new Deadline has to be chosen and the ED  is redirected to create tournament settings.
+         \end{itemize}    \\
+        \hline
+        \caption{Create a tournament use case}
+        \label{tab: create_a_tournament_use_case}
+    \end{longtable}
+\end{center}
+
+
+\subsubsection*{UC\cuc . Create a battle}
+\begin{center}
+    \begin{longtable}{|l|p{0.9\linewidth}|}
+        \hline
+        \textbf{Actor}            & ED                                                                                                                                                                                       \\
+        \hline
+        \textbf{Entry conditions} & ED is logged in. ED is in the Tournament page. ED has decided to create a Battle        \\
+        \hline
+        \textbf{Event Flow}       & 1-\ ED clicks on “Create new battle” button        \\
+        & 2-\ CKB redirect ED to the create battle form        \\
+        & 3-\ ED writes the Battle name        \\
+        & 4-\ ED sets the minimum and maximum number of students per group        \\
+        & 5-\ CBK checks the battle name, the minimum and the maximum        \\
+        & 6-\ CKB redirect ED to the upload code kata form        \\
+        & 7-\ ED uploads the code kata to be resolved        \\
+        & 8-\ CKB save the code kata sended        \\
+        & 9-\ CKB redirect ED to the deadline and additional condition form        \\
+        & 10-\ ED sets a registration deadline        \\
+        & 11-\ ED sets a final submission deadline        \\
+        & 12-\ ED sets additional configurations for scoring        \\
+        & 13-\ CKB check deadline         \\
+        & 14-\ CKB create a new Battle        \\
+        & 15-\ CKB sends a notification to all STs subscribed to the Tournament         \\
+        \hline
+        \textbf{Exit condition}   & The battle is correctly created and the ED is redirected to the battle main page        \\
+        \hline
+        \textbf{Exceptions}        & \begin{itemize}
+                \item The Battle’s name is null or already exists. An error message is shown, the ED is redirected back to the create battle settings.
+                \item The maximum number of students per group is lesser than the minimum.  An error message is shown to the ED and the ED is redirected to the create battle settings.
+                \item The minimum number of students per group is lesser or equal than zero.  An error message is shown to the ED and the ED is redirected to the create battle settings.    
+        \end{itemize}    \\
+        \hline
+        \caption{Create a battle use case}
+        \label{tab: create_a_battle_use_case}
+    \end{longtable}
+\end{center}
+
 
 
 \section{Performance requirements}
