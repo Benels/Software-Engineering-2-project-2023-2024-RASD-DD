@@ -20,8 +20,48 @@ ccccccccccccccc
 
 \subsection{World Phenomena}
 \label{subsec:world_phenomena}%
-dddddddddddddddddddddddd
-
+\newcounter{wp}
+\setcounter{wp}{1}
+\newcommand{\cwp}{\thewp\stepcounter{wp}}
+\begin{center}
+    \begin{longtable}{ |l|p{0.8\linewidth}| }
+        \hline
+        \textbf{ID} & \textbf{Description}                                                \\
+        \hline
+        WP\cwp      & The ED wants to create a Tournament                           \\
+        \hline
+        WP\cwp      & The ST wants to join a Tournament   \\
+        \hline
+        WP\cwp      & The ED wants to create a Battle   \\
+        \hline
+        WP\cwp      & The ST wants to join a Battle   \\
+        \hline
+        WP\cwp      & The ST wants to create a STG for a Battle   \\
+        \hline
+        WP\cwp      & The ST wants to fork the repository on GH   \\
+        \hline
+        WP\cwp      & The ST wants to push their code on GH   \\
+        \hline
+        WP\cwp      & The ST wants to search another User profile   \\
+        \hline
+        WP\cwp      & The ED wants to search another User profile   \\
+        \hline
+        WP\cwp      & The ST wants to search a Tournament   \\
+        \hline
+        WP\cwp      & The ED wants to search a Tournament  \\
+        \hline
+        WP\cwp      & The ST wants to check the rankings of a Battle \\
+        \hline
+        WP\cwp      & The ED wants to check the rankings of a Battle \\
+        \hline
+        WP\cwp      & The ST wants to check the rankings of a Tournament \\
+        \hline
+        WP\cwp      & The ED wants to check the rankings of a Tournament \\
+        \hline
+        \caption{World Phenomenas.}
+        \label{tab:worldph_tab}%
+    \end{longtable}
+\end{center}
 
 \subsection{Shared phenomena}
 \label{subsec:shared_phenomena}%
@@ -29,7 +69,7 @@ dddddddddddddddddddddddd
 \setcounter{sp}{1}
 \newcommand{\csp} {\thesp\stepcounter{sp}}
 \begin{center}
-    \begin{longtable}{ |l|p{0.5\linewidth}|l|l| }
+    \begin{longtable}{ |l|p{0.5\linewidth}|l|l|}
         \hline
         \textbf{ID} & \textbf{Description} & \textbf{Controller} & \textbf{Observer} \\
         \hline
@@ -74,6 +114,8 @@ dddddddddddddddddddddddd
         SP\csp      & The ST logs out of his account from the CKB system     & ED         & CKB           \\
         \hline
         SP\csp      & CKB notifies STs that a tournament has been created  & CKB         & ST          \\
+        \hline
+        SP\csp      & The ST subscribes to a specific tournament before the registration deadline  & ST         & CKB    \\
         \hline
         SP\csp      & CKB notifies STs that a battle has been created & CKB         & ST           \\
         \hline
@@ -149,15 +191,15 @@ dddddddddddddddddddddddd
             \hline
             GH              & GitHub                           \\
             \hline
-            User              & All STs and EDs                           \\
+            User            & All STs and EDs                           \\
             \hline
-            API              & Application Programming Interface                           \\
+            API             & Application Programming Interface                           \\
             \hline
-            DAX              & Domain Assumption X                           \\
+            DAX             & Domain Assumption X                           \\
             \hline
-            SPX              & Shared Phenomena X                           \\
+            SPX             & Shared Phenomena X                           \\
             \hline
-            WPX              & World Phenomena X                           \\
+            WPX             & World Phenomena X                           \\
             \hline
             RX              & Requirement X                           \\
             \hline

@@ -16,7 +16,154 @@ bbbbbbbbbbbbbbbb
 
 \subsection{State diagrams}
 \label{subsec:state_diagrams}%
-bbbbbbbbbbbbbbbb
+%Mettere inizio descrizione
+\paragraph{Signup.}
+When a user wishes to register on CKB, they are required to input their credentials, including their name, surname, email, nickname, and password in a registration form. If the provided credentials are deemed valid (ensuring that the email or nickname is not already in use, and the password meets the criteria of being at least 8 characters long, containing at least one capital letter, a number, and a special character), CKB will send an email to the user. Upon the user confirming the registration through the provided email link, the new account is successfully created. If the credentials are not correct CKB shows an error message to the User and redirects him to the registration form page.
+
+Furthermore, if the user selects the option "Register as a new Educator" during the registration process, CKB will enhance the account with additional permissions. These permissions may include the ability to create tournaments or battles.
+
+\begin{figure}[H]
+    \begin{center}
+        \includegraphics[width=1\linewidth]{StateDiagrams/signup.png}
+        \caption{Signup state diagram}
+        \label{fig:signup_sd}%
+    \end{center}
+\end{figure}
+
+\paragraph{Login.}
+When a registered user attempts to log in to their CKB account, they must enter their credentials (email and password) into a login form. If the provided credentials are accurate—matching those of a registered user in the CKB database—CKB displays the user's homepage, showcasing tournaments and ongoing battles in which the user is participating. On the other hand, if the entered credentials are invalid, CKB presents an error message to the user and redirects them back to the login form page.
+
+\begin{figure}[H]
+    \begin{center}
+        \includegraphics[width=1\linewidth]{StateDiagrams/login.png}
+        \caption{Login state diagram}
+        \label{fig:login_sd}%
+    \end{center}
+\end{figure}
+
+\paragraph{Create a Tournament.}
+When an ED intends to create a new tournament on CKB, he is required to input various parameters in the create tournament form. These parameters include the tournament name and the registration deadline for the STs. In addition to these parameters, the ED can invite other EDs to join this tournament, through a notification sent by CKB, to help him create new battles. If any of these parameters are deemed unacceptable by the system, CKB displays an error message to the ED and redirects him back to the create tournament form page.
+
+Conversely, if all parameters meet the system's criteria, CKB proceeds to create the tournament. The newly created tournament is then added to the ED's tournaments list, and a notification is sent to all STs to inform them of the availability of a new tournament.
+
+\begin{figure}[H]
+    \begin{center}
+        \includegraphics[width=1\linewidth]{StateDiagrams/create tournament.png}
+        \caption{Create a Tournament state diagram}
+        \label{fig:create_tournament_sd}%
+    \end{center}
+\end{figure}
+
+\paragraph{Create a Battle.}
+Once a tournament is created, an ED has the option to create a new battle within it. To do so, the ED is required to input various parameters in the create battle form. These parameters encompass the battle name, code kata, registration deadline, submission deadline, minimum and maximum members per STG, and any additional rules for evaluation. In the event that any of these parameters are considered unacceptable by the system, CKB displays an error message to the ED and redirects them back to the create tournament form page.
+
+Conversely, if all parameters meet the system's criteria, CKB proceeds to create the battle. The newly created battle is then added to the ED's list of battles, and a notification is sent to all STs registered to the tournament where the battle resides, informing them that a new battle is now available.
+
+\begin{figure}[H]
+    \begin{center}
+        \includegraphics[width=1\linewidth]{StateDiagrams/create battle.png}
+        \caption{Create a Battle state diagram}
+        \label{fig:create_battle_sd}%
+    \end{center}
+\end{figure}
+
+\paragraph{Join a Tournament.}
+When a new tournament is created, a ST receives a notification or discovers it on the homepage. At this point, the ST can choose to join the tournament. If the ST is not yet registered for that specific tournament, CKB not only adds the tournament to the ST's tournament list but also includes the ST in the participant list of the newly created tournament. This ensures that the ST is officially registered as a participant, allowing him to engage in the battles.
+
+\begin{figure}[H]
+    \begin{center}
+        \includegraphics[width=1\linewidth]{StateDiagrams/join tournament.png}
+        \caption{Join a Tournament state diagram}
+        \label{fig:join_tournament_sd}%
+    \end{center}
+\end{figure}
+
+\paragraph{Join a Battle.}
+Once a ST has registered for a tournament, and a new battle is created within it, the ST has the option to join a specific battle. CKB performs a check to verify if the registration deadline for the chosen battle has not expired. If the ST is within the allowed timeframe, CKB adds the ST to the list of participants for that battle and directs them to the create group page where they can further engage in the competition.
+
+However, if the registration deadline has already expired, CKB displays an error message to the ST, notifying them of the expiration, and redirects them to the tournament dashboard with the respective battle. This ensures that participants are aware of the registration timeline and can take timely actions to join the battles of their choice.
+
+\begin{figure}[H]
+    \begin{center}
+        \includegraphics[width=1\linewidth]{StateDiagrams/join battle.png}
+        \caption{Join a Battle state diagram}
+        \label{fig:join_battle_sd}%
+    \end{center}
+\end{figure}
+
+\paragraph{Create a Group.}
+The ability to create a group within a battle is granted to STs once they have joined a battle, and the registration deadline has expired. At this point, they are redirected to the create group form, where they can invite other STs to join their STG. The process involves the ST entering a nickname, and upon verification by CKB that the ST with that nickname has also joined the same battle, a notification is sent to the invited ST, enabling them to join the STG.
+
+Upon receiving a notification, a ST has the option to respond, and upon acceptance, the ST is added to the STG, becoming a participant in the battle. This invitation process is replicated for each ST that the group creator wishes to invite. Once the group is formed, the ST who initiated the STG can confirm the group, but only if the minimum and maximum number of group members are adhered to. Once confirmed, the STG is ready to actively participate in the battle.
+
+However, if an invited ST is not part of the battle, a ST accepts the invitation after the deadline, or the group creation deadline has expired, CKB displays an error message to the respective ST, informing them of the issue and guiding them accordingly. This ensures that the group creation and participation adhere to the specified deadlines and criteria.
+
+\begin{figure}[H]
+    \begin{center}
+        \includegraphics[width=1\linewidth]{StateDiagrams/create group.png}
+        \caption{Create a Group state diagram}
+        \label{fig:create_group_sd}%
+    \end{center}
+\end{figure}
+
+\paragraph{Evaluate the code.}
+During the consolidation stage, once all commits have been completed and no further changes are possible, an ED has the option to manually inspect a STG code. The ED can download the code from the battle dashboard for thorough examination. After reviewing the code, the ED can then modify the score assigned to the STG, which was previously assessed by external tools automatically during each commit.
+
+To facilitate this, CKB provides a form that allows the ED to input the adjusted score. However, before updating the score, CKB checks whether the new score adheres to predefined boundaries, such as being non-negative or not exceeding 100. If the new score meets these criteria, CKB successfully updates the score for the STG.
+
+In the event that the new score falls outside the specified boundaries, CKB displays an error message to the ED and redirects them to the evaluate code form.
+
+\begin{figure}[H]
+    \begin{center}
+        \includegraphics[width=1\linewidth]{StateDiagrams/evaluate code.png}
+        \caption{Evaluate the code state diagram}
+        \label{fig:evaluate_code_sd}%
+    \end{center}
+\end{figure}
+
+\paragraph{Open a profile.}
+If a user wishes to view another user's profile, including badges and other relevant information, they can do so by clicking on the user's nickname in various dashboards, such as the tournament dashboard or the group composition. Upon clicking the nickname, CKB displays the profile of the selected user to provide the desired information. This feature allows users to easily access and view the profiles of others within the platform.
+
+\begin{figure}[H]
+    \begin{center}
+        \includegraphics[width=1\linewidth]{StateDiagrams/open a profile.png}
+        \caption{Open a profile state diagram}
+        \label{fig:open_profile_sd}%
+    \end{center}
+\end{figure}
+
+\paragraph{Search for a profile.}
+In addition to opening a user profile by clicking the nickname in a dashboard, Users also have the option to use the search bar. By entering a nickname or a keyword in the search bar, CKB will display a list of Users whose nickname contain the entered keyword. Users can then click on a specific User from the search results to open and view their profile, providing a convenient and flexible way to access User information within the platform.
+
+\begin{figure}[H]
+    \begin{center}
+        \includegraphics[width=1\linewidth]{StateDiagrams/search for a profile.png}
+        \caption{Search for a profile state diagram}
+        \label{fig:search_profile_sd}%
+    \end{center}
+\end{figure}
+
+\paragraph{Search for a Tournament.}
+Users can utilize the search bar to look for tournaments by entering a name or a keyword. When a search query is entered, CKB will present a list of tournaments whose names contain the specified keyword. Users can then click on a particular tournament from the search results, and CKB will redirect them to the tournament dashboard for detailed information and engagement with the selected tournament. 
+
+\begin{figure}[H]
+    \begin{center}
+        \includegraphics[width=1\linewidth]{StateDiagrams/search for a tournament.png}
+        \caption{Search for a Tournament state diagram}
+        \label{fig:search_tournament_sd}%
+    \end{center}
+\end{figure}
+
+\paragraph{Logout.}
+Users can log out from their account at any time by clicking the "Logout" button. Upon clicking the button, CKB terminates the user's session, ensuring that they are securely logged out. Following this action, the user is then redirected to the login page, providing them with the opportunity to rejoin the CKB system if they wish to do so. 
+
+\begin{figure}[H]
+    \begin{center}
+        \includegraphics[width=1\linewidth]{StateDiagrams/logout.png}
+        \caption{Logout state diagram}
+        \label{fig:logout_sd}%
+    \end{center}
+\end{figure}
 
 \section{Product functions}
 \label{sec:product_functions}%

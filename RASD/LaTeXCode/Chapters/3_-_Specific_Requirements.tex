@@ -60,11 +60,11 @@ bbbbbbbbbbbbbbbb
         \hline
         R\creq      & CKB allows EDs to create new badges                                                               \\
         \hline
-        R\creq      & CKB allows EDs to choose the rules realtes to the awrdubg of badges                                                               \\
+        R\creq      & CKB allows EDs to choose the rules related to the awarding of badges                                                               \\
         \hline
         R\creq      & CKB allows EDs to choose which badges to award in a certain tournament                                                               \\
         \hline
-        R\creq      & CKB allows EDs to assing a score manually during the consolidationstage                                                               \\
+        R\creq      & CKB allows EDs to assing a score manually during the consolidation stage                                                               \\
         \hline
         R\creq      & CKB allows EDs to close a tournament                                                               \\
         \hline
@@ -98,7 +98,9 @@ bbbbbbbbbbbbbbbb
         \hline
         R\creq      & CKB evaluates the STG's work every time a push is made on GH and calculates battle score for the STG \\
         \hline
-        R\creq      & CKB updates both the battle leaderboard and the tournament leaderboard once a new score is registered \\
+        R\creq      & CKB updates the battle leaderboard once a new score is registered \\
+        \hline
+        R\creq      & CKB updates the tournament leaderboard once a new score is registered \\
         \hline
         R\creq      & CKB allows STs to check the leaderboard of a battle \\
         \hline
@@ -124,7 +126,13 @@ bbbbbbbbbbbbbbbb
         \hline
         R\creq      & CKB shall communicate with the mailing system in order to allow Users to register their account\\
         \hline
-        \caption{Requirements.}
+        R\creq      & STs need to fork the GH repository of the battle they are participating in \\
+        \hline
+        R\creq      & STs need to push their code in the GH repository in order to have their code evaluated\\
+        \hline
+        R\creq      & CKB shall assign the badges to all STs that fullfill their requirements \\
+        \hline
+        \caption{Requirements}
         \label{tab: req}%
     \end{longtable}
 \end{center}
@@ -229,6 +237,35 @@ that shows the messages exchanged between the entities and the called functions.
     \end{longtable}
 \end{center}
 
+\subsubsection*{UC\cuc . Create a tournament}
+\begin{center}
+    \begin{longtable}{|l|p{0.9\linewidth}|}
+        \hline
+        \textbf{Actor}            & ED                                                                                                                                                                                       \\
+        \hline
+        \textbf{Entry conditions} & ED is correctly logged in. The ED has decided to create a tournament. The ED is on his profile page.        \\
+        \hline
+        \textbf{Event Flow}       & 1-\ The ED clicks on “Create a Tournament” button        \\
+        & 2-\ CKB return the create tournament form        \\
+        & 3-\ The ED writes the Tournament name, sets the deadline for STs to subscribe and chooses and writes the other EDs nicknames to grant them permissions to create new battles        \\
+        & 4-\ CKB stores the data of the Tournament        \\
+        & 5-\ CKB sends a notification to the chosen EDs        \\
+        & 6-\ CKB notifies all the STs of the creation of the Tournament        \\
+        & 7-\ CKB return the Tournament main page        \\
+        \hline
+        \textbf{Exit condition}   & The tournament is correctly created and a confirmation message is shown to the ED        \\
+        \hline
+        \textbf{Exceptions}        & \begin{itemize}
+            \item The Tournament’s name is null or already exists. An error message is shown and the ED is redirected back to create tournament settings.
+            \item The EDs chosen are non-existent, or the creator chooses other ED that have already permission in this Tournament. An error message is shown to the ED and the ED is redirected to create tournament settings.
+            \item The Deadline is a date before the day the Tournament is created. An error message is shown to the ED and a new Deadline has to be chosen and the ED  is redirected to create tournament settings.
+         \end{itemize}    \\
+        \hline
+        \caption{Create a tournament use case}
+        \label{tab: create_a_tournament_use_case}
+    \end{longtable}
+\end{center}
+
 \subsubsection*{UC\cuc . Join a tournament}
 \begin{center}
     \begin{longtable}{|l|p{0.9\linewidth}|}
@@ -258,6 +295,42 @@ that shows the messages exchanged between the entities and the called functions.
     \end{longtable}
 \end{center}
 
+\subsubsection*{UC\cuc . Create a battle}
+\begin{center}
+    \begin{longtable}{|l|p{0.9\linewidth}|}
+        \hline
+        \textbf{Actor}            & ED                                                                                                                                                                                       \\
+        \hline
+        \textbf{Entry conditions} & ED is logged in. ED is in the Tournament page. ED has decided to create a Battle        \\
+        \hline
+        \textbf{Event Flow}       & 1-\ ED clicks on “Create new battle” button        \\
+        & 2-\ CKB redirect ED to the create battle form        \\
+        & 3-\ ED writes the Battle name        \\
+        & 4-\ ED sets the minimum and maximum number of students per group        \\
+        & 5-\ CBK checks the battle name, the minimum and the maximum        \\
+        & 6-\ CKB redirect ED to the upload code kata form        \\
+        & 7-\ ED uploads the code kata to be resolved        \\
+        & 8-\ CKB save the code kata sended        \\
+        & 9-\ CKB redirect ED to the deadline and additional condition form        \\
+        & 10-\ ED sets a registration deadline        \\
+        & 11-\ ED sets a final submission deadline        \\
+        & 12-\ ED sets additional configurations for scoring        \\
+        & 13-\ CKB check deadline         \\
+        & 14-\ CKB create a new Battle        \\
+        & 15-\ CKB sends a notification to all STs subscribed to the Tournament         \\
+        \hline
+        \textbf{Exit condition}   & The battle is correctly created and the ED is redirected to the battle main page        \\
+        \hline
+        \textbf{Exceptions}        & \begin{itemize}
+                \item The Battle’s name is null or already exists. An error message is shown, the ED is redirected back to the create battle settings.
+                \item The maximum number of students per group is lesser than the minimum.  An error message is shown to the ED and the ED is redirected to the create battle settings.
+                \item The minimum number of students per group is lesser or equal than zero.  An error message is shown to the ED and the ED is redirected to the create battle settings.    
+        \end{itemize}    \\
+        \hline
+        \caption{Create a battle use case}
+        \label{tab: create_a_battle_use_case}
+    \end{longtable}
+\end{center}
 
 \subsubsection*{UC\cuc . Join a battle}
 \begin{center}
@@ -309,7 +382,7 @@ that shows the messages exchanged between the entities and the called functions.
             \item The group already joined the Battle. In this case CKB will not show any error messages, but will redirect the Student to the current Leaderboard of the Battle.
             \item The number of students in the group is wrong. CKB will show an error and redirect the students to the CreateGroup page.
             \item If the creation group deadline and all the students without group or all the groups not confirmed will be kicked out from the battle
-            \item if the invited student isn’t already joined in the competition or if the nickname does not exist, CKB sends an error and redirects the students to the CreateGroup page.
+            \item if the invited student has not already joined in the competition or if the nickname does not exist, CKB sends an error and redirects the ST to the CreateGroup page.
          \end{itemize}    \\
         \hline
         \caption{Create a group and battle confirmation use case}
@@ -317,72 +390,68 @@ that shows the messages exchanged between the entities and the called functions.
     \end{longtable}
 \end{center}
 
-\subsubsection*{UC\cuc . Create a tournament}
+\subsubsection*{UC\cuc . Open a profile}
 \begin{center}
     \begin{longtable}{|l|p{0.9\linewidth}|}
         \hline
-        \textbf{Actor}            & ED                                                                                                                                                                                       \\
+        \textbf{Actor}            & ST or ED                                                                                                                                                                                       \\
         \hline
-        \textbf{Entry conditions} & ED is correctly logged in. The ED has decided to create a tournament. The ED is on his profile page.        \\
+        \textbf{Entry conditions} & The User is logged in. The User should be in a leaderboard (both battle or tournament) page for retreiving a ST profile from it or an ED profile from the owner name of the tournament (or from the list of all the EDs)        \\
         \hline
-        \textbf{Event Flow}       & 1-\ The ED clicks on “Create a Tournament” button        \\
-        & 2-\ CKB return the create tournament form        \\
-        & 3-\ The ED writes the Tournament name, sets the deadline for STs to subscribe and chooses and writes the other EDs nicknames to grant them permissions to create new battles        \\
-        & 4-\ CKB stores the data of the Tournament        \\
-        & 5-\ CKB sends a notification to the chosen EDs        \\
-        & 6-\ CKB notifies all the STs of the creation of the Tournament        \\
-        & 7-\ CKB return the Tournament main page        \\
+        \textbf{Event Flow}       & 1-\ User clicks on a ST's nickname (from the leaderboard) or ED's nickname (from the tournament owner or from the list of all the EDs)        \\
+        & 2-\ CKB returns the profile page of the selected User        \\
         \hline
-        \textbf{Exit condition}   & The tournament is correctly created and a confirmation message is shown to the ED        \\
+        \textbf{Exit condition}   & User is able to know particular information of the User that he had selected        \\
         \hline
-        \textbf{Exceptions}        & \begin{itemize}
-            \item The Tournament’s name is null or already exists. An error message is shown and the ED is redirected back to create tournament settings.
-            \item The EDs chosen are non-existent, or the creator chooses other ED that have already permission in this Tournament. An error message is shown to the ED and the ED is redirected to create tournament settings.
-            \item The Deadline is a date before the day the Tournament is created. An error message is shown to the ED and a new Deadline has to be chosen and the ED  is redirected to create tournament settings.
-         \end{itemize}    \\
+        \textbf{Exceptions}        &  \\%TODO
         \hline
-        \caption{Create a tournament use case}
-        \label{tab: create_a_tournament_use_case}
+        \caption{Open a profile use case}
+        \label{tab: open_a_profile_use_case}
     \end{longtable}
 \end{center}
 
-
-\subsubsection*{UC\cuc . Create a battle}
+\subsubsection*{UC\cuc . Search for a profile}
 \begin{center}
     \begin{longtable}{|l|p{0.9\linewidth}|}
         \hline
-        \textbf{Actor}            & ED                                                                                                                                                                                       \\
+        \textbf{Actor}            & ST or ED                                                                                                                                                                                       \\
         \hline
-        \textbf{Entry conditions} & ED is logged in. ED is in the Tournament page. ED has decided to create a Battle        \\
+        \textbf{Entry conditions} & The User is logged in  \\
         \hline
-        \textbf{Event Flow}       & 1-\ ED clicks on “Create new battle” button        \\
-        & 2-\ CKB redirect ED to the create battle form        \\
-        & 3-\ ED writes the Battle name        \\
-        & 4-\ ED sets the minimum and maximum number of students per group        \\
-        & 5-\ CBK checks the battle name, the minimum and the maximum        \\
-        & 6-\ CKB redirect ED to the upload code kata form        \\
-        & 7-\ ED uploads the code kata to be resolved        \\
-        & 8-\ CKB save the code kata sended        \\
-        & 9-\ CKB redirect ED to the deadline and additional condition form        \\
-        & 10-\ ED sets a registration deadline        \\
-        & 11-\ ED sets a final submission deadline        \\
-        & 12-\ ED sets additional configurations for scoring        \\
-        & 13-\ CKB check deadline         \\
-        & 14-\ CKB create a new Battle        \\
-        & 15-\ CKB sends a notification to all STs subscribed to the Tournament         \\
+        \textbf{Event Flow}       & 1-\ User clicks on the search bar        \\
+        & 2-\ User writes another User's nickname or a keyword of it \\
+        & 3-\ CKB returns the list of the Users that contain the written keyword in their nickname         \\
         \hline
-        \textbf{Exit condition}   & The battle is correctly created and the ED is redirected to the battle main page        \\
+        \textbf{Exit condition}   & User is able to find the User that he was searching        \\
         \hline
-        \textbf{Exceptions}        & \begin{itemize}
-                \item The Battle’s name is null or already exists. An error message is shown, the ED is redirected back to the create battle settings.
-                \item The maximum number of students per group is lesser than the minimum.  An error message is shown to the ED and the ED is redirected to the create battle settings.
-                \item The minimum number of students per group is lesser or equal than zero.  An error message is shown to the ED and the ED is redirected to the create battle settings.    
-        \end{itemize}    \\
+        \textbf{Exceptions}        &  \\%TODO
         \hline
-        \caption{Create a battle use case}
-        \label{tab: create_a_battle_use_case}
+        \caption{Search for a profile use case}
+        \label{tab: search_for_a_profile_use_case}
     \end{longtable}
 \end{center}
+
+\subsubsection*{UC\cuc . Search for a tournament}
+\begin{center}
+    \begin{longtable}{|l|p{0.9\linewidth}|}
+        \hline
+        \textbf{Actor}            & ST or ED                                                                                                                                                                                       \\
+        \hline
+        \textbf{Entry conditions} & The User is logged in  \\
+        \hline
+        \textbf{Event Flow}       & 1-\ User clicks on the search bar        \\
+        & 2-\ User writes a Tournament's name or a keyword of it \\
+        & 3-\ CKB returns the list of the Tournaments that contain the written keyword in their name         \\
+        \hline
+        \textbf{Exit condition}   & User is able to find the Tournament that he was searching        \\
+        \hline
+        \textbf{Exceptions}        &  \\%TODO
+        \hline
+        \caption{Search for a tournament use case}
+        \label{tab: search_for_a_tournament_use_case}
+    \end{longtable}
+\end{center}
+
 
 
 
