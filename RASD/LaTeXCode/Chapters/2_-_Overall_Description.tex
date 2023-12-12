@@ -1,10 +1,5 @@
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
-\newpage
-
 \section{Product perspesctive}
 \label{sec:product_perspesctive}%
-gfhfjghhf
 
 \subsection{Scenarios}
 \label{subsec:scenarios}%
@@ -45,7 +40,7 @@ The Notification Interface is used to send different kinds of notification to ST
 
 \subsection{State diagrams}
 \label{subsec:state_diagrams}%
-%Mettere inizio descrizione
+In this section are presented the State Diagrams of the CKB system representing all the possibile operation that a User can perform.
 \paragraph{Signup.}
 When a user wishes to register on CKB, they are required to input their credentials, including their name, surname, email, nickname, and password in a registration form. If the provided credentials are deemed valid (ensuring that the email or nickname is not already in use, and the password meets the criteria of being at least 8 characters long, containing at least one capital letter, a number, and a special character), CKB will send an email to the user. Upon the user confirming the registration through the provided email link, the new account is successfully created. If the credentials are not correct CKB shows an error message to the User and redirects him to the registration form page.
 
@@ -196,7 +191,20 @@ Users can log out from their account at any time by clicking the "Logout" button
 
 \section{Product functions}
 \label{sec:product_functions}%
-
+Here are listed a summary of the main functions of the CKB system:\\\\
+\textbf{ Signup:} The User submits his name, surname, nickname, email address and a new password. A confirmation mail is required to complete the process.\\\\
+\textbf{ Login:}The User signs in after typing his eMail and password in the login form. \\\\  
+\textbf{ Create a Tournament:} The ED creates a new Tournament and the system sends a notification to all the STs.\\\\
+\textbf{ Join a Tournament:} A ST can join a Tournament by clicking on the “Join Tournament” button on the Tournament’s page.\\\\
+\textbf{ Create a Battle:} An ED can create multiple Battles within a Tournament to test the STs. When a new Battle is created CKB sends a notification to all the STs that have joined the Tournament.\\\\
+\textbf{ Join a Battle:} A ST can join a Battle by clicking on the “Join Battle” button on the Battle’s page.\\\\
+\textbf{ Create a Group:} After joining a Battle the ST may create a new group and invite other STs or to accept an invitation to join another group. It is a choice of the ST to play alone or to create a group with STs, whether this is made possible by the minimum number of STs per STG decided by the ED.\\\\
+\textbf{ Evaluate Code:} During the Consolidation phase, an ED can manually download and evaluate the code of a STG within a Battle.\\\\
+\textbf{ Create a Badge:} An ED can create Badges to be awarded to worthy STs and define their rules.\\\\
+\textbf{ Search for a Profile:} Users can write a nickname or a keyword in the search bar to retrieve another User’s profile.\\\\
+\textbf{ Open a Profile:} Users can click on a nickname in a Leaderboard to open another User’s profile.\\\\
+\textbf{ Search for a Tournament:} Users can write a Tournament's name or a keyword in the search bar to retrieve the information about a Tournament.\\\\
+\textbf{ Logout:} A User session will be closed if the User clicks on "Logout" button. Next time the User opens CKB he will need to log in again.
 \subsection{Requirements}
 \label{subsec:requirements}%
 bbbbbbbbbbbbbbbb
