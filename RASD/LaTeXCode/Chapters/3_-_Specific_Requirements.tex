@@ -1,6 +1,5 @@
 This section is devoted to a specific description of every kind of requirement the system has to deal with in order to achieve all the functionalities described.
 
-\newpage
 
 \section{External interface requirements}
 \label{sec:external_interface_requirements}%
@@ -140,12 +139,37 @@ The communication Interfaces needed by the system are the HTTPS Protocol and the
 \end{center}
 
 
-\subsection{Mapping on goals}
-\label{subsec:mapping_on_goals}%
-bbbbbbbbbbbbbbbb
-
 \subsection{Use case diagrams}
 \label{subsec:use_case_diagrams}%
+
+
+\begin{figure}[H]
+    \begin{center}
+        \includegraphics[width=1\linewidth]{UseCasesUU.png}
+        \caption{Use Cases Diagram for Unregistered Users} 
+        \label{fig:UseCasesUU}%
+    \end{center}
+\end{figure}
+
+
+\begin{figure}[H]
+    \begin{center}
+        \includegraphics[width=1\linewidth]{UseCasesST.png}
+        \caption{Use Cases Diagram for Students}
+        \label{fig:UseCasesST}%
+    \end{center}
+\end{figure}
+
+
+\begin{figure}[H]
+    \begin{center}
+        \includegraphics[width=1\linewidth]{UseCasesED.png}
+        \caption{Use Cases Diagram for Educators}
+        \label{fig:UseCasesED}%
+    \end{center}
+\end{figure}
+
+
 \subsection{Use cases}
 \label{subsec: use_cases}%
 \newcounter{uc}
@@ -405,7 +429,7 @@ that shows the messages exchanged between the entities and the called functions.
         \hline
         \textbf{Exit condition}   & User is able to know particular information of the User that he had selected        \\
         \hline
-        \textbf{Exceptions}        &  \\%TODO
+        \textbf{Exceptions}        &  The User is not found. In this case the User will be redirected back to the brevious page.\\
         \hline
         \caption{Open a profile use case}
         \label{tab: open_a_profile_use_case}
@@ -426,7 +450,7 @@ that shows the messages exchanged between the entities and the called functions.
         \hline
         \textbf{Exit condition}   & User is able to find the User that he was searching        \\
         \hline
-        \textbf{Exceptions}        &  \\%TODO
+        \textbf{Exceptions}        &  None is found from the research. In this case the user will be redirectd back to the previous page.\\
         \hline
         \caption{Search for a profile use case}
         \label{tab: search_for_a_profile_use_case}
@@ -447,13 +471,125 @@ that shows the messages exchanged between the entities and the called functions.
         \hline
         \textbf{Exit condition}   & User is able to find the Tournament that he was searching        \\
         \hline
-        \textbf{Exceptions}        &  \\%TODO
+        \textbf{Exceptions}        & Nothing is found from the research. In this case the user will be redirected back to the previous page.\\%TODO
         \hline
         \caption{Search for a Tournament use case}
         \label{tab: search_for_a_Tournament_use_case}
     \end{longtable}
 \end{center}
 
+
+\subsection{Mapping on goals}
+\label{subsec:mapping_on_goals}%
+\textbf{G1 - Allow an ED to create a Tournament.}\\
+\begin{itemize}
+    \item R1: CKB allows unregistered Users to sign up.
+    \item R2: CKB allows registered EDs to login.
+    \item R4: CKB allows EDs to create Tournaments.
+    \item R5: CKB allows EDs to grant the permissions of a Tournament to other EDs.
+    \item R15: CKB allows EDs to choose which badges to award in a certain Tournament.
+    \item R17: CKB allows EDs to close a Tournament.
+    \item R27: CKB sends notifications to every ST when a new Tournament is created.
+\end{itemize}
+
+\vspace{1.5cm}
+\textbf{G2 - Allow a ST to subscribe to a specific Tournament before the registration deadline.}\\
+\begin{itemize}
+    \item R1: CKB allows unregistered Users to sign up.
+    \item R3: CKB allows registered STs to login.
+    \item R20: CKB allows STs to join a Tournament.
+    \item R39: CKB allows STs to check the list of ongoing Tournaments.
+    \item R43: CKB sends notification to every ST involved in a Tournament when the Tournament is closed and the final ranks are available.
+    \item R46: CKB shall communicate with the mailing system in order to allow Users to register their account.
+\end{itemize}
+
+
+\vspace{1.5cm}
+\textbf{G3 - Allow an ED to create a Battle.}\\
+\begin{itemize}
+    \item R6: CKB allows EDs to create Battles.
+    \item R7: CKB allows EDs to uploads the code kata of a Battle.
+    \item R8: CKB allows EDs to set the minimun and the maximum number of STs per group of a Battle.
+    \item R9: CKB allows EDs to set a registration deadline of a Battle.
+    \item R10: CKB allows EDs to set a submission deadline of a Battle.
+    \item R11: CKB allows EDs to set additional configuration for the scoring system of a Battle.
+    \item R12: CKB allows EDs to set functional aspects for the scoring system of a Battle.
+    \item R16: CKB allows EDs to assing a score manually during the consolidation stage.
+    \item R28: CKB sends notifications when a new Battle is created to every ST which is participating in the Tournament that the Battle is part of.
+    \item R30: CKB creates a GH repository of the code kata when the registration deadline for the Battle expires.
+    \item R31: CKB sends the link of the GH repository to every STG that participates in the Battle.
+    \item R32: CKB evaluates the STG's work every time a push is made on GH and calculates Battle score for the STG.
+    \item R33: CKB updates the Battle leaderboard once a new score is registered.
+    \item R46: CKB shall communicate with the mailing system in order to allow Users to register their account.
+\end{itemize}
+
+
+\vspace{1.5cm}
+\textbf{G4 - Allow any User to visualize the profile of other Users and their Badges.}\\
+\begin{itemize}
+    \item R18: CKB allows EDs to visualize the profile of another User.
+    \item R19: CKB allows STs to visualize the profile of another User.
+    \item R25: CKB stores the informations about the Users.
+    \item R26: CKB shall ensure security of data. 
+\end{itemize}
+
+
+\vspace{1.5cm}
+\textbf{G5 - Allow a ST to subscribe to a specific Battle before the registration deadline.}\\
+\begin{itemize}
+    \item R21: CKB allows STs to join a Battle.
+    \item R22: CKB allows STs to create a new STG.
+    \item R23: CKB allows STs to join a STG.
+    \item R24: CKB allows STs to invite other STs in their STG.
+    \item R29: CKB sends notifications to a ST when he receives an invitation to be part of STG.
+    \item R31: CKB sends the link of the GH repository to every STG that participates in the Battle.
+\end{itemize}
+
+
+\vspace{1.5cm}
+\textbf{G6 - Allow STs to submit their code before the submission deadline.}\\
+\begin{itemize}
+    \item R16: CKB allows EDs to assing a score manually during the consolidation stage.
+    \item R32: CKB evaluates the STG's work every time a push is made on GH and calculates Battle score for the STG.
+    \item R33: CKB updates the Battle leaderboard once a new score is registered.
+    \item R34: CKB updates the Tournament leaderboard once a new score is registered.
+    \item R37: CKB allows EDs to analyze the code of a STG.
+    \item R38: CKB sends notification to every ST involved in a Tournament when the Tournament is closed and the final ranks are available.
+    \item R44: CKB shall communicate with the GH API in order to calculate a new score every time a push action is made by a STG.
+    \item R45: CKB shall communicate with the external tool in order to calculate the score of a STG.
+    \item R47: STs need to fork the GH repository of the Battle they are participating in.
+    \item R48: STs need to push their code in the GH repository in order to have their code evaluated.
+\end{itemize}
+
+
+\vspace{1.5cm}
+\textbf{G7 - Allow an ED to set badges for deserving STs.}\\
+\begin{itemize}
+    \item R13: CKB allows EDs to create new badges.
+    \item R14: CKB allows EDs to choose the rules related to the awarding of badges.
+    \item R15: CKB allows EDs to choose which badges to award in a certain Tournament.
+    \item R49: CKB shall assign the badges to all STs that fullfill their requirements.
+\end{itemize}
+
+
+\vspace{1.5cm}
+\textbf{G8 - Allow any User to view the result and the progress of a Tournament.}\\
+\begin{itemize}
+    \item R34: CKB updates the Tournament leaderboard once a new score is registered.
+    \item R40: CKB allows EDs to check the list of ongoing Tournaments.
+    \item R41: CKB allows STs to check the leaderboard of a Tournaments.
+    \item R42: CKB allows EDs to check the leaderboard of a Tournaments.
+    \item R43: CKB sends notification to every ST involved in a Tournament when the Tournament is closed and the final ranks are available.
+\end{itemize}
+
+
+\vspace{1.5cm}
+\textbf{G9 - Allow any User to view the results of a Battle.}\\
+\begin{itemize}
+    \item R33: CKB updates the Battle leaderboard once a new score is registered.
+    \item R35: CKB allows STs to check the leaderboard of a Battle.
+    \item R36: CKB allows EDs to check the leaderboard of a Battle.
+\end{itemize}
 
 
 
@@ -464,17 +600,15 @@ that shows the messages exchanged between the entities and the called functions.
 \section{Design constraints}
 \label{sec:design_constraints}%
 
+
 \subsection{Standard compliance}
 \label{subsec:standard compliance}%%
 The system must be compliant to the EU's GDPR (General Data Protection Regulation), a set of regulations that is designed in order to protect the personal data, the privacy and security of the EU's citizens. 
 
+
 \subsection{Hardware limitations}
 \label{subsec:hardware_limitations}%
 The only hardware limitations are the support for a reliable internet connection and for a Web Browser.
-
-\subsection{Any other constraints}
-\label{subsec:other_constraints}%
-QESTA SEZIONE POTREMMO ANCHE TOGLIERLA DAL PDF
 
 
 \section{Software system attributes}
