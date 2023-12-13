@@ -211,6 +211,14 @@ that shows the messages exchanged between the entities and the called functions.
     \end{longtable}
 \end{center}
 
+\begin{figure}[H]
+    \begin{center}
+        \includegraphics[width=1\linewidth]{SequenceDiagrams/Signup as ED.png}
+        \caption{Signup as ED sequence diagram}
+        \label{fig:signup_as_ED_seqd}%
+    \end{center}
+\end{figure}
+
 \subsubsection*{UC\cuc . Signup as ST}
 \begin{center}
     \begin{longtable}{|l|p{0.9\linewidth}|}
@@ -241,6 +249,14 @@ that shows the messages exchanged between the entities and the called functions.
     \end{longtable}
 \end{center}
 
+\begin{figure}[H]
+    \begin{center}
+        \includegraphics[width=1\linewidth]{SequenceDiagrams/Signup as ST.png}
+        \caption{Signup as ST sequence diagram}
+        \label{fig:signup_as_ST_seqd}%
+    \end{center}
+\end{figure}
+
 \subsubsection*{UC\cuc . Login}
 \begin{center}
     \begin{longtable}{|l|p{0.9\linewidth}|}
@@ -262,6 +278,14 @@ that shows the messages exchanged between the entities and the called functions.
         \label{tab: login_use_case}
     \end{longtable}
 \end{center}
+
+\begin{figure}[H]
+    \begin{center}
+        \includegraphics[width=.5\linewidth]{SequenceDiagrams/login.png}
+        \caption{Login sequence diagram}
+        \label{fig:login_seqd}%
+    \end{center}
+\end{figure}
 
 \subsubsection*{UC\cuc . Create a Tournament}
 \begin{center}
@@ -343,7 +367,7 @@ that shows the messages exchanged between the entities and the called functions.
         & 11-\ ED sets a final submission deadline        \\
         & 12-\ ED sets additional configurations for scoring        \\
         & 13-\ CKB check deadline         \\
-        & 14-\ CKB create a new Battle        \\
+        & 14-\ CKB create a new Battle and redirect the ED to the new Battle main page        \\
         & 15-\ CKB sends a notification to all STs subscribed to the Tournament         \\
         \hline
         \textbf{Exit condition}   & The Battle is correctly created and the ED is redirected to the Battle main page        \\
@@ -359,6 +383,14 @@ that shows the messages exchanged between the entities and the called functions.
     \end{longtable}
 \end{center}
 
+\begin{figure}[H]
+    \begin{center}
+        \includegraphics[width=1\linewidth]{SequenceDiagrams/Create a Battle.png}
+        \caption{Create a Battle sequence diagram}
+        \label{fig:create_a_battle_seqd}%
+    \end{center}
+\end{figure}
+
 \subsubsection*{UC\cuc . Join a Battle}
 \begin{center}
     \begin{longtable}{|l|p{0.9\linewidth}|}
@@ -370,9 +402,9 @@ that shows the messages exchanged between the entities and the called functions.
         \textbf{Event Flow}       & 1-\ The Student click on the button “Go to Battles”        \\
         & 2-\ CKB redirects the student to the page that has the list of all the Battles of the Tournament.        \\
         & 3-\ The Student clicks on the “subscribe” button near the Battle name.        \\
-        & 4-\ CKB redirects the Student to the CreateGroup page of the Battle.        \\
-        & 5-\ CKB checks that the deadline does not expire\\
-        & 6-\ CKB checks that the Student joined the Tournament that contains this Battle.        \\
+        & 4-\ CKB checks that the deadline does not expire\\
+        & 5-\ CKB checks that the Student joined the Tournament that contains this Battle.        \\
+        & 6-\ CKB redirects the Student to the CreateGroup page of the Battle.        \\
         \hline
         \textbf{Exit condition}   & The Student, after the subscription deadline end, will be able to create a group and then confirm the participation to the Battle        \\
         \hline
@@ -386,6 +418,14 @@ that shows the messages exchanged between the entities and the called functions.
         \label{tab: join_a_Battle_use_case}
     \end{longtable}
 \end{center}
+
+\begin{figure}[H]
+    \begin{center}
+        \includegraphics[width=.8\linewidth]{SequenceDiagrams/Join a battle.png}
+        \caption{Join a battle sequence diagram}
+        \label{fig:join_a_battle_seqd}%
+    \end{center}
+\end{figure}
 
 \subsubsection*{UC\cuc . Create a group and Battle confirmation}
 \begin{center}
@@ -402,7 +442,7 @@ that shows the messages exchanged between the entities and the called functions.
         & 5-\ The Student can click on the “Join Battle” button.        \\
         & 6-\ CKB checks if the number of members respect the limits given by educators during the Battle creation.         \\
         & 7-\ CKB saves the Student and the group as one of the competitors of the Battle        \\
-        & 8-\ CKB shows a confirmation message and redirects all the Students to the group to the main page of the Battle (the one with the leaderboard).        \\
+        & 8-\ CKB shows a confirmation message and redirects the Student to the group to the main page of the Battle (the one with the leaderboard).        \\
         \hline
         \textbf{Exit condition}   & The Student is now a competitor in the Battle and he can starts committing after the creation group deadline expires        \\
         \hline
@@ -417,6 +457,14 @@ that shows the messages exchanged between the entities and the called functions.
         \label{tab: create_a_group_and_Battle_confirmation_use_case}
     \end{longtable}
 \end{center}
+
+\begin{figure}[H]
+    \begin{center}
+        \includegraphics[width=1\linewidth]{SequenceDiagrams/create a group and battle confirmation.png}
+        \caption{Create a group and Battle confirmation sequence diagram}
+        \label{fig:create_a_group_and_battle_confirmation_seqd}%
+    \end{center}
+\end{figure}
 
 \subsubsection*{UC\cuc . Open a profile}
 \begin{center}
@@ -437,6 +485,14 @@ that shows the messages exchanged between the entities and the called functions.
         \label{tab: open_a_profile_use_case}
     \end{longtable}
 \end{center}
+
+\begin{figure}[H]
+    \begin{center}
+        \includegraphics[width=.5\linewidth]{SequenceDiagrams/Open a profile.png}
+        \caption{Open a profile sequence diagram}
+        \label{fig:open_a_profile_seqd}%
+    \end{center}
+\end{figure}
 
 \subsubsection*{UC\cuc . Search for a profile}
 \begin{center}
@@ -459,6 +515,14 @@ that shows the messages exchanged between the entities and the called functions.
     \end{longtable}
 \end{center}
 
+\begin{figure}[H]
+    \begin{center}
+        \includegraphics[width=.5\linewidth]{SequenceDiagrams/search for a profile.png}
+        \caption{Search for a profile sequence diagram}
+        \label{fig:search_for_a_profile_seqd}%
+    \end{center}
+\end{figure}
+
 \subsubsection*{UC\cuc . Search for a Tournament}
 \begin{center}
     \begin{longtable}{|l|p{0.9\linewidth}|}
@@ -480,10 +544,53 @@ that shows the messages exchanged between the entities and the called functions.
     \end{longtable}
 \end{center}
 
+\begin{figure}[H]
+    \begin{center}
+        \includegraphics[width=.6\linewidth]{SequenceDiagrams/Search for a Tournament.png}
+        \caption{Search for a Tournament sequence diagram}
+        \label{fig:search_for_a_Tournament_seqd}%
+    \end{center}
+\end{figure}
+
+\subsubsection*{UC\cuc . Evaluate a code}
+\begin{center}
+    \begin{longtable}{|l|p{0.9\linewidth}|}
+        \hline
+        \textbf{Actor}            & ED                                                                                                                                                                                        \\
+        \hline
+        \textbf{Entry conditions} & The ED is correctly logged. During the Consolidation Stage the Educator decides to check a STG’s code.        \\
+        \hline
+        \textbf{Event Flow}       & 1-\  The ED click the “See battle leaderboard” button in the Battle page      \\
+        & 2-\   CKB shows the leaderboard page     \\
+        & 3-\   The ED clicks the “Analyze source code” button that corresponds to a STG     \\
+        & 4-\   CKB shows the source code to the ED     \\
+        & 5-\   The ED manually checks the code     \\
+        & 6-\   The ED assign a score to the STG code     \\
+        \hline
+        \textbf{Exit condition}   & CKB updates the new score to the STG code       \\
+        \hline
+        \textbf{Exceptions}        & \begin{itemize}
+            \item The Consolidation Stage already ended, an error message is shown and the ED is redirected to the battle leaderboard page
+            \item The ED awards the STG a improper score, like a score beyond the minimum and maximum bounds decided by the ED during the Creation Phase. An error message is shown and the ED is redirected to the battle leaderboard page.
+         \end{itemize}    \\
+        \hline
+        \caption{Evaluate a code use case}
+        \label{tab: evaluate_a_code_use_case}
+    \end{longtable}
+\end{center}
+
+
+\begin{figure}[H]
+    \begin{center}
+        \includegraphics[width=.8\linewidth]{SequenceDiagrams/Evaluate a code.png}
+        \caption{Evaluate a code sequence diagram}
+        \label{fig:evaluate_a_code_seqd}%
+    \end{center}
+\end{figure}
 
 \subsection{Mapping on goals}
 \label{subsec:mapping_on_goals}%
-\textbf{G1 - Allow an ED to create a Tournament.}\\
+\textbf{G1 - Allow an ED to create a Tournament.}
 \begin{itemize}
     \item R1: CKB allows unregistered Users to sign up.
     \item R2: CKB allows registered EDs to login.
@@ -495,7 +602,7 @@ that shows the messages exchanged between the entities and the called functions.
 \end{itemize}
 
 \vspace{1.5cm}
-\textbf{G2 - Allow a ST to subscribe to a specific Tournament before the registration deadline.}\\
+\textbf{G2 - Allow a ST to subscribe to a specific Tournament before the registration deadline.}
 \begin{itemize}
     \item R1: CKB allows unregistered Users to sign up.
     \item R3: CKB allows registered STs to login.
@@ -507,16 +614,16 @@ that shows the messages exchanged between the entities and the called functions.
 
 
 \vspace{1.5cm}
-\textbf{G3 - Allow an ED to create a Battle.}\\
+\textbf{G3 - Allow an ED to create a Battle.}
 \begin{itemize}
     \item R6: CKB allows EDs to create Battles.
     \item R7: CKB allows EDs to uploads the code kata of a Battle.
-    \item R8: CKB allows EDs to set the minimun and the maximum number of STs per group of a Battle.
+    \item R8: CKB allows EDs to set the minimum and the maximum number of STs per group of a Battle.
     \item R9: CKB allows EDs to set a registration deadline of a Battle.
     \item R10: CKB allows EDs to set a submission deadline of a Battle.
     \item R11: CKB allows EDs to set additional configuration for the scoring system of a Battle.
     \item R12: CKB allows EDs to set functional aspects for the scoring system of a Battle.
-    \item R16: CKB allows EDs to assing a score manually during the consolidation stage.
+    \item R16: CKB allows EDs to assign a score manually during the consolidation stage.
     \item R28: CKB sends notifications when a new Battle is created to every ST which is participating in the Tournament that the Battle is part of.
     \item R30: CKB creates a GH repository of the code kata when the registration deadline for the Battle expires.
     \item R31: CKB sends the link of the GH repository to every STG that participates in the Battle.
@@ -527,17 +634,17 @@ that shows the messages exchanged between the entities and the called functions.
 
 
 \vspace{1.5cm}
-\textbf{G4 - Allow any User to visualize the profile of other Users and their Badges.}\\
+\textbf{G4 - Allow any User to visualize the profile of other Users and their Badges.}
 \begin{itemize}
     \item R18: CKB allows EDs to visualize the profile of another User.
     \item R19: CKB allows STs to visualize the profile of another User.
-    \item R25: CKB stores the informations about the Users.
+    \item R25: CKB stores the information about the Users.
     \item R26: CKB shall ensure security of data. 
 \end{itemize}
 
 
 \vspace{1.5cm}
-\textbf{G5 - Allow a ST to subscribe to a specific Battle before the registration deadline.}\\
+\textbf{G5 - Allow a ST to subscribe to a specific Battle before the registration deadline.}
 \begin{itemize}
     \item R21: CKB allows STs to join a Battle.
     \item R22: CKB allows STs to create a new STG.
@@ -549,9 +656,9 @@ that shows the messages exchanged between the entities and the called functions.
 
 
 \vspace{1.5cm}
-\textbf{G6 - Allow STs to submit their code before the submission deadline.}\\
+\textbf{G6 - Allow STs to submit their code before the submission deadline.}
 \begin{itemize}
-    \item R16: CKB allows EDs to assing a score manually during the consolidation stage.
+    \item R16: CKB allows EDs to assign a score manually during the consolidation stage.
     \item R32: CKB evaluates the STG's work every time a push is made on GH and calculates Battle score for the STG.
     \item R33: CKB updates the Battle leaderboard once a new score is registered.
     \item R34: CKB updates the Tournament leaderboard once a new score is registered.
@@ -565,17 +672,17 @@ that shows the messages exchanged between the entities and the called functions.
 
 
 \vspace{1.5cm}
-\textbf{G7 - Allow an ED to set badges for deserving STs.}\\
+\textbf{G7 - Allow an ED to set badges for deserving STs.}
 \begin{itemize}
     \item R13: CKB allows EDs to create new badges.
     \item R14: CKB allows EDs to choose the rules related to the awarding of badges.
     \item R15: CKB allows EDs to choose which badges to award in a certain Tournament.
-    \item R49: CKB shall assign the badges to all STs that fullfill their requirements.
+    \item R49: CKB shall assign the badges to all STs that fulfill their requirements.
 \end{itemize}
 
 
 \vspace{1.5cm}
-\textbf{G8 - Allow any User to view the result and the progress of a Tournament.}\\
+\textbf{G8 - Allow any User to view the result and the progress of a Tournament.}
 \begin{itemize}
     \item R34: CKB updates the Tournament leaderboard once a new score is registered.
     \item R40: CKB allows EDs to check the list of ongoing Tournaments.
@@ -586,13 +693,73 @@ that shows the messages exchanged between the entities and the called functions.
 
 
 \vspace{1.5cm}
-\textbf{G9 - Allow any User to view the results of a Battle.}\\
+\textbf{G9 - Allow any User to view the results of a Battle.}
 \begin{itemize}
     \item R33: CKB updates the Battle leaderboard once a new score is registered.
     \item R35: CKB allows STs to check the leaderboard of a Battle.
     \item R36: CKB allows EDs to check the leaderboard of a Battle.
 \end{itemize}
 
+
+
+\begin{table}[htbp]
+    \centering
+    \label{tab:traceability}
+    \begin{tabular}{|l|c|c|c|c|c|c|c|c|c|}
+    \hline
+    \textbf{Requirements} & \textbf{G1} & \textbf{G2} & \textbf{G3} & \textbf{G4} & \textbf{G5} & \textbf{G6} & \textbf{G7} & \textbf{G8} & \textbf{G9}\\ \hline
+    R1 & \checkmark & \checkmark &  &  &  &  &  &  &  \\ \hline
+    R2 & \checkmark &  &  &  &  &  &  &  &  \\ \hline
+    R3 &  & \checkmark &  &  &  &  &  &  &  \\ \hline
+    R4 & \checkmark &  &  &  &  &  &  &  &  \\ \hline
+    R5 & \checkmark &  &  &  &  &  &  &  &  \\ \hline
+    R6 &  &  & \checkmark &  &  &  &  &  &  \\ \hline
+    R7 &  &  & \checkmark &  &  &  &  &  &  \\ \hline
+    R8 &  &  & \checkmark &  &  &  &  &  &  \\ \hline
+    R9 &  &  & \checkmark &  &  &  &  &  &  \\ \hline
+    R10 &  &  & \checkmark &  &  &  &  &  &  \\ \hline
+    R11 &  &  & \checkmark &  &  &  &  &  &  \\ \hline
+    R12 &  &  & \checkmark &  &  &  &  &  &  \\ \hline
+    R13 &  &  &  &  &  &  & \checkmark &  &  \\ \hline
+    R14 &  &  &  &  &  &  & \checkmark &  &  \\ \hline
+    R15 &\checkmark  &  &  &  &  &  & \checkmark &  &  \\ \hline
+    R16 &  &  & \checkmark &  &  & \checkmark &  &  &  \\ \hline
+    R17 &\checkmark  &  &  &  &  &  &  &  &  \\ \hline
+    R18 &  &  &  & \checkmark &  &  &  &  &  \\ \hline
+    R19 &  &  &  & \checkmark &  &  &  &  &  \\ \hline
+    R20 &  & \checkmark &  &  &  &  &  &  &  \\ \hline
+    R21 &  &  &  &  & \checkmark &  &  &  &  \\ \hline
+    R22 &  &  &  &  & \checkmark &  &  &  &  \\ \hline
+    R23 &  &  &  &  & \checkmark &  &  &  &  \\ \hline
+    R24 &  &  &  &  & \checkmark &  &  &  &  \\ \hline
+    R25 &  &  &  & \checkmark &  &  &  &  &  \\ \hline
+    R26 &  &  &  & \checkmark &  &  &  &  &  \\ \hline
+    R27 & \checkmark &  &  &  &  &  &  &  &  \\ \hline
+    R28 &  &  & \checkmark &  &  &  &  &  &  \\ \hline
+    R29 &  &  &  &  & \checkmark &  &  &  &  \\ \hline
+    R30 &  &  & \checkmark &  &  &  &  &  &  \\ \hline
+    R31 &  &  & \checkmark &  & \checkmark &  &  &  &  \\ \hline
+    R32 &  &  & \checkmark &  &  & \checkmark &  &  &  \\ \hline
+    R33 &  &  & \checkmark &  &  & \checkmark &  &  & \checkmark \\ \hline
+    R34 &  &  &  &  &  & \checkmark &  & \checkmark &  \\ \hline
+    R35 &  &  &  &  &  &  &  &  & \checkmark \\ \hline
+    R36 &  &  &  &  &  &  &  &  & \checkmark \\ \hline
+    R37 &  &  &  &  &  & \checkmark &  &  &  \\ \hline
+    R38 &  &  &  &  &  & \checkmark &  &  &  \\ \hline
+    R39 &  & \checkmark &  &  &  &  &  &  &  \\ \hline
+    R40 &  &  &  &  &  &  &  & \checkmark &  \\ \hline
+    R41 &  &  &  &  &  &  &  & \checkmark &  \\ \hline
+    R42 &  &  &  &  &  &  &  & \checkmark &  \\ \hline
+    R43 &  &  \checkmark&  &  &  &  &  & \checkmark &  \\ \hline
+    R44 &  &  &  &  &  & \checkmark &  &  &  \\ \hline
+    R45 &  &  &  &  &  & \checkmark &  &  &  \\ \hline
+    R46 &  &  \checkmark& \checkmark &  &  &  &  &  &  \\ \hline
+    R47 &  &  &  &  &  & \checkmark &  &  &  \\ \hline
+    R48 &  &  &  &  &  & \checkmark &  &  &  \\ \hline
+    R49 &  &  &  &  &  &  & \checkmark &  &  \\ \hline
+\end{tabular}
+\caption{Traceability Matrix for Goals and Requirements}
+\end{table}
 
 
 \section{Performance requirements}
