@@ -220,4 +220,37 @@ Both the EDs and the STs need to register an account in order to access CKB. Dur
 
 \subsection{Domain assumptions}
 \label{subsec:domain_assumptions}%
-bbbbbbbbbbbbbbbb
+\newcounter{da}
+\setcounter{da}{1}
+\newcommand{\cda}{\theda\stepcounter{da}}
+\begin{center}
+    \begin{longtable}{ |l|p{0.9\linewidth}| }
+        \hline
+        \textbf{ID} & \textbf{Description} \\
+        \hline
+        DA\cda      & The EDs need to have a valid email address. \\
+        \hline
+        DA\cda      &  The STs need to have a valid email address. \\
+        \hline
+        DA\cda      & The EDs need to have a device and a reliable internet connection. \\
+        \hline
+        DA\cda      & The STs need to have a device and a reliable internet connection. \\
+        \hline
+        DA\cda      & The EDs need to have a GitHub account. \\
+        \hline
+        DA\cda      & The STs need to have a GitHub account. \\
+        \hline
+        DA\cda      & Sts need to know how to fork a GitHub Repository. \\
+        \hline
+        DA\cda      & STs need to know how to push their code on GitHub. \\
+        \hline
+        DA\cda      & CKB needs to communicate with GH through its API. \\
+        \hline
+        DA\cda      & CKB needs to communicate with the external Static Analysis Tools in order to compute the scores. \\
+        \hline
+        DA\cda      & CKB needs to communicate correctly with the eMail system. \\
+        \hline
+        \caption{Domain assumptions.}
+        \label{tab:domainassmptn_tab}%
+    \end{longtable}
+\end{center}
