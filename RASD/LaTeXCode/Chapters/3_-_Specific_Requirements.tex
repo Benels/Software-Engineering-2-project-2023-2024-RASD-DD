@@ -300,7 +300,7 @@ that shows the messages exchanged between the entities and the called functions.
         \hline
         \textbf{Entry conditions} & The Student is correctly logged in. The Student has decided to join a Tournament.                                                                                                                   \\
         \hline
-        \textbf{Event Flow}       & 1-\ The Student search the name or the code of a Tournament into the search box \\
+        \textbf{Event Flow}       & 1-\ The Student search the name of a Tournament into the search box \\
         & 2-\ CKB returns the result from the search. \\
         & 3-\ The Student clicks on the new Tournament’s name.        \\
         & 4-\ CKB redirects the Student to the main page of the Tournament. \\
@@ -311,6 +311,7 @@ that shows the messages exchanged between the entities and the called functions.
         \textbf{Exit condition}   & The Student is now part of the Tournament and will be notified whenever a new Battle will be available.        \\                                                                                                                                                                                \\
         \hline
         \textbf{Exceptions}        & \begin{itemize}
+            \item Nothing is found from the research. In this case the user will be redirectd back to the home page.
             \item The Tournament already ended. In this case is shown an error message, the User is redirected to the final leaderboard of the Tournament.
             \item The student already joined the Tournament. In this case CKB will not show any error messages, but will redirect the Student to the current Leaderboard of the Tournament.
             \item The Deadline already expired. An error message is shown and the ST is redirected back to the Home Page.
@@ -595,6 +596,10 @@ that shows the messages exchanged between the entities and the called functions.
 
 \section{Performance requirements}
 \label{sec:performance_requirements}%
+\paragraph{Number of concurrent users:} According to recent research, Codewars, a website that has similar use cases of CKB, has about 1.8 million users. If we're optimistic, we want our app to attract around 25\% of those users, which means it should be able to handle up to 500,000 users. This is important for making sure our app works well for a good number of people, giving them a smooth and enjoyable experience similar to what Codewars offers.
+\paragraph{Data storage:} CKB needs to save and manage all the details about both STs and EDs. Additionally, it has to store information about all the Tournaments, including the associated Battles. When a Tournament is closed all the data about it won’t be canceled and a reference of it and of the Battles remains in the ED’s page .
+\paragraph{Time response:} Every operation that is directly executed by CKB, i.e. login, create, join and evaluate, should be in the domain of milliseconds. Other operations such as the ones that involve GH, the mailing system and the External Tools cannot be guaranteed by CKB itself.
+
 
 
 \section{Design constraints}
