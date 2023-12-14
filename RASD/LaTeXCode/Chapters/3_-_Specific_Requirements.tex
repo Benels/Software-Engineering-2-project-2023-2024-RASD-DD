@@ -340,7 +340,7 @@ that shows the messages exchanged between the entities and the called functions.
         & 3-\ The Student clicks on the new Tournament’s name.        \\
         & 4-\ CKB redirects the Student to the main page of the Tournament. \\
         & 5-\ The Student clicks on the “Join Tournament” button. \\
-        & 6-\ CKB saves the Student as one of the competitors of the Tournamen \\
+        & 6-\ CKB saves the Student as one of the competitors of the Tournament \\
         & 7-\ CKB shows a confirm message and redirects the Student to the page that contains the current Leaderboard of the Tournament (the Tournament main page). \\
         \hline
         \textbf{Exit condition}   & The Student is now part of the Tournament and will be notified whenever a new Battle will be available.        \\                                                                                                                                                                                \\
@@ -394,6 +394,7 @@ that shows the messages exchanged between the entities and the called functions.
         \textbf{Exceptions}        & \begin{itemize}
                 \item The Battle’s name is null or already exists. An error message is shown, the ED is redirected back to the create Battle settings.
                 \item The maximum number of students per group is lesser than the minimum.  An error message is shown to the ED and the ED is redirected to the create Battle settings.
+                \item The minimum number of students per group is lesser or equal than zero.  An error message is shown to the ED and the ED is redirected to the create Battle.
                 \item The minimum number of students per group is lesser or equal than zero.  An error message is shown to the ED and the ED is redirected to the create Battle settings.    
         \end{itemize}    \\
         \hline
