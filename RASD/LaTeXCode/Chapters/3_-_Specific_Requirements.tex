@@ -301,7 +301,10 @@ that shows the messages exchanged between the entities and the called functions.
         & 4-\ CKB stores the data of the Tournament        \\
         & 5-\ CKB sends a notification to the chosen EDs        \\
         & 6-\ CKB notifies all the STs of the creation of the Tournament        \\
-        & 7-\ CKB return the Tournament main page        \\
+        & 7-\ CKB redirect ED to the badges requirement page \\
+        & 8-\ The ED inserts the badges details into the form \\
+        & 9-\ CKB save the badges details \\
+        & 10-\ CKB return the Tournament main page        \\
         \hline
         \textbf{Exit condition}   & The Tournament is correctly created and a confirmation message is shown to the ED        \\
         \hline
@@ -315,6 +318,14 @@ that shows the messages exchanged between the entities and the called functions.
         \label{tab: create_a_Tournament_use_case}
     \end{longtable}
 \end{center}
+
+\begin{figure}[H]
+    \begin{center}
+        \includegraphics[width=1\linewidth]{SequenceDiagrams/Create a Tournament.png}
+        \caption{Create a Tournament diagram}
+        \label{fig:create_a_Tournament_seqd}%
+    \end{center}
+\end{figure}
 
 \subsubsection*{UC\cuc . Join a Tournament}
 \begin{center}
@@ -330,7 +341,7 @@ that shows the messages exchanged between the entities and the called functions.
         & 4-\ CKB redirects the Student to the main page of the Tournament. \\
         & 5-\ The Student clicks on the “Join Tournament” button. \\
         & 6-\ CKB saves the Student as one of the competitors of the Tournamen \\
-        & 7-\ CKB shows a confirm message and redirects the Student to the page that contains the current Leaderboard of the Tournament. \\
+        & 7-\ CKB shows a confirm message and redirects the Student to the page that contains the current Leaderboard of the Tournament (the Tournament main page). \\
         \hline
         \textbf{Exit condition}   & The Student is now part of the Tournament and will be notified whenever a new Battle will be available.        \\                                                                                                                                                                                \\
         \hline
@@ -345,6 +356,14 @@ that shows the messages exchanged between the entities and the called functions.
         \label{tab: join_a_Tournament_use_case}
     \end{longtable}
 \end{center}
+
+\begin{figure}[H]
+    \begin{center}
+        \includegraphics[width=.8\linewidth]{SequenceDiagrams/Join a tournament.png}
+        \caption{Join a Tournament diagram}
+        \label{fig:join_a_Tournament_seqd}%
+    \end{center}
+\end{figure}
 
 \subsubsection*{UC\cuc . Create a Battle}
 \begin{center}
