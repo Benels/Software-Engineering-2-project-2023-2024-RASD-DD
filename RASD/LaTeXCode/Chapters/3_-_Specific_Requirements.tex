@@ -5,18 +5,17 @@ This section is devoted to a specific description of every kind of requirement t
 \label{sec:external_interface_requirements}%
 
 \subsection{User interfaces}
-\label{subsec:user_interfaces}%
-The CodeKataBattle’s user interface will be a website, developed in order to be used both by STs and EDs, available to everybody who has a device with an Internet Browser and a reliable Internet connection.
+\label{subsec:User_interfaces}%
+The CodeKataBattle’s User interface will be a website, developed in order to be used both by STs and EDs, available to everybody who has a device with an Internet Browser and a reliable Internet connection.
 
 \subsection{Hardware interfaces}
 \label{subsec:hardware_interfaces}%
-The system will be accessible from every device with an Internet Browser to access the website and a reliable Internet connection.
-The user is free to choose his device like a computer, a tablet or a smartphone, despite that, it is suggested to use a computer, which will make it easier to deal with the writing of the code.
-
+The system will be accessible from every device with an Internet Browser to access the website and a reliable Internet connection.\\
+The User is free to choose his device like a computer, a tablet or a smartphone, despite that, it is suggested to use a computer, which will make it easier to deal with the writing of the code.
 
 \subsection{Software interfaces}
 \label{subsec:software_interfaces}%
-The system requires the GitHub APIs and the External Tools in order to work properly. Also, it will use a mailing system to send confirmation emails to the users during the registration process.    
+The system requires the GitHub APIs and the External Tools in order to work properly. Also, it will use a mailing system to send confirmation eMails to the Users during the registration process.    
 
 \subsection{Communication interfaces}
 \label{subsec:communication_interfaces}%
@@ -49,7 +48,7 @@ The communication Interfaces needed by the system are the HTTPS Protocol and the
         \hline
         R\creq      & CKB allows EDs to uploads the code kata of a Battle                                                                   \\
         \hline
-        R\creq      & CKB allows EDs to set the minimun and the maximum number of STs per group of a Battle                                                                    \\
+        R\creq      & CKB allows EDs to set the minimun and the maximum number of STs per group of a Battle                                                            \\
         \hline
         R\creq      & CKB allows EDs to set a registration deadline of a Battle                                                                 \\
         \hline
@@ -59,11 +58,11 @@ The communication Interfaces needed by the system are the HTTPS Protocol and the
         \hline
         R\creq      & CKB allows EDs to set functional aspects for the scoring system of a Battle                                                               \\
         \hline
-        R\creq      & CKB allows EDs to create new badges                                                               \\
+        R\creq      & CKB allows EDs to create new Badges                                                  \\
         \hline
-        R\creq      & CKB allows EDs to choose the rules related to the awarding of badges                                                               \\
+        R\creq      & CKB allows EDs to choose the rules related to the awarding of Badges                                                               \\
         \hline
-        R\creq      & CKB allows EDs to choose which badges to award in a certain Tournament                                                               \\
+        R\creq      & CKB allows EDs to choose which Badges to award in a certain Tournament                                                               \\
         \hline
         R\creq      & CKB allows EDs to assing a score manually during the consolidation stage                                                               \\
         \hline
@@ -99,13 +98,13 @@ The communication Interfaces needed by the system are the HTTPS Protocol and the
         \hline
         R\creq      & CKB evaluates the STG's work every time a push is made on GH and calculates Battle score for the STG \\
         \hline
-        R\creq      & CKB updates the Battle leaderboard once a new score is registered \\
+        R\creq      & CKB updates the Battle Leaderboard once a new score is registered \\
         \hline
-        R\creq      & CKB updates the Tournament leaderboard once a new score is registered \\
+        R\creq      & CKB updates the Tournament Leaderboard once a new score is registered \\
         \hline
-        R\creq      & CKB allows STs to check the leaderboard of a Battle \\
+        R\creq      & CKB allows STs to check the Leaderboard of a Battle \\
         \hline
-        R\creq      & CKB allows EDs to check the leaderboard of a Battle \\
+        R\creq      & CKB allows EDs to check the Leaderboard of a Battle \\
         \hline
         R\creq      & CKB allows EDs to analyze the code of a STG \\
         \hline
@@ -115,9 +114,9 @@ The communication Interfaces needed by the system are the HTTPS Protocol and the
         \hline
         R\creq      & CKB allows EDs to check the list of ongoing Tournaments \\
         \hline
-        R\creq      & CKB allows STs to check the leaderboard of a Tournaments \\
+        R\creq      & CKB allows STs to check the Leaderboard of a Tournaments \\
         \hline
-        R\creq      & CKB allows EDs to check the leaderboard of a Tournaments \\
+        R\creq      & CKB allows EDs to check the Leaderboard of a Tournaments \\
         \hline
         R\creq      & CKB sends notification to every ST involved in a Tournament when the Tournament is closed and the final ranks are available \\
         \hline
@@ -131,9 +130,10 @@ The communication Interfaces needed by the system are the HTTPS Protocol and the
         \hline
         R\creq      & STs need to push their code in the GH repository in order to have their code evaluated\\
         \hline
-        R\creq      & CKB shall assign the badges to all STs that fullfill their requirements \\
+        R\creq      & CKB shall assign the Badges to all STs that fullfill their requirements \\
+        R\creq      & CKB sends notifications to the ED when he receives the permission to create Battles in a Tournament\\
         \hline
-        \caption{Requirements}
+        \caption{Requirements.}
         \label{tab: req}%
     \end{longtable}
 \end{center}
@@ -146,7 +146,7 @@ The communication Interfaces needed by the system are the HTTPS Protocol and the
 \begin{figure}[H]
     \begin{center}
         \includegraphics[width=1\linewidth]{UseCasesUU.png}
-        \caption{Use Cases Diagram for Unregistered Users} 
+        \caption{Use Cases Diagram for Unregistered Users.} 
         \label{fig:UseCasesUU}%
     \end{center}
 \end{figure}
@@ -155,7 +155,7 @@ The communication Interfaces needed by the system are the HTTPS Protocol and the
 \begin{figure}[H]
     \begin{center}
         \includegraphics[width=1\linewidth]{UseCasesST.png}
-        \caption{Use Cases Diagram for Students}
+        \caption{Use Cases Diagram for Students.}
         \label{fig:UseCasesST}%
     \end{center}
 \end{figure}
@@ -164,7 +164,7 @@ The communication Interfaces needed by the system are the HTTPS Protocol and the
 \begin{figure}[H]
     \begin{center}
         \includegraphics[width=1\linewidth]{UseCasesED.png}
-        \caption{Use Cases Diagram for Educators}
+        \caption{Use Cases Diagram for Educators.}
         \label{fig:UseCasesED}%
     \end{center}
 \end{figure}
@@ -175,38 +175,35 @@ The communication Interfaces needed by the system are the HTTPS Protocol and the
 \newcounter{uc}
 \setcounter{uc}{1}
 \newcommand{\cuc}{\theuc\stepcounter{uc}}
-%sistemare
-In this section, they are explained and represented the main identified use cases.
-There is a table with entry conditions, event flow, exit conditions and exception for each of them, and a sequence diagram
-that shows the messages exchanged between the entities and the called functions. \\
-
+In this section, they are explained and represented the main identified use cases.\\
+There is a table with entry conditions, event flow, exit conditions and exception for each of them, and a sequence diagram that shows the messages exchanged between the entities and the called functions. \\
 
 \subsubsection*{UC\cuc . Signup as ED}
 \begin{center}
     \begin{longtable}{|l|p{0.9\linewidth}|}
         \hline
-        \textbf{Actor}            & ED, email provider                                                                                                                                                                                        \\
+        \textbf{Actor}            & ED, eMail provider\\
         \hline
-        \textbf{Entry conditions} & The ED is not already registered in CKB and has to search the CKB URL in the browser search bar                                                                                                                   \\
+        \textbf{Entry conditions} & The ED is not already registered in CKB and has to search the CKB URL in the browser search bar \\
         \hline
-        \textbf{Event Flow}       & 1 - The application shows the login form  \\
-        & 2 - The ED clicks on “create an account” button   \\
-        & 3 - The application shows the signup form    \\
-        & 4 - The ED inserts his name, surname, nickname, email and password in the form and also ticks on the “Signup as Educator” checkbox  \\
+        \textbf{Event Flow}       & 1 - CKB shows the login form  \\
+        & 2 - The ED clicks on “Create an Account” button   \\
+        & 3 - CKB shows the signup form    \\
+        & 4 - The ED inserts his name, surname, nickname, eMail and password in the form and also ticks on the “Signup as Educator” checkbox  \\
         & 5 - The ED clicks on the “Register” button  \\
-        & 6 - The application checks all the credentials  \\
-        & 7 - If credentials are correct the application sends a confirmation email to the ED through the email provider.  \\
-        & 8 - The ED clicks on the confirmation link                                                                         \\                                                                                                                                                            \\
+        & 6 - CKB checks all the credentials  \\
+        & 7 - If credentials are correct CKB sends a confirmation eMail to the ED through the eMail provider.  \\
+        & 8 - The ED clicks on the confirmation link    \\
         \hline
-        \textbf{Exit condition}   & The application allows the ED to access to the CKB system \\                                                                                                                                                                                \\
+        \textbf{Exit condition}   & CKB allows the ED to access to the CKB system \\       
         \hline
         \textbf{Exceptions}       & \begin{itemize}
-            \item The email address is already linked to an account. In this case an error message is shown and the ED is redirected to the profile creation settings.
+            \item The eMail address is already linked to an account. In this case an error message is shown and the ED is redirected to the profile creation settings.
             \item Invalid password if it is shorter than 8 characters, if it doesn’t have at least 1 number and/or 1 capital letter and/or a special character. In this case an error message is shown and the ED is redirected to the profile creation settings.
             \item  The nickname is already used. An error is shown and the ED is redirected to the profile creation settings.
-        \end{itemize}  \\
+        \end{itemize}\\
         \hline
-        \caption{Signup as ED use case}
+        \caption{Signup as ED use case.}
         \label{tab: signup_as_ED_use_case}
     \end{longtable}
 \end{center}
@@ -214,7 +211,7 @@ that shows the messages exchanged between the entities and the called functions.
 \begin{figure}[H]
     \begin{center}
         \includegraphics[width=1\linewidth]{SequenceDiagrams/Signup as ED.png}
-        \caption{Signup as ED sequence diagram}
+        \caption{Signup as ED sequence diagram.}
         \label{fig:signup_as_ED_seqd}%
     \end{center}
 \end{figure}
@@ -223,28 +220,28 @@ that shows the messages exchanged between the entities and the called functions.
 \begin{center}
     \begin{longtable}{|l|p{0.9\linewidth}|}
         \hline
-        \textbf{Actor}            & ST, email provider                                                                                                                                                                                      \\
+        \textbf{Actor}            & ST, eMail provider \\
         \hline
-        \textbf{Entry conditions} & The ST is not already registered in CKB and has to search the CKB URL in the browser search bar                                                                                                                   \\
+        \textbf{Entry conditions} & The ST is not already registered in CKB and has to search the CKB URL in the browser search bar \\
         \hline
-        \textbf{Event Flow}       & 1 - The application shows the login form  \\
+        \textbf{Event Flow}       & 1 - CKB shows the login form  \\
         & 2 - The ST clicks on “create an account” button  \\
-        & 3 - The application shows the signup form  \\
-        & 4 - the ST inserts his name,surname, nickname and password in the form  \\
+        & 3 - CKB shows the signup form  \\
+        & 4 - The ST inserts his name,surname, nickname and password in the form  \\
         & 5 - The ST clicks on the “Register” button  \\
-        & 6 - The application checks all the credentials  \\
-        & 7 - if credentials are correct the application sends a confirmation email to the ST through an email provider.  \\
-        & 8 - The ST clicks on the confirmation link                                                                        \\                                                                                                                                                                    \\
+        & 6 - CKB checks all the credentials  \\
+        & 7 - If credentials are correct CKB sends a confirmation eMail to the ST through an eMail provider.  \\
+        & 8 - The ST clicks on the confirmation link \\
         \hline
-        \textbf{Exit condition}   & The application allows the ST to access to the CKB system \\                                                                                                                                                                                \\
+        \textbf{Exit condition}   & CKB allows the ST to access to the CKB system \\
         \hline
         \textbf{Exceptions}       & \begin{itemize}
-            \item The email address is already linked to an account. In this case an error message is shown and the ST is redirected to the profile creation settings.
+            \item The eMail address is already linked to an account. In this case an error message is shown and the ST is redirected to the profile creation settings.
             \item Invalid password if it is shorter than 8 characters, if it doesn’t have at least 1 number and/or 1 capital letter and/or a special character. In this case an error message is shown and the ST is redirected to the profile creation settings.
             \item The nickname is already used. An error is shown and the ST is redirected to the profile creation settings.
-        \end{itemize}    \\
+        \end{itemize} \\
         \hline
-        \caption{Signup as ST use case}
+        \caption{Signup as ST use case.}
         \label{tab: signup_as_ST_use_case}
     \end{longtable}
 \end{center}
@@ -252,7 +249,7 @@ that shows the messages exchanged between the entities and the called functions.
 \begin{figure}[H]
     \begin{center}
         \includegraphics[width=1\linewidth]{SequenceDiagrams/Signup as ST.png}
-        \caption{Signup as ST sequence diagram}
+        \caption{Signup as ST sequence diagram.}
         \label{fig:signup_as_ST_seqd}%
     \end{center}
 \end{figure}
@@ -261,20 +258,20 @@ that shows the messages exchanged between the entities and the called functions.
 \begin{center}
     \begin{longtable}{|l|p{0.9\linewidth}|}
         \hline
-        \textbf{Actor}            & Users                                                                                                                                                                                        \\
+        \textbf{Actor}            & Users\\
         \hline
-        \textbf{Entry conditions} & The User should be registered in CKB and has to search the CKB URL in the browser search bar                                                                                                                   \\
+        \textbf{Entry conditions} & The User should be registered in CKB and has to search the CKB URL in the browser search bar \\
         \hline
-        \textbf{Event Flow}       & 1-\ The application shows the login form                                                     \\
-        & 2-\ The User insert his mail and password in the form \\
-        & 3-\ The User clicks on the "Login" button       \\                                                                                                                      
-        & 4-\ The system check the credentials  \\                                                                                                                                                                                                                                     \\
+        \textbf{Event Flow}       & 1-\ CKB shows the login form  \\
+        & 2-\ The User inserts his mail and password in the form \\
+        & 3-\ The User clicks on the "Login" button       \\                               
+        & 4-\ CKB checks the credentials  \\
         \hline
-        \textbf{Exit condition}   & The application allows the user to access to the CKB system \\                                                                                                                                                                                \\
+        \textbf{Exit condition}   & The application allows the User to access to the CKB system \\
         \hline
-        \textbf{Exceptions}       & Incorrect email or password. An error message is shown and the User is redirected back to the Login page                                                                                                                        \\
+        \textbf{Exceptions}       & Incorrect eMail or password. An error message is shown and the User is redirected back to the Login page \\
         \hline
-        \caption{Login use case}
+        \caption{Login use case.}
         \label{tab: login_use_case}
     \end{longtable}
 \end{center}
@@ -282,7 +279,7 @@ that shows the messages exchanged between the entities and the called functions.
 \begin{figure}[H]
     \begin{center}
         \includegraphics[width=.5\linewidth]{SequenceDiagrams/login.png}
-        \caption{Login sequence diagram}
+        \caption{Login sequence diagram.}
         \label{fig:login_seqd}%
     \end{center}
 \end{figure}
@@ -291,19 +288,19 @@ that shows the messages exchanged between the entities and the called functions.
 \begin{center}
     \begin{longtable}{|l|p{0.9\linewidth}|}
         \hline
-        \textbf{Actor}            & ED                                                                                                                                                                                       \\
+        \textbf{Actor}            & ED\\
         \hline
-        \textbf{Entry conditions} & ED is correctly logged in. The ED has decided to create a Tournament. The ED is on his profile page.        \\
+        \textbf{Entry conditions} & ED is correctly logged in. The ED has decided to create a Tournament. The ED is on his profile page. \\
         \hline
         \textbf{Event Flow}       & 1-\ The ED clicks on “Create a Tournament” button        \\
-        & 2-\ CKB return the create Tournament form        \\
+        & 2-\ CKB returns the create Tournament form   \\
         & 3-\ The ED writes the Tournament name, sets the deadline for STs to subscribe and chooses and writes the other EDs nicknames to grant them permissions to create new Battles        \\
         & 4-\ CKB stores the data of the Tournament        \\
         & 5-\ CKB sends a notification to the chosen EDs        \\
         & 6-\ CKB notifies all the STs of the creation of the Tournament        \\
-        & 7-\ CKB redirect ED to the badges requirement page \\
-        & 8-\ The ED inserts the badges details into the form \\
-        & 9-\ CKB save the badges details \\
+        & 7-\ CKB redirect ED to the Badges requirement page \\
+        & 8-\ The ED inserts the Badges details into the form \\
+        & 9-\ CKB save the Badges details \\
         & 10-\ CKB return the Tournament main page        \\
         \hline
         \textbf{Exit condition}   & The Tournament is correctly created and a confirmation message is shown to the ED        \\
@@ -346,8 +343,8 @@ that shows the messages exchanged between the entities and the called functions.
         \textbf{Exit condition}   & The Student is now part of the Tournament and will be notified whenever a new Battle will be available.        \\                                                                                                                                                                                \\
         \hline
         \textbf{Exceptions}        & \begin{itemize}
-            \item Nothing is found from the research. In this case the user will be redirectd back to the home page.
-            \item The Tournament already ended. In this case is shown an error message, the User is redirected to the final leaderboard of the Tournament.
+            \item Nothing is found from the research. In this case the User will be redirectd back to the home page.
+            \item The Tournament already ended. In this case is shown an error message, the User is redirected to the final Leaderboard of the Tournament.
             \item The student already joined the Tournament. In this case CKB will not show any error messages, but will redirect the Student to the current Leaderboard of the Tournament.
             \item The Deadline already expired. An error message is shown and the ST is redirected back to the Home Page.
         \end{itemize}    \\
@@ -417,7 +414,7 @@ that shows the messages exchanged between the entities and the called functions.
         \hline
         \textbf{Actor}            & ST                                                                                                                                                                                        \\
         \hline
-        \textbf{Entry conditions} & The Student is correctly logged in and it is in the Tournament main page (the one with the leaderboard). The Student has decided to join a Battle.        \\
+        \textbf{Entry conditions} & The Student is correctly logged in and it is in the Tournament main page (the one with the Leaderboard). The Student has decided to join a Battle.        \\
         \hline
         \textbf{Event Flow}       & 1-\ The Student click on the button “Go to Battles”        \\
         & 2-\ CKB redirects the student to the page that has the list of all the Battles of the Tournament.        \\
@@ -430,7 +427,7 @@ that shows the messages exchanged between the entities and the called functions.
         \hline
         \textbf{Exceptions}        & \begin{itemize}
             \item The Student isn’t in the Tournament that this Battle is part of. In this case CKB shows an error message, the User is redirected back to his main page/dashboard
-            \item The Battle already ended or already started. In this case  CKB shows an error message, the User is redirected to the final leaderboard of the Battle.
+            \item The Battle already ended or already started. In this case  CKB shows an error message, the User is redirected to the final Leaderboard of the Battle.
             \item The student already joined the Battle. In this case CKB will not show any error messages, but will redirect the Student to the CreateGroup page.
          \end{itemize}    \\
         \hline
@@ -462,7 +459,7 @@ that shows the messages exchanged between the entities and the called functions.
         & 5-\ The Student can click on the “Join Battle” button.        \\
         & 6-\ CKB checks if the number of members respect the limits given by educators during the Battle creation.         \\
         & 7-\ CKB saves the Student and the group as one of the competitors of the Battle        \\
-        & 8-\ CKB shows a confirmation message and redirects the Student to the group to the main page of the Battle (the one with the leaderboard).        \\
+        & 8-\ CKB shows a confirmation message and redirects the Student to the group to the main page of the Battle (the one with the Leaderboard).        \\
         \hline
         \textbf{Exit condition}   & The Student is now a competitor in the Battle and he can starts committing after the creation group deadline expires        \\
         \hline
@@ -480,7 +477,7 @@ that shows the messages exchanged between the entities and the called functions.
 
 \begin{figure}[H]
     \begin{center}
-        \includegraphics[width=1\linewidth]{SequenceDiagrams/create a group and battle confirmation.png}
+        \includegraphics[width=0.5\linewidth]{SequenceDiagrams/create a group and battle confirmation.png}
         \caption{Create a group and Battle confirmation sequence diagram}
         \label{fig:create_a_group_and_battle_confirmation_seqd}%
     \end{center}
@@ -492,9 +489,9 @@ that shows the messages exchanged between the entities and the called functions.
         \hline
         \textbf{Actor}            & ST or ED                                                                                                                                                                                       \\
         \hline
-        \textbf{Entry conditions} & The User is logged in. The User should be in a leaderboard (both Battle or Tournament) page for retreiving a ST profile from it or an ED profile from the owner name of the Tournament (or from the list of all the EDs)        \\
+        \textbf{Entry conditions} & The User is logged in. The User should be in a Leaderboard (both Battle or Tournament) page for retreiving a ST profile from it or an ED profile from the owner name of the Tournament (or from the list of all the EDs)        \\
         \hline
-        \textbf{Event Flow}       & 1-\ User clicks on a ST's nickname (from the leaderboard) or ED's nickname (from the Tournament owner or from the list of all the EDs)        \\
+        \textbf{Event Flow}       & 1-\ User clicks on a ST's nickname (from the Leaderboard) or ED's nickname (from the Tournament owner or from the list of all the EDs)        \\
         & 2-\ CKB returns the profile page of the selected User        \\
         \hline
         \textbf{Exit condition}   & User is able to know particular information of the User that he had selected        \\
@@ -528,7 +525,7 @@ that shows the messages exchanged between the entities and the called functions.
         \hline
         \textbf{Exit condition}   & User is able to find the User that he was searching        \\
         \hline
-        \textbf{Exceptions}        &  None is found from the research. In this case the user will be redirectd back to the previous page.\\
+        \textbf{Exceptions}        &  None is found from the research. In this case the User will be redirectd back to the previous page.\\
         \hline
         \caption{Search for a profile use case}
         \label{tab: search_for_a_profile_use_case}
@@ -557,7 +554,7 @@ that shows the messages exchanged between the entities and the called functions.
         \hline
         \textbf{Exit condition}   & User is able to find the Tournament that he was searching        \\
         \hline
-        \textbf{Exceptions}        & Nothing is found from the research. In this case the user will be redirected back to the previous page.\\%TODO
+        \textbf{Exceptions}        & Nothing is found from the research. In this case the User will be redirected back to the previous page.\\%TODO
         \hline
         \caption{Search for a Tournament use case}
         \label{tab: search_for_a_Tournament_use_case}
@@ -580,8 +577,8 @@ that shows the messages exchanged between the entities and the called functions.
         \hline
         \textbf{Entry conditions} & The ED is correctly logged. During the Consolidation Stage the Educator decides to check a STG’s code.        \\
         \hline
-        \textbf{Event Flow}       & 1-\  The ED click the “See battle leaderboard” button in the Battle page      \\
-        & 2-\   CKB shows the leaderboard page     \\
+        \textbf{Event Flow}       & 1-\  The ED click the “See battle Leaderboard” button in the Battle page      \\
+        & 2-\   CKB shows the Leaderboard page     \\
         & 3-\   The ED clicks the “Analyze source code” button that corresponds to a STG     \\
         & 4-\   CKB shows the source code to the ED     \\
         & 5-\   The ED manually checks the code     \\
@@ -590,8 +587,8 @@ that shows the messages exchanged between the entities and the called functions.
         \textbf{Exit condition}   & CKB updates the new score to the STG code       \\
         \hline
         \textbf{Exceptions}        & \begin{itemize}
-            \item The Consolidation Stage already ended, an error message is shown and the ED is redirected to the battle leaderboard page
-            \item The ED awards the STG a improper score, like a score beyond the minimum and maximum bounds decided by the ED during the Creation Phase. An error message is shown and the ED is redirected to the battle leaderboard page.
+            \item The Consolidation Stage already ended, an error message is shown and the ED is redirected to the battle Leaderboard page
+            \item The ED awards the STG a improper score, like a score beyond the minimum and maximum bounds decided by the ED during the Creation Phase. An error message is shown and the ED is redirected to the battle Leaderboard page.
          \end{itemize}    \\
         \hline
         \caption{Evaluate a code use case}
@@ -602,7 +599,7 @@ that shows the messages exchanged between the entities and the called functions.
 
 \begin{figure}[H]
     \begin{center}
-        \includegraphics[width=.8\linewidth]{SequenceDiagrams/Evaluate a code.png}
+        \includegraphics[width=.6\linewidth]{SequenceDiagrams/Evaluate a code.png}
         \caption{Evaluate a code sequence diagram}
         \label{fig:evaluate_a_code_seqd}%
     \end{center}
@@ -616,9 +613,10 @@ that shows the messages exchanged between the entities and the called functions.
     \item R2: CKB allows registered EDs to login.
     \item R4: CKB allows EDs to create Tournaments.
     \item R5: CKB allows EDs to grant the permissions of a Tournament to other EDs.
-    \item R15: CKB allows EDs to choose which badges to award in a certain Tournament.
+    \item R15: CKB allows EDs to choose which Badges to award in a certain Tournament.
     \item R17: CKB allows EDs to close a Tournament.
     \item R27: CKB sends notifications to every ST when a new Tournament is created.
+    \item R50: CKB sends notifications to the ED when he receives the permission to create Battles in a Tournament.
 \end{itemize}
 
 \vspace{1.5cm}
@@ -648,7 +646,7 @@ that shows the messages exchanged between the entities and the called functions.
     \item R30: CKB creates a GH repository of the code kata when the registration deadline for the Battle expires.
     \item R31: CKB sends the link of the GH repository to every STG that participates in the Battle.
     \item R32: CKB evaluates the STG's work every time a push is made on GH and calculates Battle score for the STG.
-    \item R33: CKB updates the Battle leaderboard once a new score is registered.
+    \item R33: CKB updates the Battle Leaderboard once a new score is registered.
     \item R46: CKB shall communicate with the mailing system in order to allow Users to register their account.
 \end{itemize}
 
@@ -680,8 +678,8 @@ that shows the messages exchanged between the entities and the called functions.
 \begin{itemize}
     \item R16: CKB allows EDs to assign a score manually during the consolidation stage.
     \item R32: CKB evaluates the STG's work every time a push is made on GH and calculates Battle score for the STG.
-    \item R33: CKB updates the Battle leaderboard once a new score is registered.
-    \item R34: CKB updates the Tournament leaderboard once a new score is registered.
+    \item R33: CKB updates the Battle Leaderboard once a new score is registered.
+    \item R34: CKB updates the Tournament Leaderboard once a new score is registered.
     \item R37: CKB allows EDs to analyze the code of a STG.
     \item R38: CKB sends notification to every ST involved in a Tournament when the Tournament is closed and the final ranks are available.
     \item R44: CKB shall communicate with the GH API in order to calculate a new score every time a push action is made by a STG.
@@ -692,22 +690,22 @@ that shows the messages exchanged between the entities and the called functions.
 
 
 \vspace{1.5cm}
-\textbf{G7 - Allow an ED to set badges for deserving STs.}
+\textbf{G7 - Allow an ED to set Badges for deserving STs.}
 \begin{itemize}
-    \item R13: CKB allows EDs to create new badges.
-    \item R14: CKB allows EDs to choose the rules related to the awarding of badges.
-    \item R15: CKB allows EDs to choose which badges to award in a certain Tournament.
-    \item R49: CKB shall assign the badges to all STs that fulfill their requirements.
+    \item R13: CKB allows EDs to create new Badges.
+    \item R14: CKB allows EDs to choose the rules related to the awarding of Badges.
+    \item R15: CKB allows EDs to choose which Badges to award in a certain Tournament.
+    \item R49: CKB shall assign the Badges to all STs that fulfill their requirements.
 \end{itemize}
 
 
 \vspace{1.5cm}
 \textbf{G8 - Allow any User to view the result and the progress of a Tournament.}
 \begin{itemize}
-    \item R34: CKB updates the Tournament leaderboard once a new score is registered.
+    \item R34: CKB updates the Tournament Leaderboard once a new score is registered.
     \item R40: CKB allows EDs to check the list of ongoing Tournaments.
-    \item R41: CKB allows STs to check the leaderboard of a Tournaments.
-    \item R42: CKB allows EDs to check the leaderboard of a Tournaments.
+    \item R41: CKB allows STs to check the Leaderboard of a Tournaments.
+    \item R42: CKB allows EDs to check the Leaderboard of a Tournaments.
     \item R43: CKB sends notification to every ST involved in a Tournament when the Tournament is closed and the final ranks are available.
 \end{itemize}
 
@@ -715,76 +713,78 @@ that shows the messages exchanged between the entities and the called functions.
 \vspace{1.5cm}
 \textbf{G9 - Allow any User to view the results of a Battle.}
 \begin{itemize}
-    \item R33: CKB updates the Battle leaderboard once a new score is registered.
-    \item R35: CKB allows STs to check the leaderboard of a Battle.
-    \item R36: CKB allows EDs to check the leaderboard of a Battle.
+    \item R33: CKB updates the Battle Leaderboard once a new score is registered.
+    \item R35: CKB allows STs to check the Leaderboard of a Battle.
+    \item R36: CKB allows EDs to check the Leaderboard of a Battle.
 \end{itemize}
 
-
-
-\begin{table}[htbp]
-    \centering
-    \label{tab:traceability}
-    \begin{tabular}{|l|c|c|c|c|c|c|c|c|c|}
+\vspace{1.5cm}
+\newcounter{rtt}
+\setcounter{rtt}{1}
+\newcommand{\crt} {\thertt\stepcounter{rtt}}
+\begin{center}
+     \begin{longtable}{|l|c|c|c|c|c|c|c|c|c|}
     \hline
     \textbf{Requirements} & \textbf{G1} & \textbf{G2} & \textbf{G3} & \textbf{G4} & \textbf{G5} & \textbf{G6} & \textbf{G7} & \textbf{G8} & \textbf{G9}\\ \hline
-    R1 & \checkmark & \checkmark &  &  &  &  &  &  &  \\ \hline
-    R2 & \checkmark &  &  &  &  &  &  &  &  \\ \hline
-    R3 &  & \checkmark &  &  &  &  &  &  &  \\ \hline
-    R4 & \checkmark &  &  &  &  &  &  &  &  \\ \hline
-    R5 & \checkmark &  &  &  &  &  &  &  &  \\ \hline
-    R6 &  &  & \checkmark &  &  &  &  &  &  \\ \hline
-    R7 &  &  & \checkmark &  &  &  &  &  &  \\ \hline
-    R8 &  &  & \checkmark &  &  &  &  &  &  \\ \hline
-    R9 &  &  & \checkmark &  &  &  &  &  &  \\ \hline
-    R10 &  &  & \checkmark &  &  &  &  &  &  \\ \hline
-    R11 &  &  & \checkmark &  &  &  &  &  &  \\ \hline
-    R12 &  &  & \checkmark &  &  &  &  &  &  \\ \hline
-    R13 &  &  &  &  &  &  & \checkmark &  &  \\ \hline
-    R14 &  &  &  &  &  &  & \checkmark &  &  \\ \hline
-    R15 &\checkmark  &  &  &  &  &  & \checkmark &  &  \\ \hline
-    R16 &  &  & \checkmark &  &  & \checkmark &  &  &  \\ \hline
-    R17 &\checkmark  &  &  &  &  &  &  &  &  \\ \hline
-    R18 &  &  &  & \checkmark &  &  &  &  &  \\ \hline
-    R19 &  &  &  & \checkmark &  &  &  &  &  \\ \hline
-    R20 &  & \checkmark &  &  &  &  &  &  &  \\ \hline
-    R21 &  &  &  &  & \checkmark &  &  &  &  \\ \hline
-    R22 &  &  &  &  & \checkmark &  &  &  &  \\ \hline
-    R23 &  &  &  &  & \checkmark &  &  &  &  \\ \hline
-    R24 &  &  &  &  & \checkmark &  &  &  &  \\ \hline
-    R25 &  &  &  & \checkmark &  &  &  &  &  \\ \hline
-    R26 &  &  &  & \checkmark &  &  &  &  &  \\ \hline
-    R27 & \checkmark &  &  &  &  &  &  &  &  \\ \hline
-    R28 &  &  & \checkmark &  &  &  &  &  &  \\ \hline
-    R29 &  &  &  &  & \checkmark &  &  &  &  \\ \hline
-    R30 &  &  & \checkmark &  &  &  &  &  &  \\ \hline
-    R31 &  &  & \checkmark &  & \checkmark &  &  &  &  \\ \hline
-    R32 &  &  & \checkmark &  &  & \checkmark &  &  &  \\ \hline
-    R33 &  &  & \checkmark &  &  & \checkmark &  &  & \checkmark \\ \hline
-    R34 &  &  &  &  &  & \checkmark &  & \checkmark &  \\ \hline
-    R35 &  &  &  &  &  &  &  &  & \checkmark \\ \hline
-    R36 &  &  &  &  &  &  &  &  & \checkmark \\ \hline
-    R37 &  &  &  &  &  & \checkmark &  &  &  \\ \hline
-    R38 &  &  &  &  &  & \checkmark &  &  &  \\ \hline
-    R39 &  & \checkmark &  &  &  &  &  &  &  \\ \hline
-    R40 &  &  &  &  &  &  &  & \checkmark &  \\ \hline
-    R41 &  &  &  &  &  &  &  & \checkmark &  \\ \hline
-    R42 &  &  &  &  &  &  &  & \checkmark &  \\ \hline
-    R43 &  &  \checkmark&  &  &  &  &  & \checkmark &  \\ \hline
-    R44 &  &  &  &  &  & \checkmark &  &  &  \\ \hline
-    R45 &  &  &  &  &  & \checkmark &  &  &  \\ \hline
-    R46 &  &  \checkmark& \checkmark &  &  &  &  &  &  \\ \hline
-    R47 &  &  &  &  &  & \checkmark &  &  &  \\ \hline
-    R48 &  &  &  &  &  & \checkmark &  &  &  \\ \hline
-    R49 &  &  &  &  &  &  & \checkmark &  &  \\ \hline
-\end{tabular}
+    R\crt & \checkmark & \checkmark &  &  &  &  &  &  &  \\ \hline
+    R\crt & \checkmark &  &  &  &  &  &  &  &  \\ \hline
+    R\crt &  & \checkmark &  &  &  &  &  &  &  \\ \hline
+    R\crt & \checkmark &  &  &  &  &  &  &  &  \\ \hline
+    R\crt & \checkmark &  &  &  &  &  &  &  &  \\ \hline
+    R\crt &  &  & \checkmark &  &  &  &  &  &  \\ \hline
+    R\crt &  &  & \checkmark &  &  &  &  &  &  \\ \hline
+    R\crt &  &  & \checkmark &  &  &  &  &  &  \\ \hline
+    R\crt &  &  & \checkmark &  &  &  &  &  &  \\ \hline
+    R\crt &  &  & \checkmark &  &  &  &  &  &  \\ \hline
+    R\crt &  &  & \checkmark &  &  &  &  &  &  \\ \hline
+    R\crt &  &  & \checkmark &  &  &  &  &  &  \\ \hline
+    R\crt &  &  &  &  &  &  & \checkmark &  &  \\ \hline
+    R\crt &  &  &  &  &  &  & \checkmark &  &  \\ \hline
+    R\crt &\checkmark  &  &  &  &  &  & \checkmark &  &  \\ \hline
+    R\crt &  &  & \checkmark &  &  & \checkmark &  &  &  \\ \hline
+    R\crt &\checkmark  &  &  &  &  &  &  &  &  \\ \hline
+    R\crt &  &  &  & \checkmark &  &  &  &  &  \\ \hline
+    R\crt &  &  &  & \checkmark &  &  &  &  &  \\ \hline
+    R\crt &  & \checkmark &  &  &  &  &  &  &  \\ \hline
+    R\crt &  &  &  &  & \checkmark &  &  &  &  \\ \hline
+    R\crt &  &  &  &  & \checkmark &  &  &  &  \\ \hline
+    R\crt &  &  &  &  & \checkmark &  &  &  &  \\ \hline
+    R\crt &  &  &  &  & \checkmark &  &  &  &  \\ \hline
+    R\crt &  &  &  & \checkmark &  &  &  &  &  \\ \hline
+    R\crt &  &  &  & \checkmark &  &  &  &  &  \\ \hline
+    R\crt & \checkmark &  &  &  &  &  &  &  &  \\ \hline
+    R\crt &  &  & \checkmark &  &  &  &  &  &  \\ \hline
+    R\crt &  &  &  &  & \checkmark &  &  &  &  \\ \hline
+    R\crt &  &  & \checkmark &  &  &  &  &  &  \\ \hline
+    R\crt &  &  & \checkmark &  & \checkmark &  &  &  &  \\ \hline
+    R\crt &  &  & \checkmark &  &  & \checkmark &  &  &  \\ \hline
+    R\crt &  &  & \checkmark &  &  & \checkmark &  &  & \checkmark \\ \hline
+    R\crt &  &  &  &  &  & \checkmark &  & \checkmark &  \\ \hline
+    R\crt &  &  &  &  &  &  &  &  & \checkmark \\ \hline
+    R\crt &  &  &  &  &  &  &  &  & \checkmark \\ \hline
+    R\crt &  &  &  &  &  & \checkmark &  &  &  \\ \hline
+    R\crt &  &  &  &  &  & \checkmark &  &  &  \\ \hline
+    R\crt &  & \checkmark &  &  &  &  &  &  &  \\ \hline
+    R\crt &  &  &  &  &  &  &  & \checkmark &  \\ \hline
+    R\crt &  &  &  &  &  &  &  & \checkmark &  \\ \hline
+    R\crt &  &  &  &  &  &  &  & \checkmark &  \\ \hline
+    R\crt &  &  \checkmark&  &  &  &  &  & \checkmark &  \\ \hline
+    R\crt &  &  &  &  &  & \checkmark &  &  &  \\ \hline
+    R\crt &  &  &  &  &  & \checkmark &  &  &  \\ \hline
+    R\crt &  &  \checkmark& \checkmark &  &  &  &  &  &  \\ \hline
+    R\crt &  &  &  &  &  & \checkmark &  &  &  \\ \hline
+    R\crt &  &  &  &  &  & \checkmark &  &  &  \\ \hline
+    R\crt &  &  &  &  &  &  & \checkmark &  &  \\ \hline
+    R\crt & \checkmark &  &  &  &  &  &  &  &   \\ \hline
 \caption{Traceability Matrix for Goals and Requirements}
-\end{table}
+\label{tab:traceability}
+\end{longtable}
+\end{center}
 
 
 \section{Performance requirements}
 \label{sec:performance_requirements}%
-\paragraph{Number of concurrent users:} According to recent research, Codewars, a website that has similar use cases of CKB, has about 1.8 million users. If we're optimistic, we want our app to attract around 25\% of those users, which means it should be able to handle up to 500,000 users. This is important for making sure our app works well for a good number of people, giving them a smooth and enjoyable experience similar to what Codewars offers.
+\paragraph{Number of concurrent Users:} According to recent research, Codewars, a website that has similar use cases of CKB, has about 1.8 million Users. If we're optimistic, we want our app to attract around 25\% of those Users, which means it should be able to handle up to 500,000 Users. This is important for making sure our app works well for a good number of people, giving them a smooth and enjoyable experience similar to what Codewars offers.
 \paragraph{Data storage:} CKB needs to save and manage all the details about both STs and EDs. Additionally, it has to store information about all the Tournaments, including the associated Battles. When a Tournament is closed all the data about it won’t be canceled and a reference of it and of the Battles remains in the ED’s page .
 \paragraph{Time response:} Every operation that is directly executed by CKB, i.e. login, create, join and evaluate, should be in the domain of milliseconds. Other operations such as the ones that involve GH, the mailing system and the External Tools cannot be guaranteed by CKB itself.
 
@@ -818,18 +818,18 @@ It shall be prevented a case scenario in which a mainta break occurs near to Bat
 
 \subsection{Security}
 \label{subsec:security}%
-The system must control the access rights of the users. The system shall grant both authentication, verifying the identity of the users that attempt to login and authorization, verifying the permission of the already logged users to perform certain requested actions. \\
-Measures to protect the database will be adopted, such as defense against query injections, and password and users' personal data stored will be encrypted.
+The system must control the access rights of the Users. The system shall grant both authentication, verifying the identity of the Users that attempt to login and authorization, verifying the permission of the already logged Users to perform certain requested actions. \\
+Measures to protect the database will be adopted, such as defense against query injections, and password and Users' personal data stored will be encrypted.
 
 
 \subsection{Maintainability}
 \label{subsec:maintainability}%
 The system must be designed using scalable and reusable models in order to permit future addition of features with minimum effort. 
-Ordinary maintenance has to be scheduled at nightime, in order to keep the services available when the user traffic is high.
+Ordinary maintenance has to be scheduled at nightime, in order to keep the services available when the User traffic is high.
 
 \subsection{Portability}
 \label{subsec:portability}%
-The system must be accessible by the users from every kind of Web Browser. 
+The system must be accessible by the Users from every kind of Web Browser. 
 There are no particular portability requirements server side.
 
 

@@ -1,7 +1,7 @@
-Online coding challenges and platforms have become an essential resource for programmers and developers in the modern tech landscape. These platforms provide a versatile means to enhance coding skills, offer practical learning experiences, and promote a competitive and engaging approach to problem-solving. Additionally, participation in such platforms can prepare individuals for tech industry job interviews, as many companies utilize similar coding challenges during their recruitment processes. 
-In summary, these online coding challenge platforms are invaluable tools for skill development, community engagement, and professional growth in the ever-evolving field of programming.
+Online coding challenges and platforms have become an essential resource for programmers and developers in the modern tech landscape. These platforms provide a versatile means to enhance coding skills, offer practical learning experiences, and promote a competitive and engaging approach to problem-solving. Additionally, participation in such platforms can prepare individuals for tech industry job interviews, as many companies utilize similar coding challenges during their recruitment processes.\\
+Indeed, online coding challenge platforms are proving to be invaluable tools. They not only facilitate skill development and community engagement, but also foster professional growth in the continuously evolving field of programming.
 
-What makes the CodeKataBattle platform even more compelling is the involvement of experienced educators who create coding Battles. These experts design challenges that are not only instructive but also thought-provoking, ensuring a rich and educational experience for participants.
+What makes the CodeKataBattle platform even more compelling is the involvement of experienced Educators who create coding Battles. These experts design challenges that are not only instructive but also thought-provoking, ensuring a rich and educational experience for participants.
 
 Moreover, these platforms often facilitate the creation of groups, enabling collaborative problem-solving and enhancing team working skills. Users can form teams, tackle challenges together, and learn from one another's approaches. This group dynamic adds an extra layer of motivation and shared learning experiences, enhancing the value of these platforms for participants.
 
@@ -9,8 +9,9 @@ Moreover, these platforms often facilitate the creation of groups, enabling coll
 
 \section{Purpose}
 \label{sec:purpose}%
-The purpose of this document is to present a detailed description of CodaKataBattle.
-It is addressed to the developers who have to implement the requirements and could be used as an agreement between the customer and the contractors. 
+The purpose of this document is to present a detailed description of CodeKataBattle.
+It is addressed to the developers who have to implement the requirements and could be used as an agreement between the customer and the contractors.\\ 
+The document is also intended to provide the customer with a clear and unambiguous description of the system's functionalities and constraints, allowing the customer to validate the requirements and to verify if the system meets the expectations.
 
 \subsection{Goals}
 \label{subsec:goals}%
@@ -36,7 +37,7 @@ Below there's a table that lists all the goals of the CKB system:
         \hline
         G\cg        &  Allow STs to submit their code before the submission deadline                          \\
         \hline
-        G\cg        &  Allow an ED to set badges for deserving STs \\
+        G\cg        &  Allow an ED to set Badges for deserving STs \\
         \hline
         G\cg        &  Allow any User to view the result and the progress of a Tournament                          \\
         \hline
@@ -50,7 +51,9 @@ Below there's a table that lists all the goals of the CKB system:
 
 \section{Scope}
 \label{sec:scope}%
-CodeKataBattle (CKB) is a new platform that aims to help Students to improve their software development skills by participating in Tournaments and Battles, in which they will train on code katas, programming exercises that contain some test cases to be passed. Educators will create Tournaments and Battles in order to challenge the Students that will be asked to create groups and compete with their code. 
+CodeKataBattle (CKB) is a new platform that aims to help Students to improve their software development skills by participating in Tournaments and Battles, in which they will train on code katas, programming exercises that contain some test cases to be passed. Educators will create Tournaments and Battles in order to challenge the Students that will be asked to create groups and compete with their code.
+
+\newpage
 
 \subsection{World Phenomena}
 \label{subsec:world_phenomena}%
@@ -97,6 +100,8 @@ CodeKataBattle (CKB) is a new platform that aims to help Students to improve the
     \end{longtable}
 \end{center}
 
+\newpage
+
 \subsection{Shared phenomena}
 \label{subsec:shared_phenomena}%
 \newcounter{sp}
@@ -117,7 +122,7 @@ CodeKataBattle (CKB) is a new platform that aims to help Students to improve the
         \hline
         SP\csp      & CKB adds the Tournament to the ED's Tournament list  & CKB         & ED           \\
         \hline
-        SP\csp      & The ED can checks his Tournament list  & ED         & CKB           \\
+        SP\csp      & The ED checks his Tournament list  & ED         & CKB           \\
         \hline
         SP\csp      & The ED grants other EDs the permission to create Battles within a Tournament  & ED         & CKB\\
         \hline
@@ -125,11 +130,11 @@ CodeKataBattle (CKB) is a new platform that aims to help Students to improve the
         \hline
         SP\csp      & CBK adds the Battle to the ED's Battle list  & CKB         & ED           \\
         \hline
-        SP\csp      & The ED can checks his Battle list  & ED         & CKB           \\
+        SP\csp      & The ED checks his Battle list  & ED         & CKB           \\
         \hline
         SP\csp      & The ED uploads the code kata in the Battle  & ED         & CKB           \\
         \hline
-        SP\csp      & The ED sets the minimum and the maximum number of students per group for the Battle  & ED & CKB \\
+        SP\csp      & The ED sets the minimum and the maximum number of STs per group for the Battle  & ED & CKB \\
         \hline
         SP\csp      & The ED sets a registration deadline to the Battle  & ED         & CKB           \\
         \hline
@@ -137,15 +142,15 @@ CodeKataBattle (CKB) is a new platform that aims to help Students to improve the
         \hline
         SP\csp      & The ED sets additional configurations for scoring in the Battle  & ED         & CKB           \\
         \hline
-        SP\csp      & The ED sets the badges that STs could be awarded in the Battle  & ED         & CKB           \\
+        SP\csp      & The ED sets the Badges that STs could be awarded in the Battle  & ED         & CKB           \\
         \hline
-        SP\csp      & The ED sets the parameters of the badges that STs could be awarded in the Battle  & ED         & CKB           \\
+        SP\csp      & The ED sets the parameters of the Badges that STs could be awarded in the Battle  & ED         & CKB           \\
         \hline
         SP\csp      & The ST creates an account in the CKB system  & ST         & CKB           \\
         \hline
         SP\csp      & The ST logs in his account in the CKB system  & ST         & CKB           \\
         \hline
-        SP\csp      & The ST logs out of his account from the CKB system     & ED         & CKB           \\
+        SP\csp      & The ST logs out from his account out of the CKB system     & ED         & CKB           \\
         \hline
         SP\csp      & CKB notifies STs that a Tournament has been created  & CKB         & ST          \\
         \hline
@@ -157,31 +162,31 @@ CodeKataBattle (CKB) is a new platform that aims to help Students to improve the
         \hline
         SP\csp      & CKB adds the Tournament to the ST's Battle list  & CKB         & ST           \\
         \hline
-        SP\csp      & The ST creates a STg for the Battle  & ST         & CKB           \\
+        SP\csp      & The ST creates a STG for the Battle  & ST         & CKB           \\
         \hline
         SP\csp      & The ST invites other STs to join his STG for a Battle  & ST         & CKB           \\
         \hline
         SP\csp      & CKB sends a notification to the ST when he receives ain invitation to join a STG  & CKB         & ST           \\
         \hline
-        SP\csp      & The ST accepts other ST's invitations to join their STG fot a Battle  & ST         & CKB           \\
+        SP\csp      & The ST accepts other ST's invitations to join their STG for a Battle  & ST         & CKB           \\
         \hline
         SP\csp      & CKB adds the STs to the STG  & CKB         & ST           \\
         \hline
-        SP\csp      & CKB creates a GH repository containing the code kata and sends the lik to all STs registered in the Battle  & CKB         & ST           \\
+        SP\csp      & CKB creates a GH repository containing the code kata and sends the link to all STs registered in the Battle  & CKB         & ST           \\
         \hline
         SP\csp      & The ST commits a new version of his code & ST         & CKB           \\
         \hline
         SP\csp      & CKB runs the tests on the source code & CKB      & ST           \\
         \hline
-        SP\csp      & CKB updates the score of the STG on the Battle's leaderboard  & CKB         & ST           \\
+        SP\csp      & CKB updates the score of the STG on the Battle's Leaderboard  & CKB         & ST           \\
         \hline
-        SP\csp      & CKB updates the score of the ST on the Tournament's leaderboard  & CKB         & ST           \\
+        SP\csp      & CKB updates the score of the ST on the Tournament's Leaderboard  & CKB         & ST           \\
         \hline
         SP\csp      & STs can view the current ranks evolving during the Battle  & ST        & CKB      \\
         \hline
         SP\csp      & EDs can view the current ranks evolving during the Battle  & ED      & CKB      \\
         \hline
-        SP\csp      & During the consolidation stage, EDs can manually modify the scores  & ED         & CKB           \\
+        SP\csp      & During the consolidation stage, EDs can manually modify the scores of the STG & ED         & CKB           \\
         \hline
         SP\csp      & CKB notifies all STs when the final Battle ranks are available  & CKB         & ST           \\
         \hline
@@ -193,7 +198,7 @@ CodeKataBattle (CKB) is a new platform that aims to help Students to improve the
         \hline
         SP\csp      & EDs can view the current ranks evolving during the Tournament  & ED        & CKB      \\
         \hline
-        SP\csp      & CKB assigns the badges to the STs  & CKB         & ST           \\
+        SP\csp      & CKB assigns the Badges to the STs  & CKB         & ST           \\
         \hline
         SP\csp      & The ST can visualize the profile of other ST or ED  & ST        & CKB           \\
         \hline
@@ -221,7 +226,7 @@ CodeKataBattle (CKB) is a new platform that aims to help Students to improve the
             \hline
             STG             & Student Group                    \\
             \hline
-            CKB             & CodaKataBattle                   \\
+            CKB             & CodeKataBattle                   \\
             \hline
             GH              & GitHub                           \\
             \hline
@@ -257,14 +262,15 @@ RASD v1.0 20/12/2023
     \item IEEE Standard Documentation For RASD 
 \end{itemize}
 
+\newpage
 
 \section{Document Structure}
 \label{sec:document_structure}%
-\noindent The document is divided into six sections, each with its unique focus, as outlined below.\\\\
-\textbf{Introduction:} In the first section, we lay out the project's objectives, purposes, and offer a concise examination of global and shared phenomena. This section also includes a compilation of abbreviations and definitions that are essential for comprehending the problem.\\\\
-\textbf{Overall Description:} The second section provides a comprehensive overview of the problem. It delves into further details about the domain and various scenarios involved, in addition to discussing product and user characteristics, assumptions, dependencies and constraints.\\\\
-\textbf{Specific Requirements:} The third section is dedicated to an in-depth analysis of the specific requirements. It offers detailed insights into external interface requirements, functional requirements, and performance requirements.\\\\
-\textbf{Formal Analysis Using Alloy:} The fourth section employs Alloy to conduct a formal analysis. This chapter's primary purpose is to validate the accuracy of the model described in the preceding sections. It focuses on presenting the results of the conducted checks and meaningful assertions.\\\\
-\textbf{Effort Spent:} Section five outlines the individual efforts contributed by each group member to compose this document.\\\\
-\textbf{References:} The final section serves as a bibliography, listing the references and additional resources used in the creation of this document.
+The document is divided into six sections, each with its unique focus, as outlined below.
+\paragraph{Introduction:} In the first section, we lay out the project's objectives, purposes, and offer a concise examination of global and shared phenomena. This section also includes a compilation of abbreviations and definitions that are essential for comprehending the problem.
+\paragraph{Overall Description:} The second section provides a comprehensive overview of the problem. It delves into further details about the domain and various scenarios involved, in addition to discussing product and User characteristics, assumptions, dependencies and constraints.
+\paragraph{Specific Requirements:} The third section is dedicated to an in-depth analysis of the specific requirements. It offers detailed insights into external interface requirements, functional requirements, and performance requirements.
+\paragraph{Formal Analysis Using Alloy:} The fourth section employs Alloy to conduct a formal analysis. This chapter's primary purpose is to validate the accuracy of the model described in the preceding sections. It focuses on presenting the results of the conducted checks and meaningful assertions.
+\paragraph{Effort Spent:} Section five outlines the individual efforts contributed by each group member to compose this document.
+\paragraph{References:} The final section serves as a bibliography, listing the references and additional resources used in the creation of this document.
 

@@ -4,21 +4,21 @@
 \subsection{Scenarios}
 \label{subsec:scenarios}%
 \paragraph{Scenario 1: Unregistered ST creates an account.}
-Bhristian Ciffi wants to improve his skills in coding, so he decides to join CKB. First he opens the website and clicks on the “Sign-Up” button, so he proceeds to insert his eMail, password, name, surname and a nickname in order to create a new account. Then, Bhristian will receive a confirmation mail to activate the account. Once the creation of the account is completed he’ll be free to join his first competition.
+Bhristian Ciffi wants to improve his coding skills, so he decides to join CKB. First he opens the website and clicks on the “Sign-Up” button, so he proceeds to insert his name, surname, nickame, eMail and password in order to create a new account. Then, Bhristian will receive a confirmation mail to activate the account. Once the creation of the account is completed he’ll be free to join his first competition.
 
 \paragraph{Scenario 2: ED creates a new Tournament.}
-DumbTurkey, who is a Software Engineering teacher and an ED for CKB in his free time, wants to test STs with his new Tournament regarding the various phases of the creation of a calculator that resolves differential equations in Java, so he creates a new Tournament by clicking in his home page on the “Create a Tournament” button. Then he inserts the name of the Tournament, the students’ subscription deadline and he clicks on the “Confirm” button. As soon as the Tournament is created he grants to Gianbrambo Bambo, one of his friends, who is also an ED, the permissions to create Battles within the Tournament by clicking on the button “Grant permission” and inserting the Educator’s email in the Tournament options. In the meanwhile a notification is sent by CKB to all STs in order to inform them of the creation of the Tournament.
+DumbTurkey, who is a Software Engineering teacher and an ED for CKB in his free time, wants to test STs with his new Tournament regarding the various phases of the creation of a calculator that resolves differential equations in Java, so he creates a new Tournament by clicking in his home page on the “Create a Tournament” button. Then he inserts the name of the Tournament, the students’ subscription deadline, grants to Gianbrambo Bambo, one of his friends, who is also an ED, the permissions to create Battles within the Tournament by inserting his eMail in the creation Tournament form and he clicks on the “Create Tournament” button. As soon as the button is clicked a notification is sent by CKB to all STs in order to inform them about the creation of the Tournament and another notification is sent to Gianbrambo Bambo to alert him that he has permission in the Tournament.
 
 \paragraph{Scenario 3: ST joins a Tournament.}
 Ilbo Glions wants to join a Tournament that he noticed in the “Open Tournament” section on his Homepage and clicks on the Tournament’s name. Opening the Tournament Page, he decides to participate in the Tournament, so he clicks on the “Join Tournament” button. 
 
 \paragraph{Scenario 4: ED creates a Battle.}
-Bamba Filo, an ED enter in his Tournament Page in order to create a new Battle with the title “Time Series Forecasting Challenge”, so he inserts the title in the apposite form, sets the minimum and maximum numbers of participants per each group to be respectively 3 and 5, the registration deadline to 4 days from that moment, the final submission deadline to 15 days and uploads the code kata with a brief description of what the STs have to do. Finally he clicks on the “Confirm” button. Simultaneously a notification is sent to every Student that joined the Tournament.
+Bamba Filo, an ED enter in his Tournament Page in order to create a new Battle with the title “Time Series Forecasting Challenge”, so he inserts the title in the apposite form, sets the minimum and maximum numbers of participants per each group to be respectively 3 and 5, the registration deadline to 4 days from that moment, the final submission deadline to 15 days and uploads the code kata with a brief description of what the STs have to do. Finally he clicks on the “Confirm” button. Simultaneously a notification is sent to every ST that joined the Tournament.
 
 \paragraph{Scenario 5: ST joins a Battle.}
-Mateo Retegui wants to participate in the “Time Series Forecasting Challenge”, a Battle created by an ED. After receiving the notification from the ED, he selects the Battle from the link in the notification and he clicks on the “Join the Battle” button. Then he is asked to join or create a Group in order to participate, so he clicks on the “Create a Group'' button, so he can set the Group’s name to be “TheCEOs” and sends the invitations to some of his friends. Finally, once the Group is full he clicks on “Confirm the Group”. Once the registration deadline expires, he will see the GitHub Repository link on the main page of the Battle, so he proceeds to fork the repository and starts coding.
+Mateo Retegui wants to participate in the “Time Series Forecasting Challenge”, a Battle created by an ED. After receiving the notification from the ED, he selects the Battle from the link in the notification and he clicks on the “Join the Battle” button. Then he is asked to join or create a Group in order to participate, so he clicks on the “Create a Group" button, so he can set the Group’s name to be “TheCEOs” and sends the invitations to some of his friends. Finally, once the Group is full he clicks on “Confirm the Group”. Once the registration deadline expires, he will see the GitHub Repository link on the main page of the Battle, so he proceeds to fork the repository and starts coding.
 
-
+\newpage
 
 \subsection{Class diagrams}
 \label{subsec:class_diagrams}%
@@ -26,44 +26,46 @@ Mateo Retegui wants to participate in the “Time Series Forecasting Challenge�
 
 \begin{figure}[H]
     \begin{center}
-        \includegraphics[width=1\linewidth]{UML.png}
-        \caption{High level Class Diagram}
+        \includegraphics[width=1.1\linewidth]{UML.png}
+        \caption{High level Class Diagram.}
         \label{fig:UML}%
     \end{center}
 \end{figure}
 
-Student and Educator Classes are implemented by extending the abstract Class ‘User’, since their attributes are almost the same, in fact the username, name, surname, email and password strings are in common for both the classes.\\
-Educators may create new instances of the Tournament Class, which contains the Battles. There are two different enumerations (one for Tournament, the other for Battle) in order to implement and to keep record of the current status of the Tournament or the Battle. The current rankings are saved using List<Student> in the correct classes. \\
-Educators can also set one or more badges to be awarded to deserving students. Battle Class may interact with the external Tools (like the GitHub API and the Tools for the code testing). \\
-The Notification Interface is used to send different kinds of notification to STs and EDs when a new Tournament or Battle is created, or during the various phases of the competition, or when a ST invites other STs to join a group.\\
+Student and Educator Classes are implemented by extending the abstract Class ‘User’, since their attributes are almost the same, in fact the Username, name, surname, eMail and password strings are in common for both the classes.\\
+EDs may create new instances of the Tournament Class, which contains the Battles. There are two different enumerations (one for Tournament, the other for Battle) in order to implement and to keep record of the current status of the Tournament or the Battle. The current rankings are saved using List<Student> in the correct classes. \\
+EDs can also set one or more Badges to be awarded to deserving STs. Battle Class may interact with the external Tools (like the GitHub API and the Tools for the code testing). \\
+The Notification Interface is used to send different kinds of notification to STs and EDs when a new Tournament or Battle is created, or during the various phases of the competition, or when a ST invites other STs to join a STG.\\
 
 
 \subsection{State diagrams}
 \label{subsec:state_diagrams}%
 In this section are presented the State Diagrams of the CKB system representing all the possibile operation that a User can perform.
 \paragraph{Signup.}
-When a user wishes to register on CKB, they are required to input their credentials, including their name, surname, email, nickname, and password in a registration form. If the provided credentials are deemed valid (ensuring that the email or nickname is not already in use, and the password meets the criteria of being at least 8 characters long, containing at least one capital letter, a number, and a special character), CKB will send an email to the user. Upon the user confirming the registration through the provided email link, the new account is successfully created. If the credentials are not correct CKB shows an error message to the User and redirects him to the registration form page.
+When a User wishes to register on CKB, they are required to input their credentials, including their name, surname, nickname, eMail and password in a registration form. If the provided credentials are deemed valid (ensuring that the eMail or nickname is not already in use, and the password meets the criteria of being at least 8 characters long, containing at least one capital letter, a number, and a special character), CKB will send an eMail to the User. Upon the User confirming the registration through the provided eMail link, the new account is successfully created. If the credentials are not correct CKB shows an error message to the User and redirects him to the signup form page.
 
-Furthermore, if the user selects the option "Register as a new Educator" during the registration process, CKB will enhance the account with additional permissions. These permissions may include the possibility to create Tournaments or Battles.
+Furthermore, if the User selects the option "Register as a new Educator" during the registration process, CKB will enhance the account with additional permissions. These permissions may include the possibility to create Tournaments or Battles.
 
 \begin{figure}[H]
     \begin{center}
         \includegraphics[width=1\linewidth]{StateDiagrams/signup.png}
-        \caption{Signup state diagram}
+        \caption{Signup state diagram.}
         \label{fig:signup_sd}%
     \end{center}
 \end{figure}
 
 \paragraph{Login.}
-When a registered user attempts to log in to their CKB account, they must enter their credentials (email and password) into a login form. If the provided credentials are accurate—matching those of a registered user in the CKB database—CKB displays the user's homepage, showcasing Tournaments and ongoing Battles in which the user is participating. On the other hand, if the entered credentials are invalid, CKB presents an error message to the user and redirects them back to the login form page.
+When a registered User attempts to log in to their CKB account, they must enter their credentials (eMail and password) into a login form. If the provided credentials are accurate —matching those of a registered User in the CKB database— CKB displays the User's homepage, showcasing Tournaments and ongoing Battles in which the User is participating. On the other hand, if the entered credentials are invalid, CKB presents an error message to the User and redirects them back to the login form page.
 
 \begin{figure}[H]
     \begin{center}
         \includegraphics[width=1\linewidth]{StateDiagrams/login.png}
-        \caption{Login state diagram}
+        \caption{Login state diagram.}
         \label{fig:login_sd}%
     \end{center}
 \end{figure}
+
+\newpage
 
 \paragraph{Create a Tournament.}
 When an ED intends to create a new Tournament on CKB, he is required to input various parameters in the create Tournament form. These parameters include the Tournament name, the registration deadline for the STs and the rules to acquire the Badges. In addition to these parameters, the ED can invite other EDs to join this Tournament, through a notification sent by CKB, to help him create new Battles. If any of these parameters are deemed unacceptable by the system, CKB displays an error message to the ED and redirects him back to the create Tournament form page.
@@ -73,7 +75,7 @@ Conversely, if all parameters meet the system's criteria, CKB proceeds to create
 \begin{figure}[H]
     \begin{center}
         \includegraphics[width=1\linewidth]{StateDiagrams/create Tournament.png}
-        \caption{Create a Tournament state diagram}
+        \caption{Create a Tournament state diagram.}
         \label{fig:create_Tournament_sd}%
     \end{center}
 \end{figure}
@@ -86,7 +88,7 @@ Conversely, if all parameters meet the system's criteria, CKB proceeds to create
 \begin{figure}[H]
     \begin{center}
         \includegraphics[width=1\linewidth]{StateDiagrams/create Battle.png}
-        \caption{Create a Battle state diagram}
+        \caption{Create a Battle state diagram.}
         \label{fig:create_Battle_sd}%
     \end{center}
 \end{figure}
@@ -97,7 +99,7 @@ When a new Tournament is created, a ST receives a notification or discovers it o
 \begin{figure}[H]
     \begin{center}
         \includegraphics[width=1\linewidth]{StateDiagrams/join Tournament.png}
-        \caption{Join a Tournament state diagram}
+        \caption{Join a Tournament state diagram.}
         \label{fig:join_Tournament_sd}%
     \end{center}
 \end{figure}
@@ -110,13 +112,13 @@ However, if the registration deadline has already expired, CKB displays an error
 \begin{figure}[H]
     \begin{center}
         \includegraphics[width=1\linewidth]{StateDiagrams/join Battle.png}
-        \caption{Join a Battle state diagram}
+        \caption{Join a Battle state diagram.}
         \label{fig:join_Battle_sd}%
     \end{center}
 \end{figure}
 
 \paragraph{Create a Group.}
-The possibility to create a group within a Battle is granted to STs once they have joined a Battle, and the registration deadline has expired. At this point, they are redirected to the create group form, where they can invite other STs to join their STG. The process involves the ST entering a nickname, and upon verification by CKB that the ST with that nickname has also joined the same Battle, a notification is sent to the invited ST, enabling them to join the STG.
+The possibility to create a group within a Battle is granted to STs once they have joined a Battle, and the registration deadline has expired. At this point, they are redirected to the create group form, where they write de STG name and can invite other STs to join their STG. The process involves the ST entering a nickname, and upon verification by CKB that the ST with that nickname has also joined the same Battle, a notification is sent to the invited ST, enabling them to join the STG.
 
 Upon receiving a notification, a ST has the option to respond, and upon acceptance, the ST is added to the STG, becoming a participant in the Battle. This invitation process is replicated for each ST that the group creator wishes to invite. Once the group is formed, the ST who initiated the STG can confirm the group, but only if the minimum and maximum number of group members are adhered to. Once confirmed, the STG is ready to actively participate in the Battle.
 
@@ -125,7 +127,7 @@ However, if an invited ST is not part of the Battle, a ST accepts the invitation
 \begin{figure}[H]
     \begin{center}
         \includegraphics[width=1\linewidth]{StateDiagrams/create group.png}
-        \caption{Create a Group state diagram}
+        \caption{Create a Group state diagram.}
         \label{fig:create_group_sd}%
     \end{center}
 \end{figure}
@@ -140,29 +142,29 @@ In the event that the new score falls outside the specified boundaries, CKB disp
 \begin{figure}[H]
     \begin{center}
         \includegraphics[width=1\linewidth]{StateDiagrams/evaluate code.png}
-        \caption{Evaluate the code state diagram}
+        \caption{Evaluate the code state diagram.}
         \label{fig:evaluate_code_sd}%
     \end{center}
 \end{figure}
 
 \paragraph{Open a profile.}
-If a user wishes to view another user's profile, including badges and other relevant information, they can do so by clicking on the user's nickname in various dashboards, such as the Tournament dashboard or the group composition. Upon clicking the nickname, CKB displays the profile of the selected user to provide the desired information. This feature allows users to easily access and view the profiles of others within the platform.
+If a User wishes to view another User's profile, including Badges and other relevant information, they can do so by clicking on the User's nickname in various dashboards, such as the Tournament dashboard or the group composition. Upon clicking the nickname, CKB displays the profile of the selected User to provide the desired information. This feature allows Users to easily access and view the profiles of others within the platform.
 
 \begin{figure}[H]
     \begin{center}
         \includegraphics[width=1\linewidth]{StateDiagrams/open a profile.png}
-        \caption{Open a profile state diagram}
+        \caption{Open a profile state diagram.}
         \label{fig:open_profile_sd}%
     \end{center}
 \end{figure}
 
 \paragraph{Search for a profile.}
-In addition to opening a user profile by clicking the nickname in a dashboard, Users also have the option to use the search bar. By entering a nickname or a keyword in the search bar, CKB will display a list of Users whose nickname contain the entered keyword. Users can then click on a specific User from the search results to open and view their profile, providing a convenient and flexible way to access User information within the platform.
+In addition to opening a User profile by clicking the nickname in a dashboard, Users also have the option to use the search bar. By entering a nickname or a keyword in the search bar, CKB will display a list of Users whose nickname contain the entered keyword. Users can then click on a specific User from the search results to open and view their profile, providing a convenient and flexible way to access User information within the platform.
 
 \begin{figure}[H]
     \begin{center}
         \includegraphics[width=1\linewidth]{StateDiagrams/search for a profile.png}
-        \caption{Search for a profile state diagram}
+        \caption{Search for a profile state diagram.}
         \label{fig:search_profile_sd}%
     \end{center}
 \end{figure}
@@ -173,18 +175,18 @@ Users can utilize the search bar to look for Tournaments by entering a name or a
 \begin{figure}[H]
     \begin{center}
         \includegraphics[width=1\linewidth]{StateDiagrams/search for a Tournament.png}
-        \caption{Search for a Tournament state diagram}
+        \caption{Search for a Tournament state diagram.}
         \label{fig:search_Tournament_sd}%
     \end{center}
 \end{figure}
 
 \paragraph{Logout.}
-Users can log out from their account at any time by clicking the "Logout" button. Upon clicking the button, CKB terminates the user's session, ensuring that they are securely logged out. Following this action, the user is then redirected to the login page, providing them with the opportunity to rejoin the CKB system if they wish to do so. 
+Users can log out from their account at any time by clicking the "Logout" button. Upon clicking the button, CKB terminates the User's session, ensuring that they are securely logged out. Following this action, the User is then redirected to the login page, providing them with the opportunity to rejoin the CKB system if they wish to do so. 
 
 \begin{figure}[H]
     \begin{center}
         \includegraphics[width=1\linewidth]{StateDiagrams/logout.png}
-        \caption{Logout state diagram}
+        \caption{Logout state diagram.}
         \label{fig:logout_sd}%
     \end{center}
 \end{figure}
@@ -192,13 +194,13 @@ Users can log out from their account at any time by clicking the "Logout" button
 \section{Product functions}
 \label{sec:product_functions}%
 Here are listed a summary of the main functions of the CKB system:\\\\
-\textbf{ Signup:} The User submits his name, surname, nickname, email address and a new password. A confirmation mail is required to complete the process.\\\\
-\textbf{ Login:}The User signs in after typing his eMail and password in the login form. \\\\  
+\textbf{ Signup:} The User submits his name, surname, nickname, eMail address and a new password. A confirmation mail is required to complete the process.\\\\
+\textbf{ Login:}The User sign in after typing his eMail and password in the login form. \\\\  
 \textbf{ Create a Tournament:} The ED creates a new Tournament and the system sends a notification to all the STs.\\\\
 \textbf{ Join a Tournament:} A ST can join a Tournament by clicking on the “Join Tournament” button on the Tournament’s page.\\\\
 \textbf{ Create a Battle:} An ED can create multiple Battles within a Tournament to test the STs. When a new Battle is created CKB sends a notification to all the STs that have joined the Tournament.\\\\
 \textbf{ Join a Battle:} A ST can join a Battle by clicking on the “Join Battle” button on the Battle’s page.\\\\
-\textbf{ Create a Group:} After joining a Battle the ST may create a new group and invite other STs or to accept an invitation to join another group. It is a choice of the ST to play alone or to create a group with STs, whether this is made possible by the minimum number of STs per STG decided by the ED.\\\\
+\textbf{ Create a Group:} After joining a Battle the ST may create a new group and invite other STs or accept an invitation to join another STG. It is a choice of the ST to play alone or to create a group with STs, whether this is made possible by the minimum number of STs per STG decided by the ED.\\\\
 \textbf{ Evaluate Code:} During the Consolidation phase, an ED can manually download and evaluate the code of a STG within a Battle.\\\\
 \textbf{ Create a Badge:} An ED can create Badges to be awarded to worthy STs and define their rules.\\\\
 \textbf{ Search for a Profile:} Users can write a nickname or a keyword in the search bar to retrieve another User’s profile.\\\\
@@ -208,13 +210,14 @@ Here are listed a summary of the main functions of the CKB system:\\\\
 
 
 \section{User characteristic}
-\label{sec:user_characteristic}%
-Essentially, there are two types of registered users in CKB: Students (STs) and Educators (EDs). Here are briefly explained their main characteristics:
+\label{sec:User_characteristic}%
+There are two types of registered Users in CKB: Students (STs) and Educators (EDs). Here are briefly explained their main characteristics:
 \begin{itemize}
-    \item ST: Students join CodeKataBattle in order to prove and improve their skills in coding. They need to have a device with an internet connection and an account in order to have access to CKB, in which they can join Tournaments and Battles to compete with other students.  
-    \item ED: Educators join CodeKataBattle, where they can organize Tournaments in which STs can compete, evaluate the STs’ works and award them badges. 
+    \item ST: Students join CodeKataBattle in order to prove and improve their skills in coding. They need to have a device with an internet connection and an account in order to have access to CKB, in which they can join Tournaments and Battles to compete with other STs.  
+    \item ED: Educators join CodeKataBattle, where they can create Tournaments in which STs can compete in different Battles and evaluate the STs’ works.
 \end{itemize}
 Both the EDs and the STs need to register an account in order to access CKB. During the registration process their both asked to provide an eMail account.
+
 \section{Assumptions, dependencies and constraints}
 \label{sec:assumptions_dependencies_constraints}%
 
@@ -228,9 +231,9 @@ Both the EDs and the STs need to register an account in order to access CKB. Dur
         \hline
         \textbf{ID} & \textbf{Description} \\
         \hline
-        DA\cda      & The EDs need to have a valid email address. \\
+        DA\cda      & The EDs need to have a valid eMail address. \\
         \hline
-        DA\cda      &  The STs need to have a valid email address. \\
+        DA\cda      & The STs need to have a valid eMail address. \\
         \hline
         DA\cda      & The EDs need to have a device and a reliable internet connection. \\
         \hline
@@ -240,7 +243,7 @@ Both the EDs and the STs need to register an account in order to access CKB. Dur
         \hline
         DA\cda      & The STs need to have a GitHub account. \\
         \hline
-        DA\cda      & Sts need to know how to fork a GitHub Repository. \\
+        DA\cda      & STs need to know how to fork a GitHub Repository. \\
         \hline
         DA\cda      & STs need to know how to push their code on GitHub. \\
         \hline

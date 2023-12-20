@@ -92,6 +92,8 @@
 \define@key[OIST]{title}{name2}{\def\nameB{#1}}
 \define@key[OIST]{title}{name3}{\def\nameC{#1}}
 \define@key[OIST]{title}{academicyear}{\def\academicyear{#1}}
+\define@key[OIST]{title}{version}{\def\version{#1}}
+\define@key[OIST]{title}{releasedate}{\def\releasedate{#1}}
 
 \providecommand{\puttitle}{}
 \renewcommand{\puttitle}[1]{
@@ -125,6 +127,14 @@
         \begin{minipage}{0.85\textwidth}
             \normalsize{
                 Academic Year: {\academicyear}
+            }
+            \\
+            \normalsize{
+                Version:   {\version}
+            }
+            \\
+            \normalsize{
+                Release date:    {\releasedate}
             }
         \end{minipage}
     \end{titlepage}
