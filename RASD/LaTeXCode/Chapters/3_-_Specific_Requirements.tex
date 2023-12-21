@@ -180,22 +180,22 @@ There is a table with entry conditions, event flow, exit conditions and exceptio
 
 \subsubsection*{UC\cuc . Signup as ED}
 \begin{center}
-    \begin{longtable}{|l|p{0.9\linewidth}|}
+    \begin{longtable}{|l|p{0.75\linewidth}|}
         \hline
         \textbf{Actor}            & ED, eMail provider\\
         \hline
         \textbf{Entry conditions} & The ED is not already registered in CKB and has to search the CKB URL in the browser search bar \\
         \hline
-        \textbf{Event Flow}       & 1 - CKB shows the login form  \\
-        & 2 - The ED clicks on “Create an Account” button   \\
-        & 3 - CKB shows the signup form    \\
-        & 4 - The ED inserts his name, surname, nickname, eMail and password in the form and also ticks on the “Signup as Educator” checkbox  \\
-        & 5 - The ED clicks on the “Register” button  \\
-        & 6 - CKB checks all the credentials  \\
+        \textbf{Event Flow}       & 1 - CKB shows the login form.  \\
+        & 2 - The ED clicks on “Create an Account” button.   \\
+        & 3 - CKB shows the signup form.    \\
+        & 4 - The ED inserts his name, surname, nickname, eMail and password in the form and also ticks on the “Signup as Educator” checkbox.  \\
+        & 5 - The ED clicks on the “Register” button.  \\
+        & 6 - CKB checks all the credentials.  \\
         & 7 - If credentials are correct CKB sends a confirmation eMail to the ED through the eMail provider.  \\
-        & 8 - The ED clicks on the confirmation link    \\
+        & 8 - The ED clicks on the confirmation link.    \\
         \hline
-        \textbf{Exit condition}   & CKB allows the ED to access to the CKB system \\       
+        \textbf{Exit condition}   & CKB allows the ED to access to the CKB system. \\       
         \hline
         \textbf{Exceptions}       & \begin{itemize}
             \item The eMail address is already linked to an account. In this case an error message is shown and the ED is redirected to the profile creation settings.
@@ -218,22 +218,22 @@ There is a table with entry conditions, event flow, exit conditions and exceptio
 
 \subsubsection*{UC\cuc . Signup as ST}
 \begin{center}
-    \begin{longtable}{|l|p{0.9\linewidth}|}
+    \begin{longtable}{|l|p{0.75\linewidth}|}
         \hline
         \textbf{Actor}            & ST, eMail provider \\
         \hline
         \textbf{Entry conditions} & The ST is not already registered in CKB and has to search the CKB URL in the browser search bar \\
         \hline
-        \textbf{Event Flow}       & 1 - CKB shows the login form  \\
-        & 2 - The ST clicks on “create an account” button  \\
-        & 3 - CKB shows the signup form  \\
-        & 4 - The ST inserts his name,surname, nickname and password in the form  \\
-        & 5 - The ST clicks on the “Register” button  \\
-        & 6 - CKB checks all the credentials  \\
+        \textbf{Event Flow}       & 1 - CKB shows the login form.  \\
+        & 2 - The ST clicks on “create an account” button.  \\
+        & 3 - CKB shows the signup form.  \\
+        & 4 - The ST inserts his name,surname, nickname and password in the form.  \\
+        & 5 - The ST clicks on the “Register” button.  \\
+        & 6 - CKB checks all the credentials.  \\
         & 7 - If credentials are correct CKB sends a confirmation eMail to the ST through an eMail provider.  \\
-        & 8 - The ST clicks on the confirmation link \\
+        & 8 - The ST clicks on the confirmation link. \\
         \hline
-        \textbf{Exit condition}   & CKB allows the ST to access to the CKB system \\
+        \textbf{Exit condition}   & CKB allows the ST to access to the CKB system. \\
         \hline
         \textbf{Exceptions}       & \begin{itemize}
             \item The eMail address is already linked to an account. In this case an error message is shown and the ST is redirected to the profile creation settings.
@@ -256,20 +256,20 @@ There is a table with entry conditions, event flow, exit conditions and exceptio
 
 \subsubsection*{UC\cuc . Login}
 \begin{center}
-    \begin{longtable}{|l|p{0.9\linewidth}|}
+    \begin{longtable}{|l|p{0.75\linewidth}|}
         \hline
         \textbf{Actor}            & Users\\
         \hline
         \textbf{Entry conditions} & The User should be registered in CKB and has to search the CKB URL in the browser search bar \\
         \hline
-        \textbf{Event Flow}       & 1-\ CKB shows the login form  \\
-        & 2-\ The User inserts his mail and password in the form \\
-        & 3-\ The User clicks on the "Login" button       \\                               
-        & 4-\ CKB checks the credentials  \\
+        \textbf{Event Flow}       & 1-\ CKB shows the login form.  \\
+        & 2-\ The User inserts his mail and password in the form .\\
+        & 3-\ The User clicks on the "Login" button.       \\                               
+        & 4-\ CKB checks the credentials.  \\
         \hline
-        \textbf{Exit condition}   & The application allows the User to access to the CKB system \\
+        \textbf{Exit condition}   & CKB allows the User to access to the CKB system. \\
         \hline
-        \textbf{Exceptions}       & Incorrect eMail or password. An error message is shown and the User is redirected back to the Login page \\
+        \textbf{Exceptions}       & Incorrect eMail or password. An error message is shown and the User is redirected back to the Login page. \\
         \hline
         \caption{Login use case.}
         \label{tab: login_use_case}
@@ -286,32 +286,32 @@ There is a table with entry conditions, event flow, exit conditions and exceptio
 
 \subsubsection*{UC\cuc . Create a Tournament}
 \begin{center}
-    \begin{longtable}{|l|p{0.9\linewidth}|}
+    \begin{longtable}{|l|p{0.75\linewidth}|}
         \hline
         \textbf{Actor}            & ED\\
         \hline
-        \textbf{Entry conditions} & ED is correctly logged in. The ED has decided to create a Tournament. The ED is on his profile page. \\
+        \textbf{Entry conditions} & The ED is correctly logged in. The ED has decided to create a Tournament. The ED is on his profile page. \\
         \hline
-        \textbf{Event Flow}       & 1-\ The ED clicks on “Create a Tournament” button        \\
-        & 2-\ CKB returns the create Tournament form   \\
-        & 3-\ The ED writes the Tournament name, sets the deadline for STs to subscribe and chooses and writes the other EDs nicknames to grant them permissions to create new Battles        \\
-        & 4-\ CKB stores the data of the Tournament        \\
-        & 5-\ CKB sends a notification to the chosen EDs        \\
-        & 6-\ CKB notifies all the STs of the creation of the Tournament        \\
-        & 7-\ CKB redirect ED to the Badges requirement page \\
-        & 8-\ The ED inserts the Badges details into the form \\
-        & 9-\ CKB save the Badges details \\
-        & 10-\ CKB return the Tournament main page        \\
+        \textbf{Event Flow}       & 1-\ The ED clicks on “Create a Tournament” button.       \\
+        & 2-\ CKB returns the create Tournament form.   \\
+        & 3-\ The ED writes the Tournament name, sets the deadline for STs to subscribe and chooses and writes the other EDs nicknames to grant them permissions to create new Battles.        \\
+        & 4-\ CKB stores the data of the Tournament.        \\
+        & 5-\ CKB sends a notification to the chosen EDs.        \\
+        & 6-\ CKB notifies all the STs of the creation of the Tournament.        \\
+        & 7-\ CKB redirect ED to the Badges requirement page. \\
+        & 8-\ The ED inserts the Badges details into the form. \\
+        & 9-\ CKB save the Badges details. \\
+        & 10-\ CKB return the Tournament main page.        \\
         \hline
-        \textbf{Exit condition}   & The Tournament is correctly created and a confirmation message is shown to the ED        \\
+        \textbf{Exit condition}   & The Tournament is correctly created and a confirmation message is shown to the ED.        \\
         \hline
         \textbf{Exceptions}        & \begin{itemize}
             \item The Tournament’s name is null or already exists. An error message is shown and the ED is redirected back to create Tournament settings.
             \item The EDs chosen are non-existent, or the creator chooses other ED that have already permission in this Tournament. An error message is shown to the ED and the ED is redirected to create Tournament settings.
-            \item The Deadline is a date before the day the Tournament is created. An error message is shown to the ED and a new Deadline has to be chosen and the ED  is redirected to create Tournament settings.
+            \item The registration deadline is a date before the day the Tournament is created. An error message is shown to the ED and a new deadline has to be chosen and the ED  is redirected to create Tournament settings.
          \end{itemize}    \\
         \hline
-        \caption{Create a Tournament use case}
+        \caption{Create a Tournament use case.}
         \label{tab: create_a_Tournament_use_case}
     \end{longtable}
 \end{center}
@@ -319,37 +319,39 @@ There is a table with entry conditions, event flow, exit conditions and exceptio
 \begin{figure}[H]
     \begin{center}
         \includegraphics[width=1\linewidth]{SequenceDiagrams/Create a Tournament.png}
-        \caption{Create a Tournament diagram}
+        \caption{Create a Tournament diagram.}
         \label{fig:create_a_Tournament_seqd}%
     \end{center}
 \end{figure}
 
+\newpage
+
 \subsubsection*{UC\cuc . Join a Tournament}
 \begin{center}
-    \begin{longtable}{|l|p{0.9\linewidth}|}
+    \begin{longtable}{|l|p{0.75\linewidth}|}
         \hline
-        \textbf{Actor}            & ST                                                                                                                                                                                        \\
+        \textbf{Actor}            & ST  \\
         \hline
-        \textbf{Entry conditions} & The Student is correctly logged in. The Student has decided to join a Tournament.                                                                                                                   \\
+        \textbf{Entry conditions} & The ST is correctly logged in. The ST has decided to join a Tournament.   \\
         \hline
-        \textbf{Event Flow}       & 1-\ The Student search the name of a Tournament into the search box \\
+        \textbf{Event Flow}       & 1-\ The ST search the name of a Tournament into the search box \\
         & 2-\ CKB returns the result from the search. \\
-        & 3-\ The Student clicks on the new Tournament’s name.        \\
+        & 3-\ The ST clicks on the new Tournament’s name.        \\
         & 4-\ CKB redirects the Student to the main page of the Tournament. \\
-        & 5-\ The Student clicks on the “Join Tournament” button. \\
-        & 6-\ CKB saves the Student as one of the competitors of the Tournament \\
-        & 7-\ CKB shows a confirm message and redirects the Student to the page that contains the current Leaderboard of the Tournament (the Tournament main page). \\
+        & 5-\ The ST clicks on the “Join Tournament” button. \\
+        & 6-\ CKB saves the ST as one of the competitors of the Tournament. \\
+        & 7-\ CKB shows a confirm message and redirects the ST to the page that contains the current Leaderboard of the Tournament (the Tournament main page). \\
         \hline
-        \textbf{Exit condition}   & The Student is now part of the Tournament and will be notified whenever a new Battle will be available.        \\                                                                                                                                                                                \\
+        \textbf{Exit condition}   & The ST is now part of the Tournament and will be notified whenever a new Battle will be available.        \\
         \hline
         \textbf{Exceptions}        & \begin{itemize}
-            \item Nothing is found from the research. In this case the User will be redirectd back to the home page.
-            \item The Tournament already ended. In this case is shown an error message, the User is redirected to the final Leaderboard of the Tournament.
-            \item The student already joined the Tournament. In this case CKB will not show any error messages, but will redirect the Student to the current Leaderboard of the Tournament.
+            \item Nothing is found from the research. In this case the ST will be redirectd back to the home page.
+            \item The Tournament already ended. In this case is shown an error message and the ST is redirected to the final Leaderboard of the Tournament.
+            \item The ST already joined the Tournament. In this case CKB will not show any error messages, but will redirect the ST to the current Leaderboard of the Tournament.
             \item The Deadline already expired. An error message is shown and the ST is redirected back to the Home Page.
         \end{itemize}    \\
         \hline
-        \caption{Join a Tournament use case}
+        \caption{Join a Tournament use case.}
         \label{tab: join_a_Tournament_use_case}
     \end{longtable}
 \end{center}
@@ -357,45 +359,44 @@ There is a table with entry conditions, event flow, exit conditions and exceptio
 \begin{figure}[H]
     \begin{center}
         \includegraphics[width=.8\linewidth]{SequenceDiagrams/Join a tournament.png}
-        \caption{Join a Tournament diagram}
+        \caption{Join a Tournament diagram.}
         \label{fig:join_a_Tournament_seqd}%
     \end{center}
 \end{figure}
 
 \subsubsection*{UC\cuc . Create a Battle}
 \begin{center}
-    \begin{longtable}{|l|p{0.9\linewidth}|}
+    \begin{longtable}{|l|p{0.75\linewidth}|}
         \hline
-        \textbf{Actor}            & ED                                                                                                                                                                                       \\
+        \textbf{Actor}            & ED \\
         \hline
-        \textbf{Entry conditions} & ED is logged in. ED is in the Tournament page. ED has decided to create a Battle        \\
+        \textbf{Entry conditions} & The ED is logged in. The ED is in the Tournament page. The ED has decided to create a Battle.        \\
         \hline
-        \textbf{Event Flow}       & 1-\ ED clicks on “Create new Battle” button        \\
-        & 2-\ CKB redirect ED to the create Battle form        \\
-        & 3-\ ED writes the Battle name        \\
-        & 4-\ ED sets the minimum and maximum number of students per group        \\
-        & 5-\ CBK checks the Battle name, the minimum and the maximum        \\
-        & 6-\ CKB redirect ED to the upload code kata form        \\
-        & 7-\ ED uploads the code kata to be resolved        \\
-        & 8-\ CKB save the code kata sended        \\
-        & 9-\ CKB redirect ED to the deadline and additional condition form        \\
-        & 10-\ ED sets a registration deadline        \\
-        & 11-\ ED sets a final submission deadline        \\
-        & 12-\ ED sets additional configurations for scoring        \\
-        & 13-\ CKB check deadline         \\
-        & 14-\ CKB create a new Battle and redirect the ED to the new Battle main page        \\
-        & 15-\ CKB sends a notification to all STs subscribed to the Tournament         \\
+        \textbf{Event Flow}       & 1-\ ED clicks on “Create new Battle” button.        \\
+        & 2-\ CKB redirects ED to the create Battle form.        \\
+        & 3-\ The ED uploads the code kata.        \\
+        & 4-\ The ED writes the Battle name.        \\
+        & 5-\ The ED sets the minimum and maximum number of STs per group.        \\
+        & 6-\ The ED sets the registration deadline.      \\
+        & 7-\ The ED sets the final submission deadline.      \\
+        & 8-\ The ED sets additional configurations for scoring.        \\
+        & 9-\ CBK checks the parameters inserted by the ED.        \\
+        & 10-\ CKB creates a new Battle and redirect the ED to the new Battle main page.        \\
+        & 11-\ CKb stores the information about the Battle.        \\
+        & 12-\ CKB sends a notification to all STs subscribed to the Tournament         \\
         \hline
-        \textbf{Exit condition}   & The Battle is correctly created and the ED is redirected to the Battle main page        \\
+        \textbf{Exit condition}   & The Battle is correctly created and the ED is redirected to the Battle main page.        \\
         \hline
         \textbf{Exceptions}        & \begin{itemize}
                 \item The Battle’s name is null or already exists. An error message is shown, the ED is redirected back to the create Battle settings.
                 \item The maximum number of students per group is lesser than the minimum.  An error message is shown to the ED and the ED is redirected to the create Battle settings.
                 \item The minimum number of students per group is lesser or equal than zero.  An error message is shown to the ED and the ED is redirected to the create Battle.
-                \item The minimum number of students per group is lesser or equal than zero.  An error message is shown to the ED and the ED is redirected to the create Battle settings.    
+                \item The registration deadline is a date before the day the Battle is created. An error message is shown to the ED and a new deadline has to be chosen and the ED is redirected to create Battle settings.   
+                \item  The final submission deadline is a date before the registration deadline. An error message is shown to the ED and a new deadline has to be chosen and the ED is redirected to create Battle settings.  
+                \item The code kata is not valid. An error message is shown to the ED and the ED is redirected to create Battle settings. 
         \end{itemize}    \\
         \hline
-        \caption{Create a Battle use case}
+        \caption{Create a Battle use case.}
         \label{tab: create_a_Battle_use_case}
     \end{longtable}
 \end{center}
@@ -403,35 +404,37 @@ There is a table with entry conditions, event flow, exit conditions and exceptio
 \begin{figure}[H]
     \begin{center}
         \includegraphics[width=1\linewidth]{SequenceDiagrams/Create a Battle.png}
-        \caption{Create a Battle sequence diagram}
+        \caption{Create a Battle sequence diagram.}
         \label{fig:create_a_battle_seqd}%
     \end{center}
 \end{figure}
 
+\newpage
+
 \subsubsection*{UC\cuc . Join a Battle}
 \begin{center}
-    \begin{longtable}{|l|p{0.9\linewidth}|}
+    \begin{longtable}{|l|p{0.75\linewidth}|}
         \hline
-        \textbf{Actor}            & ST                                                                                                                                                                                        \\
+        \textbf{Actor}            & ST \\
         \hline
-        \textbf{Entry conditions} & The Student is correctly logged in and it is in the Tournament main page (the one with the Leaderboard). The Student has decided to join a Battle.        \\
+        \textbf{Entry conditions} & The ST is correctly logged in and it is in the Tournament main page. The ST has decided to join a Battle.        \\
         \hline
-        \textbf{Event Flow}       & 1-\ The Student click on the button “Go to Battles”        \\
-        & 2-\ CKB redirects the student to the page that has the list of all the Battles of the Tournament.        \\
-        & 3-\ The Student clicks on the “subscribe” button near the Battle name.        \\
-        & 4-\ CKB checks that the deadline does not expire\\
-        & 5-\ CKB checks that the Student joined the Tournament that contains this Battle.        \\
-        & 6-\ CKB redirects the Student to the CreateGroup page of the Battle.        \\
+        \textbf{Event Flow}       & 1-\ The ST clicks on the button “Go to Battles”        \\
+        & 2-\ CKB redirects the ST to the page that has the list of all the Battles of the Tournament.        \\
+        & 3-\ The ST clicks on the “Subscribe” button near the Battle name.        \\
+        & 4-\ CKB checks that the deadline has not expired.\\
+        & 5-\ CKB checks that the ST joined the Tournament that contains this Battle.   \\
+        & 6-\ CKB redirects the ST to the CreateGroup page of the Battle.        \\
         \hline
-        \textbf{Exit condition}   & The Student, after the subscription deadline end, will be able to create a group and then confirm the participation to the Battle        \\
+        \textbf{Exit condition}   & The ST, after the subscription deadline end, will be able to create a group and then confirm the participation to the Battle        \\
         \hline
         \textbf{Exceptions}        & \begin{itemize}
-            \item The Student isn’t in the Tournament that this Battle is part of. In this case CKB shows an error message, the User is redirected back to his main page/dashboard
-            \item The Battle already ended or already started. In this case  CKB shows an error message, the User is redirected to the final Leaderboard of the Battle.
-            \item The student already joined the Battle. In this case CKB will not show any error messages, but will redirect the Student to the CreateGroup page.
+            \item The ST isn’t in the Tournament that this Battle is part of. In this case CKB shows an error message, the ST is redirected back to the Tournament main page.
+            \item The Battle already ended or already started. In this case  CKB shows an error message, the ST is redirected to the final Leaderboard of the Battle.
+            \item The ST already joined the Battle. In this case CKB will not show any error messages, but will redirect the ST to the CreateGroup page.
          \end{itemize}    \\
         \hline
-        \caption{Join a Battle use case}
+        \caption{Join a Battle use case.}
         \label{tab: join_a_Battle_use_case}
     \end{longtable}
 \end{center}
@@ -439,38 +442,42 @@ There is a table with entry conditions, event flow, exit conditions and exceptio
 \begin{figure}[H]
     \begin{center}
         \includegraphics[width=.8\linewidth]{SequenceDiagrams/Join a battle.png}
-        \caption{Join a battle sequence diagram}
+        \caption{Join a battle sequence diagram.}
         \label{fig:join_a_battle_seqd}%
     \end{center}
 \end{figure}
 
+\newpage
+
 \subsubsection*{UC\cuc . Create a group and Battle confirmation}
 \begin{center}
-    \begin{longtable}{|l|p{0.9\linewidth}|}
+    \begin{longtable}{|l|p{0.75\linewidth}|}
         \hline
-        \textbf{Actor}            & ST                                                                                                                                                                                        \\
+        \textbf{Actor}            & ST   \\
         \hline
-        \textbf{Entry conditions} & The Student is correctly logged in and it is in the CreateGroup page. The Student has decided to join a Battle.        \\
+        \textbf{Entry conditions} & The ST is correctly logged in and it is in the CreateGroup page. The ST has decided to join a Battle.        \\
         \hline
-        \textbf{Event Flow}       & 1-\ The Student clicks on the “invite” button and then inserts another student’s nickname.        \\
-        & 2-\ CBK checks if the student joined the competition and notifies other students of an invitation.          \\
-        & 3-\ the other student can decide to accept or reject the invitation clicking on the “accept” or “reject” button inside the notification.        \\
-        & 4-\ CKB shows to the Student that creates the group the different state of the various invitation requests (3 state : accepted, rejected, pending)(only the first n-invited players that accept the invite are considered part of the group)(where n is the upper bound threshold).         \\
-        & 5-\ The Student can click on the “Join Battle” button.        \\
-        & 6-\ CKB checks if the number of members respect the limits given by educators during the Battle creation.         \\
-        & 7-\ CKB saves the Student and the group as one of the competitors of the Battle        \\
-        & 8-\ CKB shows a confirmation message and redirects the Student to the group to the main page of the Battle (the one with the Leaderboard).        \\
+        \textbf{Event Flow}       & 1-\ The ST inserts the STG name.        \\
+        & 2-\ The ST inserts another ST's nickname and clicks on the “Invite” button and then.        \\
+        & 3-\ CBK checks if the ST joined the competition and notifies other students of an invitation.  \\
+        & 4-\ The other STs can decide to accept or reject the invitation clicking on the “Accept” or “Reject” button inside the notification.        \\
+        & 5-\ CKB shows to the ST that has created the STG the different state of the various invitation requests (3 state : accepted, rejected, pending)(only the first \(n\)-invited STs that accept the invite are considered part of the group)(where \(n\) is the maximum number decided by the ED in the create Battle form).         \\
+        & 6-\ The ST can click on the “Confirm Group” button.        \\
+        & 7-\ CKB checks if the number of members respects the limits given by ED during the Battle creation.         \\
+        & 8-\ CKB saves the ST and the STG as one of the competitors of the Battle.        \\
+        & 9-\ CKB shows a confirmation message and redirects the ST to the main page of the Battle.        \\
         \hline
-        \textbf{Exit condition}   & The Student is now a competitor in the Battle and he can starts committing after the creation group deadline expires        \\
+        \textbf{Exit condition}   & The ST is now a competitor in the Battle and he can starts committing after the creation group deadline expires        \\
         \hline
         \textbf{Exceptions}        & \begin{itemize}
-            \item The group already joined the Battle. In this case CKB will not show any error messages, but will redirect the Student to the current Leaderboard of the Battle.
-            \item The number of students in the group is wrong. CKB will show an error and redirect the students to the CreateGroup page.
-            \item If the creation group deadline and all the students without group or all the groups not confirmed will be kicked out from the Battle
-            \item if the invited student has not already joined in the competition or if the nickname does not exist, CKB sends an error and redirects the ST to the CreateGroup page.
-         \end{itemize}    \\
+            \item The STG name already exists in the Battle. In this case CKB shows an error message and the ST is redirected back to the CreateGroup page.
+            \item The STG already joined the Battle. In this case CKB will not show any error messages, but will redirect the ST to the current Leaderboard of the Battle.
+            \item The number of STs in the group is wrong. CKB will show an error and redirect the ST to the CreateGroup page.
+            \item If the creation group deadline expires, all the STs without group or all the STG not confirmed will be kicked out from the Battle.
+            \item If the invited ST has not already joined in the competition or if the nickname does not exist, CKB sends an error and redirects the ST to the CreateGroup page.
+         \end{itemize}  \\
         \hline
-        \caption{Create a group and Battle confirmation use case}
+        \caption{Create a group and Battle confirmation use case.}
         \label{tab: create_a_group_and_Battle_confirmation_use_case}
     \end{longtable}
 \end{center}
@@ -478,27 +485,27 @@ There is a table with entry conditions, event flow, exit conditions and exceptio
 \begin{figure}[H]
     \begin{center}
         \includegraphics[width=0.5\linewidth]{SequenceDiagrams/create a group and battle confirmation.png}
-        \caption{Create a group and Battle confirmation sequence diagram}
+        \caption{Create a group and Battle confirmation sequence diagram.}
         \label{fig:create_a_group_and_battle_confirmation_seqd}%
     \end{center}
 \end{figure}
 
 \subsubsection*{UC\cuc . Open a profile}
 \begin{center}
-    \begin{longtable}{|l|p{0.9\linewidth}|}
+    \begin{longtable}{|l|p{0.75\linewidth}|}
         \hline
-        \textbf{Actor}            & ST or ED                                                                                                                                                                                       \\
+        \textbf{Actor}            & ST or ED \\
         \hline
         \textbf{Entry conditions} & The User is logged in. The User should be in a Leaderboard (both Battle or Tournament) page for retreiving a ST profile from it or an ED profile from the owner name of the Tournament (or from the list of all the EDs)        \\
         \hline
-        \textbf{Event Flow}       & 1-\ User clicks on a ST's nickname (from the Leaderboard) or ED's nickname (from the Tournament owner or from the list of all the EDs)        \\
-        & 2-\ CKB returns the profile page of the selected User        \\
+        \textbf{Event Flow}       & 1-\ User clicks on a ST's nickname (from the Leaderboard) or ED's nickname (from the Tournament owner or from the list of all the EDs).        \\
+        & 2-\ CKB returns the profile page of the selected User.        \\
         \hline
-        \textbf{Exit condition}   & User is able to know particular information of the User that he had selected        \\
+        \textbf{Exit condition}   & User is able to know particular information of the User that he had selected.        \\
         \hline
-        \textbf{Exceptions}        &  The User is not found. In this case the User will be redirected back to the brevious page.\\
+        \textbf{Exceptions}        &  The User is not found. In this case the User will be redirected back to the previous page.\\
         \hline
-        \caption{Open a profile use case}
+        \caption{Open a profile use case.}
         \label{tab: open_a_profile_use_case}
     \end{longtable}
 \end{center}
@@ -506,28 +513,30 @@ There is a table with entry conditions, event flow, exit conditions and exceptio
 \begin{figure}[H]
     \begin{center}
         \includegraphics[width=.5\linewidth]{SequenceDiagrams/Open a profile.png}
-        \caption{Open a profile sequence diagram}
+        \caption{Open a profile sequence diagram.}
         \label{fig:open_a_profile_seqd}%
     \end{center}
 \end{figure}
 
+\newpage
+
 \subsubsection*{UC\cuc . Search for a profile}
 \begin{center}
-    \begin{longtable}{|l|p{0.9\linewidth}|}
+    \begin{longtable}{|l|p{0.75\linewidth}|}
         \hline
-        \textbf{Actor}            & ST or ED                                                                                                                                                                                       \\
+        \textbf{Actor}            & ST or ED\\
         \hline
         \textbf{Entry conditions} & The User is logged in  \\
         \hline
-        \textbf{Event Flow}       & 1-\ User clicks on the search bar        \\
-        & 2-\ User writes another User's nickname or a keyword of it \\
-        & 3-\ CKB returns the list of the Users that contain the written keyword in their nickname         \\
+        \textbf{Event Flow}       & 1-\ User clicks on the search bar.        \\
+        & 2-\ User writes another User's nickname or a keyword of it. \\
+        & 3-\ CKB returns the list of the Users that contain the written keyword in their nickname.         \\
         \hline
-        \textbf{Exit condition}   & User is able to find the User that he was searching        \\
+        \textbf{Exit condition}   & User is able to find the User that he was searching.        \\
         \hline
         \textbf{Exceptions}        &  None is found from the research. In this case the User will be redirectd back to the previous page.\\
         \hline
-        \caption{Search for a profile use case}
+        \caption{Search for a profile use case.}
         \label{tab: search_for_a_profile_use_case}
     \end{longtable}
 \end{center}
@@ -535,28 +544,30 @@ There is a table with entry conditions, event flow, exit conditions and exceptio
 \begin{figure}[H]
     \begin{center}
         \includegraphics[width=.5\linewidth]{SequenceDiagrams/search for a profile.png}
-        \caption{Search for a profile sequence diagram}
+        \caption{Search for a profile sequence diagram.}
         \label{fig:search_for_a_profile_seqd}%
     \end{center}
 \end{figure}
 
+\newpage
+
 \subsubsection*{UC\cuc . Search for a Tournament}
 \begin{center}
-    \begin{longtable}{|l|p{0.9\linewidth}|}
+    \begin{longtable}{|l|p{0.75\linewidth}|}
         \hline
-        \textbf{Actor}            & ST or ED                                                                                                                                                                                       \\
+        \textbf{Actor}            & ST or ED  \\
         \hline
         \textbf{Entry conditions} & The User is logged in  \\
         \hline
-        \textbf{Event Flow}       & 1-\ User clicks on the search bar        \\
-        & 2-\ User writes a Tournament's name or a keyword of it \\
-        & 3-\ CKB returns the list of the Tournaments that contain the written keyword in their name         \\
+        \textbf{Event Flow}       & 1-\ User clicks on the search bar.       \\
+        & 2-\ User writes a Tournament's name or a keyword of it. \\
+        & 3-\ CKB returns the list of the Tournaments that contain the written keyword in their name.         \\
         \hline
-        \textbf{Exit condition}   & User is able to find the Tournament that he was searching        \\
+        \textbf{Exit condition}   & User is able to find the Tournament that he was searching.        \\
         \hline
-        \textbf{Exceptions}        & Nothing is found from the research. In this case the User will be redirected back to the previous page.\\%TODO
+        \textbf{Exceptions}        & Nothing is found from the research. In this case the User will be redirected back to the previous page.\\
         \hline
-        \caption{Search for a Tournament use case}
+        \caption{Search for a Tournament use case.}
         \label{tab: search_for_a_Tournament_use_case}
     \end{longtable}
 \end{center}
@@ -564,34 +575,36 @@ There is a table with entry conditions, event flow, exit conditions and exceptio
 \begin{figure}[H]
     \begin{center}
         \includegraphics[width=.6\linewidth]{SequenceDiagrams/Search for a Tournament.png}
-        \caption{Search for a Tournament sequence diagram}
+        \caption{Search for a Tournament sequence diagram.}
         \label{fig:search_for_a_Tournament_seqd}%
     \end{center}
 \end{figure}
 
+\newpage
+
 \subsubsection*{UC\cuc . Evaluate a code}
 \begin{center}
-    \begin{longtable}{|l|p{0.9\linewidth}|}
+    \begin{longtable}{|l|p{0.75\linewidth}|}
         \hline
-        \textbf{Actor}            & ED                                                                                                                                                                                        \\
+        \textbf{Actor}            & ED \\
         \hline
         \textbf{Entry conditions} & The ED is correctly logged. During the Consolidation Stage the Educator decides to check a STG’s code.        \\
         \hline
-        \textbf{Event Flow}       & 1-\  The ED click the “See battle Leaderboard” button in the Battle page      \\
-        & 2-\   CKB shows the Leaderboard page     \\
-        & 3-\   The ED clicks the “Analyze source code” button that corresponds to a STG     \\
-        & 4-\   CKB shows the source code to the ED     \\
-        & 5-\   The ED manually checks the code     \\
-        & 6-\   The ED assign a score to the STG code     \\
+        \textbf{Event Flow}       & 1-\  The ED click the “See battle Leaderboard” button in the Battle page.      \\
+        & 2-\   CKB shows the Leaderboard page.     \\
+        & 3-\   The ED clicks the “Analyze source code” button that corresponds to a STG. \\
+        & 4-\   CKB shows the source code to the ED.     \\
+        & 5-\   The ED manually checks the code.     \\
+        & 6-\   The ED assign a score to the STG code.     \\
         \hline
         \textbf{Exit condition}   & CKB updates the new score to the STG code       \\
         \hline
         \textbf{Exceptions}        & \begin{itemize}
-            \item The Consolidation Stage already ended, an error message is shown and the ED is redirected to the battle Leaderboard page
+            \item The Consolidation Stage already ended, an error message is shown and the ED is redirected to the battle Leaderboard page.
             \item The ED awards the STG a improper score, like a score beyond the minimum and maximum bounds decided by the ED during the Creation Phase. An error message is shown and the ED is redirected to the battle Leaderboard page.
          \end{itemize}    \\
         \hline
-        \caption{Evaluate a code use case}
+        \caption{Evaluate a code use case.}
         \label{tab: evaluate_a_code_use_case}
     \end{longtable}
 \end{center}
@@ -600,10 +613,12 @@ There is a table with entry conditions, event flow, exit conditions and exceptio
 \begin{figure}[H]
     \begin{center}
         \includegraphics[width=.6\linewidth]{SequenceDiagrams/Evaluate a code.png}
-        \caption{Evaluate a code sequence diagram}
+        \caption{Evaluate a code sequence diagram.}
         \label{fig:evaluate_a_code_seqd}%
     \end{center}
 \end{figure}
+
+\newpage
 
 \subsection{Mapping on goals}
 \label{subsec:mapping_on_goals}%
@@ -784,9 +799,9 @@ There is a table with entry conditions, event flow, exit conditions and exceptio
 
 \section{Performance requirements}
 \label{sec:performance_requirements}%
-\paragraph{Number of concurrent Users:} According to recent research, Codewars, a website that has similar use cases of CKB, has about 1.8 million Users. If we're optimistic, we want our app to attract around 25\% of those Users, which means it should be able to handle up to 500,000 Users. This is important for making sure our app works well for a good number of people, giving them a smooth and enjoyable experience similar to what Codewars offers.
-\paragraph{Data storage:} CKB needs to save and manage all the details about both STs and EDs. Additionally, it has to store information about all the Tournaments, including the associated Battles. When a Tournament is closed all the data about it won’t be canceled and a reference of it and of the Battles remains in the ED’s page .
-\paragraph{Time response:} Every operation that is directly executed by CKB, i.e. login, create, join and evaluate, should be in the domain of milliseconds. Other operations such as the ones that involve GH, the mailing system and the External Tools cannot be guaranteed by CKB itself.
+\paragraph{Number of concurrent Users:} According to recent research, Codewars, a website that has similar use cases of CKB, has about 1.8 million Users. If we're optimistic, we want our website to attract around 25\% of those Users, which means CKB should be able to handle up to 500,000 Users. This is important for making sure our website works well for a good number of people, giving them a smooth and enjoyable experience similar to what Codewars offers.
+\paragraph{Data storage:} CKB need to save and manage all the details about both STs and EDs. Additionally, it has to store information about all the Tournaments, including the associated Battles. When a Tournament is closed all the data about it won’t be canceled and a reference of it and of the Battles remains in the ED’s page .
+\paragraph{Time response:} Every operation that is directly executed by CKB, i.e. register, login, create, join and evaluate, should be in the domain of milliseconds. Other operations such as the ones that involve GH, the mailing system and the External Tools cannot be guaranteed by CKB itself.
 
 
 
@@ -814,7 +829,7 @@ The system has to be fault tolerant in order to prevent the propagation of error
 \subsection{Availability}
 \label{subsec:availability}%
 The system must be available the most time possible, with a minimum value of 99.9\% (three-nines) of time. In this way the system will be unavailable for only 8.76 hours a year. \\
-It shall be prevented a case scenario in which a mainta break occurs near to Battle's end, therefore there must be as few maintenance breaks as possible, with them possibly at nightime.
+It shall be prevented a case scenario in which a maintenance break occurs near to Battle's end, therefore there must be as few maintenance breaks as possible, with them possibly at nightime.
 
 \subsection{Security}
 \label{subsec:security}%
@@ -824,12 +839,12 @@ Measures to protect the database will be adopted, such as defense against query 
 
 \subsection{Maintainability}
 \label{subsec:maintainability}%
-The system must be designed using scalable and reusable models in order to permit future addition of features with minimum effort. 
+The system must be designed using scalable and reusable models in order to permit future addition of features with minimum effort. \\
 Ordinary maintenance has to be scheduled at nightime, in order to keep the services available when the User traffic is high.
 
 \subsection{Portability}
 \label{subsec:portability}%
-The system must be accessible by the Users from every kind of Web Browser. 
+The system must be accessible by the Users from every kind of Web Browser.\\ 
 There are no particular portability requirements server side.
 
 
