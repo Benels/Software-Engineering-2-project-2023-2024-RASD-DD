@@ -512,7 +512,8 @@ check assertion1 for 5
 -----------------------------------------------------
 
 
-
+-- In the baseWorld there is only one Tournament, one Group, two Battles, two Students and one Educator.
+-- This is one of the simpliest possible worlds that can be generated.
 pred baseWorld{
 	#Tournament = 1 
 	# Group = 1
@@ -524,6 +525,8 @@ run baseWorld for 5
 
 
 
+-- In this World there is still only one Tournament, 
+-- but there are three Groups of Students and there are two different Battles. 
 pred World{
 	#Tournament=1
 	#Group = 3
@@ -537,9 +540,13 @@ run World for 5
 
 
 
+-- In this World there are two Tournaments, each of them having at least one Battle.
 pred World2{
 	#Tournament=2
+		all t: Tournament | #(t.battles) >0
 	#Student=4
 	#Battle =2
 }
 run World2 for 5
+
+
