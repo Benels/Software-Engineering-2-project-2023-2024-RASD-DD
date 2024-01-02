@@ -79,7 +79,7 @@
 \usepackage{wasysym} % For the headers
 \usepackage{rotating}
 \usepackage{listings}
-\usepackage{hyperref}
+\usepackage{csquotes}
 \fancyhf{}
 
 % Input of configuration file. Do not change config.tex file unless you really know what you are doing. 
@@ -89,6 +89,13 @@
 \definecolor{dkgreen}{rgb}{0,0.6,0}
 \definecolor{gray}{rgb}{0.5,0.5,0.5}
 \definecolor{mauve}{rgb}{0.58,0,0.82}
+
+
+\definecolor{ckbgrapefruit}{RGB}{218, 64, 38}
+\newcommand{\ckbautoref}[1] {%
+	\hypersetup{linkcolor=ckbgrapefruit}%
+	\autoref{#1}%
+}
 
 
 
