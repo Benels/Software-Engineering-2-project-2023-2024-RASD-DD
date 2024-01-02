@@ -623,6 +623,69 @@ There is a table with entry conditions, event flow, exit conditions and exceptio
 
 \newpage
 
+\subsubsection*{UC\cuc . Create a new Badge}
+\begin{center}
+    \begin{longtable}{|l|p{0.75\linewidth}|}
+        \hline
+        \textbf{Actor}            & ED \\
+        \hline
+        \textbf{Entry conditions} & The ED is correctly logged. During the Torunament creation the ED has ticked the "Create Badge" setting.        \\
+        \hline
+        \textbf{Event Flow}       & 1-\ CKB retreives all the Badges previously created by the ED. \\
+        & 2-\ CKB shows to the ED the "Create Badge" form \\
+        & 3-\ The ED inserts the Badge name, description and the rules to obtain a new Badge. \\
+        & 4-\ The ED clicks on the "Create Badge" button. \\
+        & 5-\ CKB checks the Badge's details. \\
+        & 6-\ CKB saves the Badge's details. \\
+        \hline
+        \textbf{Exit condition}   & CKB adds the Badge to the Tournament information.      \\
+        \hline
+        \textbf{Exceptions}        & \begin{itemize}
+            \item The Badge's name is null or already exists. An error message is shown and the ED is redirected back to the create Badge settings.
+            \item The Badge's description is null. An error message is shown and the ED is redirected back to the create Badge settings.
+            \item The Badge's rules are null. An error message is shown and the ED is redirected back to the create Badge settings.
+         \end{itemize}    \\
+        \hline
+        \caption{Create a new Badge use case.}
+        \label{tab: create_a_badge_use_case}
+    \end{longtable}
+\end{center}
+
+
+\subsubsection*{UC\cuc . Modify an existing Badge}
+\begin{center}
+    \begin{longtable}{|l|p{0.75\linewidth}|}
+        \hline
+        \textbf{Actor}            & ED \\
+        \hline
+        \textbf{Entry conditions} & The ED is correctly logged. During the Torunament creation the ED has ticked the "Create Badge" setting.        \\
+        \hline
+        \textbf{Event Flow}       & 1-\ CKB retreives all the Badges previously created by the ED. \\
+        & 2-\ The ED clicks on a previously created Badge name. \\
+        & 3-\ CKB shows to the ED the "Modify Badge" form \\
+        & 4-\ The ED modifies the Badge name, description or the rules to obtain this Badge. \\
+        & 5-\ The ED clicks on the "Modify Badge" button. \\
+        & 6-\ CKB checks the Badge's details. \\
+        & 7-\ CKB saves the Badge's details. \\
+        \hline
+        \textbf{Exit condition}   & CKB adds the modified Badge to the Tournament information. \\
+        \hline
+        \textbf{Exceptions}        & \begin{itemize}
+            \item The modified Badge's name is null or already exists. An error message is shown and the ED is redirected back to the create Badge settings.
+            \item The modified Badge's description is null. An error message is shown and the ED is redirected back to the create Badge settings.
+            \item The modified Badge's rules are null. An error message is shown and the ED is redirected back to the create Badge settings.
+         \end{itemize}    \\
+        \hline
+        \caption{ Modify an existing Badge use case.}
+        \label{tab: modify_badge_use_case}
+    \end{longtable}
+\end{center}
+
+
+
+
+\newpage
+
 \subsection{Mapping on goals}
 \label{subsec:mapping_on_goals}%
 \textbf{G1 - Allow an ED to create a Tournament.}
