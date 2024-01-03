@@ -301,10 +301,8 @@ There is a table with entry conditions, event flow, exit conditions and exceptio
         & 4-\ CKB stores the data of the Tournament.        \\
         & 5-\ CKB sends a notification to the chosen EDs.        \\
         & 6-\ CKB notifies all the STs of the creation of the Tournament.        \\
-        & 7-\ CKB redirect ED to the Badges requirement page. \\
-        & 8-\ The ED inserts the Badges details into the form. \\
-        & 9-\ CKB save the Badges details. \\
-        & 10-\ CKB return the Tournament main page.        \\
+        & 7-\ CKB check if the tick on the create badge is true and if it is so CKB retrives all the ED previous Badges and redirect ED to the Badges requirement page.\\
+        & 8-\ if that's not the case CKB return the Tournament main page. \\
         \hline
         \textbf{Exit condition}   & The Tournament is correctly created and a confirmation message is shown to the ED.        \\
         \hline
@@ -384,8 +382,8 @@ There is a table with entry conditions, event flow, exit conditions and exceptio
         & 7-\ The ED sets the final submission deadline.      \\
         & 8-\ The ED sets additional configurations for scoring.        \\
         & 9-\ CBK checks the parameters inserted by the ED.        \\
-        & 10-\ CKB creates a new Battle and redirect the ED to the new Battle main page.        \\
-        & 11-\ CKb stores the information about the Battle.        \\
+        & 10-\ CKB create a new github repository \\
+        & 11-\ CKB creates a new Battle and redirect the ED to the new Battle main page.        \\
         & 12-\ CKB sends a notification to all STs subscribed to the Tournament         \\
         \hline
         \textbf{Exit condition}   & The Battle is correctly created and the ED is redirected to the Battle main page.        \\
@@ -631,12 +629,12 @@ There is a table with entry conditions, event flow, exit conditions and exceptio
         \hline
         \textbf{Entry conditions} & The ED is correctly logged. During the Torunament creation the ED has ticked the "Create Badge" setting.        \\
         \hline
-        \textbf{Event Flow}       & 1-\ CKB retreives all the Badges previously created by the ED. \\
-        & 2-\ CKB shows to the ED the "Create Badge" form \\
-        & 3-\ The ED inserts the Badge name, description and the rules to obtain a new Badge. \\
-        & 4-\ The ED clicks on the "Create Badge" button. \\
-        & 5-\ CKB checks the Badge's details. \\
-        & 6-\ CKB saves the Badge's details. \\
+        \textbf{Event Flow}      
+        & 1-\ The ED inserts the Badge name, description and the rules to obtain a new Badge. \\
+        & 2-\ The ED clicks on the "Create Badge" button. \\
+        & 3-\ CKB checks the Badge's details. \\
+        & 4-\ CKB saves the Badge's details. \\
+        & 5-\ CKB return the Tournament main page. \\
         \hline
         \textbf{Exit condition}   & CKB adds the Badge to the Tournament information.      \\
         \hline
@@ -660,20 +658,21 @@ There is a table with entry conditions, event flow, exit conditions and exceptio
         \hline
         \textbf{Entry conditions} & The ED is correctly logged. During the Torunament creation the ED has ticked the "Create Badge" setting.        \\
         \hline
-        \textbf{Event Flow}       & 1-\ CKB retreives all the Badges previously created by the ED. \\
-        & 2-\ The ED clicks on a previously created Badge name. \\
-        & 3-\ CKB shows to the ED the "Modify Badge" form \\
-        & 4-\ The ED modifies the Badge name, description or the rules to obtain this Badge. \\
-        & 5-\ The ED clicks on the "Modify Badge" button. \\
-        & 6-\ CKB checks the Badge's details. \\
-        & 7-\ CKB saves the Badge's details. \\
+        \textbf{Event Flow}       
+        & 1-\ The ED clicks on a previously created Badge name. \\
+        & 2-\ CKB shows to the ED the "Modify Badge" form \\
+        & 3-\ The ED modifies the Badge name, description or the rules to obtain this Badge. \\
+        & 4-\ The ED clicks on the "Modify Badge" button. \\
+        & 5-\ CKB checks the Badge's details. \\
+        & 6-\ CKB saves the Badge's details. \\
         \hline
         \textbf{Exit condition}   & CKB adds the modified Badge to the Tournament information. \\
         \hline
         \textbf{Exceptions}        & \begin{itemize}
-            \item The modified Badge's name is null or already exists. An error message is shown and the ED is redirected back to the create Badge settings.
+            \item The modified Badge's name is null. An error message is shown and the ED is redirected back to the create Badge settings.
             \item The modified Badge's description is null. An error message is shown and the ED is redirected back to the create Badge settings.
             \item The modified Badge's rules are null. An error message is shown and the ED is redirected back to the create Badge settings.
+            \item The modified Badge's name does not belongs to the ED.An error message is shown and the ED is redirected back to the create Badge settings.
          \end{itemize}    \\
         \hline
         \caption{ Modify an existing Badge use case.}
