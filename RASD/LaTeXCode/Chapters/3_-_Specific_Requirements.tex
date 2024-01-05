@@ -48,7 +48,7 @@ The communication Interfaces needed by the system are the HTTPS Protocol and the
         \hline
         R\creq      & CKB allows EDs to uploads the code kata of a Battle                                                                   \\
         \hline
-        R\creq      & CKB allows EDs to set the minimun and the maximum number of STs per group of a Battle                                                            \\
+        R\creq      & CKB allows EDs to set the minimum and the maximum number of STs per group of a Battle                                                            \\
         \hline
         R\creq      & CKB allows EDs to set a registration deadline of a Battle                                                                 \\
         \hline
@@ -64,7 +64,7 @@ The communication Interfaces needed by the system are the HTTPS Protocol and the
         \hline
         R\creq      & CKB allows EDs to choose which Badges to award in a certain Tournament                                                               \\
         \hline
-        R\creq      & CKB allows EDs to assing a score manually during the consolidation stage                                                               \\
+        R\creq      & CKB allows EDs to assign a score manually during the consolidation stage                                                               \\
         \hline
         R\creq      & CKB allows EDs to close a Tournament                                                               \\
         \hline
@@ -114,9 +114,9 @@ The communication Interfaces needed by the system are the HTTPS Protocol and the
         \hline
         R\creq      & CKB allows EDs to check the list of ongoing Tournaments \\
         \hline
-        R\creq      & CKB allows STs to check the Leaderboard of a Tournaments \\
+        R\creq      & CKB allows STs to check the Leaderboard of a Tournament \\
         \hline
-        R\creq      & CKB allows EDs to check the Leaderboard of a Tournaments \\
+        R\creq      & CKB allows EDs to check the Leaderboard of a Tournament \\
         \hline
         R\creq      & CKB sends notification to every ST involved in a Tournament when the Tournament is closed and the final ranks are available \\
         \hline
@@ -301,8 +301,8 @@ There is a table with entry conditions, event flow, exit conditions and exceptio
         & 4-\ CKB stores the data of the Tournament.        \\
         & 5-\ CKB sends a notification to the chosen EDs.        \\
         & 6-\ CKB notifies all the STs of the creation of the Tournament.        \\
-        & 7-\ CKB check if the tick on the create badge is true and if it is so CKB retrives all the ED previous Badges and redirect ED to the Badges requirement page.\\
-        & 8-\ if that's not the case CKB return the Tournament main page. \\
+        & 7-\ CKB checks if the tick on the create badge is true and if it is so CKB retrives all the ED's previously used Badges and redirects the ED to the Badges requirement page.\\
+        & 8-\ If that's not the case CKB return the Tournament main page. \\
         \hline
         \textbf{Exit condition}   & The Tournament is correctly created and a confirmation message is shown to the ED.        \\
         \hline
@@ -864,12 +864,12 @@ There is a table with entry conditions, event flow, exit conditions and exceptio
 
 \section{Performance requirements}
 \label{sec:performance_requirements}%
-\paragraph{Number of concurrent Users:} According to recent research, Codewars, a website that has similar use cases of CKB, has about 1.8 million Users. If we're optimistic, we want our website to attract around 25\% of those Users, which means CKB should be able to handle up to 500,000 Users. This is important for making sure our website works well for a good number of people, giving them a smooth and enjoyable experience similar to what Codewars offers.
-\paragraph{Data storage:} CKB need to save and manage all the details about both STs and EDs. Additionally, it has to store information about all the Tournaments, including the associated Battles. When a Tournament is closed all the data about it won’t be canceled and a reference of it and of the Battles remains in the ED’s page .
+\paragraph{Number of concurrent Users:} According to recent researches, websites with a similar goal of CKB, has about 1.8 million Users. We want our website to attract at least 25\% of those Users, which means CKB should be able to handle up to 500,000 Users simultaneously. This is important for making sure our website works well for a good number of people, giving them a smooth and enjoyable experience.
+\paragraph{Data storage:} CKB needs to save and manage all the details about both STs and EDs. Additionally, it has to store information about all the Tournaments, including the associated Battles. When a Tournament is closed all the data about it won’t be canceled and a reference of it and of the Battles remains in the ED’s page .
 \paragraph{Time response:} Every operation that is directly executed by CKB, i.e. register, login, create, join and evaluate, should be in the domain of milliseconds. Other operations such as the ones that involve GH, the mailing system and the External Tools cannot be guaranteed by CKB itself.
 
 
-
+\newpage
 \section{Design constraints}
 \label{sec:design_constraints}%
 

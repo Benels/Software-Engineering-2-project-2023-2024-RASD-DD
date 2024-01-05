@@ -1,0 +1,145 @@
+\paragraph{LoginManager:}
+\begin{itemize}
+    \item R2: CKB allows registered EDs to login 
+    \item R3: CKB allows registered STs to login
+\end{itemize}
+
+
+\paragraph{RegistrationManager:}
+\begin{itemize}
+    \item R1: CKB allows unregistered Users to sign up 
+    \item R46: CKB shall communicate with the mailing system in order to allow Users to register their account 
+\end{itemize}
+
+
+\paragraph{CreateTournament:}
+\begin{itemize}
+    \item R4: CKB allows EDs to create Tournaments 
+    \item R5: CKB allows EDs to grant the permissions of a Tournament to other EDs
+    \item R15: CKB allows EDs to choose which Badges to award in a certain Tournament 
+\end{itemize}
+
+
+\paragraph{CreateBattle:}
+\begin{itemize}
+    \item R6: CKB allows EDs to create Battles 
+    \item R7: CKB allows EDs to uploads the code kata of a Battle 
+    \item R8: CKB allows EDs to set the minimum and the maximum number of STs per group of a Battle 
+    \item R9: CKB allows EDs to set a registration deadline of a Battle 
+    \item R10: CKB allows EDs to set a submission deadline of a Battle 
+    \item R11: CKB allows EDs to set additional configuration for the scoring system of a Battle 
+    \item R12: CKB allows EDs to set functional aspects for the scoring system of a Battle
+    \item R30: CKB creates a GH repository of the code kata when the registration deadline for the Battle expires 
+    \item R31: CKB sends the link of the GH repository to every STG that participates in the Battle 
+\end{itemize}
+
+
+\paragraph{CreateGroup:}
+\begin{itemize}
+    \item R22: CKB allows STs to create a new STG 
+    \item R23: CKB allows STs to join a STG 
+    \item R24:CKB allows STs to invite other STs in their STG
+\end{itemize}
+
+
+\paragraph{OpenProfile:}
+\begin{itemize}
+    \item R18: CKB allows EDs to visualize the profile of another User 
+    \item R19: CKB allows STs to visualize the profile of another User
+\end{itemize}
+
+
+\paragraph{JoinTournament:}
+\begin{itemize}
+    \item R20: CKB allows STs to join a Tournament 
+\end{itemize}
+
+
+\paragraph{ViewTournament:}
+\begin{itemize}
+    \item R41: CKB allows STs to check the Leaderboard of a Tournament 
+    \item R42: CKB allows EDs to check the Leaderboard of a Tournament
+\end{itemize}
+
+
+\paragraph{CloseTournament:}
+\begin{itemize}
+    \item R17: CKB allows EDs to close a Tournament 
+    \item R49: CKB shall assign the Badges to all STs that fulfill their requirements 
+\end{itemize}
+
+
+\paragraph{CreateBadge:}
+\begin{itemize}
+    \item R13: CKB allows EDs to create new Badges 
+\end{itemize}
+
+
+\paragraph{ModifyBadge:}
+\begin{itemize}
+    \item R14: CKB allows EDs to choose the rules related to the awarding of Badges 
+\end{itemize}
+
+
+\paragraph{JoinBattle:}
+\begin{itemize}
+    \item R21: CKB allows STs to join a Battle 
+    \item R47: STs need to fork the GH repository of the Battle they are participating in 
+\end{itemize}
+
+
+\paragraph{ViewBattle:}
+\begin{itemize}
+    \item R35: CKB allows STs to check the Leaderboard of a Battle 
+    \item R36: CKB allows EDs to check the Leaderboard of a Battle
+\end{itemize}
+
+
+\paragraph{EndBattle:}
+\begin{itemize}
+    \item R16: CKB allows EDs to assign a score manually during the consolidation stage 
+\end{itemize}
+
+
+\paragraph{ManualEvaluation:}
+\begin{itemize}
+    \item R16: CKB allows EDs to assign a score manually during the consolidation stage 
+    \item R37: CKB allows EDs to analyze the code of a STG 
+\end{itemize}
+
+
+\paragraph{AutomatedEvaluation:}
+\begin{itemize}
+    \item R32: CKB evaluates the STG's work every time a push is made on GH and calculates Battle score for the STG 
+    \item R33: CKB updates the Battle Leaderboard once a new score is registered 
+    \item R34: CKB updates the Tournament Leaderboard once a new score is registered
+    \item R44: CKB shall communicate with the GH API in order to calculate a new score every time a push action is made by a STG 
+    \item R45: CKB shall communicate with the external tool in order to calculate the score of a STG
+\end{itemize}
+
+
+\paragraph{Model:}
+\begin{itemize}
+    \item R25: CKB stores the informations about the Users 
+    \item R26: CKB shall ensure security of data
+\end{itemize}
+
+
+\paragraph{DashBoardManager:}
+\begin{itemize}
+    \item R39: CKB allows STs to check the list of ongoing Tournaments 
+    \item R40: CKB allows EDs to check the list of ongoing Tournaments
+\end{itemize}
+
+
+\paragraph{NotificationManager:}
+\begin{itemize}
+    \item R27: CKB sends notifications to every ST when a new Tournament is created 
+    \item R28: CKB sends notifications when a new Battle is created to every ST which is participating in the Tournament that the Battle is part of
+    \item R29: CKB sends notifications to a ST when he receives an invitation to be part of STG
+    \item R38: CKB sends notifications to every STs participating in the Battle once the consolidation stage ends
+    \item R43: CKB sends notifications to every ST involved in a Tournament when the Tournament is closed and the final ranks are available
+    \item R50: CKB sends notifications to the ED when he receives the permission to create Battles in a Tournament
+
+\end{itemize}
+

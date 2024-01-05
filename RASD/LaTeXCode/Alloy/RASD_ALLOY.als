@@ -168,8 +168,9 @@ fact allSubscribedStudentsArePartecipants{
 
 
 
--- Every Battle present in the Educators' battles set must have the same Educator as the creator. 
--- The Educator must also be in the set of mods or the creator of the Tournament that the Battle belongs to.
+-- Every Battle present in the Educators' battles set must have the same Educator 
+-- as the creator. The Educator must also be in the set of mods or the creator of 
+-- the Tournament that the Battle belongs to.
 fact EdBattleCorrespondence{
 	all b: Battle |
 		all e: Educator |
@@ -184,8 +185,9 @@ fact EdBattleCorrespondence{
 
 
 
--- Every battle that is part of a certain tournament, must have the belongsTo field set to that Tournament
--- and the creator of the Battle must be the creator or a moderator of the Tournament
+-- Every battle that is part of a certain tournament, must have the belongsTo 
+-- field set to that Tournament and the creator of the Battle must be the 
+-- creator or a moderator of the Tournament
 fact BattlesInTournament{
 	all b: Battle |
 		all t: Tournament |
@@ -198,7 +200,8 @@ fact BattlesInTournament{
 
 
 
--- All the Battles that are part of a Tournament must be listed in the set of Battles of the Tournament.
+-- All the Battles that are part of a Tournament must be listed in the set of 
+-- Battles of the Tournament.
 fact BattlesInTournament{
 	all b: Battle |
 		all t: Tournament |
@@ -332,6 +335,7 @@ fact GroupsForkedReposCorrespondence{
 
 
 
+
 -- Groups that are subscribed to the same Battle must have no Students in common.
 fact noCommonStudentsInDifferentGroups{
 	all disj g1, g2: Group | 
@@ -371,7 +375,8 @@ fact s_in_B_T{
 
 
 
--- All the Groups that participate to a Battle must be in the Rankings of the same Battle.
+-- All the Groups that participate to a Battle 
+-- must be in the Rankings of the same Battle.
 fact GroupInRankings{
 	all g: Group | 
 		all b: Battle | 
@@ -416,7 +421,7 @@ fact BattleGroupsCardinality{
 
 
 
---Every Student must be in a Group for every Battle he is in.
+-- Every Student must be in a Group for every Battle he is in.
 fact BattleGroupsConsistency{
 	all s: Student | 
 		all b: Battle |
@@ -438,6 +443,16 @@ fact allSubscribedStudentsArePartecipantsBattle{
 			b in s.battles
 				iff
 			#(b.rankings & s.groups) = 1
+}
+
+
+
+-- Every Group's Repository must be a Forked Repository of the Battle's Main Repository.
+fact groupReposConsistency{
+	all g: Group |
+		g.repo in g.battle.forkedRepos
+			and
+		g.repo.forkedFrom = g.battle.mainRepo
 }
 
 
@@ -475,6 +490,8 @@ fact RepoLinkedToBattle{
 
 
 
+
+
 -- No Battle can have the same Forked Repositories as another Battle.
 fact NoCommonForkedRepos{
 	no disj b1, b2: Battle | 
@@ -507,13 +524,42 @@ check assertion1 for 5
 
 
 
+
+assert assertion2{
+	all s: Student |
+		all g: Group |
+			s in g.members
+				implies
+			g in s.groups
+				and
+			g.battle in s.battles
+				and
+			g in g.battle.rankings
+				and 
+			s in g.battle.partecipants
+				and
+			#(g.battle.rankings & s.groups)=1
+				and
+			g.repo in g.battle.forkedRepos
+				and
+			g.repo.forkedFrom = g.battle.mainRepo
+				and
+			s in g.battle.belongsTo.partecipants
+				and
+			g.battle.belongsTo in s.tournaments
+}
+check assertion2 for 5
+
+
+
 -----------------------------------------------------
 --	PREDICATES					
 -----------------------------------------------------
 
 
--- In the baseWorld there is only one Tournament, one Group, two Battles, two Students and one Educator.
--- This is one of the simpliest possible worlds that can be generated.
+-- In the baseWorld there is only one Tournament, one Group, two Battles, 
+-- two Students and one Educator. This is one of the simpliest possible 
+-- worlds that can be generated.
 pred baseWorld{
 	#Tournament = 1 
 	# Group = 1
