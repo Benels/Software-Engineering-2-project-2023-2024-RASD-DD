@@ -247,7 +247,7 @@ If the link in the mail is clicked the RegistrationManager saves the new profile
 \subsection{Login}
 \begin{figure}[H]
     \begin{center}
-        \includegraphics[height=0.8\pdfpageheight]{RuntimeView/Login.png}
+        \includegraphics[height=0.8\pdfpageheight, width=0.8\linewidth]{RuntimeView/Login.png}
         \caption{Runtime view for 'Login'.}
         \label{fig:runtime_login}%
     \end{center}
@@ -581,9 +581,9 @@ CodeKataBattle will be developed over a \textbf{3-Tier architecture}, which is a
 \\
 The system is modularized over three independent tiers:
 \begin{itemize}
-    \item Presentation Tier: this is the top-level tier, that directly interacts with the Users. Its goal will be to collect the Users’ inputs and show them the outputs produced by the lower tiers. 
-    \item Application Tier: this is the middle level tier. The Application Tier processes the Users’ requests that arrive from the Presentation Tier, perform the necessary computation, even retrieving or storing data on the Data Tier, and computes that data in order to complete specific tasks requested by the Users. This tier needs to handle several requests by different Users simultaneously, while guaranteeing the security and integrity of the stored data.
-    \item Data Tier: this is the lowest level tier. The Data Tier stores, retrieves and manages data used or produced by the Application Tier by the DataBase System’s APIs.
+    \item \textbf{Presentation Tier:} this is the top-level tier, that directly interacts with the Users. Its goal will be to collect the Users’ inputs and show them the outputs produced by the lower tiers. 
+    \item \textbf{Application Tier:} this is the middle level tier. The Application Tier processes the Users’ requests that arrive from the Presentation Tier, perform the necessary computation, even retrieving or storing data on the Data Tier, and computes that data in order to complete specific tasks requested by the Users. This tier needs to handle several requests by different Users simultaneously, while guaranteeing the security and integrity of the stored data.
+    \item \textbf{Data Tier:} this is the lowest level tier. The Data Tier stores, retrieves and manages data used or produced by the Application Tier by the DataBase System’s APIs.
 \end{itemize}
 
 For a more detailed description of the tiers and their components, please refer to \ckbautoref{sec:deployment_view}.\\
@@ -593,9 +593,9 @@ The Client-Server interactions are performed through \textbf{REST APIs}, a set o
 \\
 The implementation of CKB will follow the \textbf{Model-View-Controller} pattern, which is a software design pattern that splits the software into three elements interconnected with each other: 
 \begin{itemize}
-    \item Model: contains the methods that manage the data. It provides methods for saving, retrieving and manipulating data from the database.
-    \item View: the view is the part that concerns the visual representation of the data for the final user.
-    \item Controller: acts as a connection point between the view and the model. The controller handles the users’ interactions with the view and processes the operations.
+    \item \textbf{Model:} contains the methods that manage the data. It provides methods for saving, retrieving and manipulating data from the database.
+    \item \textbf{View:} the view is the part that concerns the visual representation of the data for the final user.
+    \item \textbf{Controller:} acts as a connection point between the view and the model. The controller handles the users’ interactions with the view and processes the operations.
 \end{itemize}
 
 \section{Other Design Decisions}
