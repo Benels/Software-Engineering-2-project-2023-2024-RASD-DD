@@ -16,9 +16,9 @@ Here we represents an overview of how the entire CKB architecture is composed of
 \end{itemize}
 \noindent Server side:
 \begin{itemize}
-    \item \textbf{Web Server:} handles communication with Users, receiving and processing their inputs. Additionally, it provides load balancing for requests, distributing them among various replicas of the CKB Server.
+    \item \textbf{Web Server:} handles communication with Users, receiving and processing their inputs. Additionally, it provides load balancing for requests, distributing them among various replicas of the CKB Server. It also manages the User sessions.
     \item \textbf{CKB Server:} is the central component where interfaces are located, facilitating communication between the Web Server and databases/APIs. It serves as the primary server for the entire website and is replicated across multiple machines to handle a high volume of requests.
-    \item \textbf{DBMS Server:} stores data related to Users, Tournaments, and Battles. It acts as the repository for essential information.
+    \item \textbf{DBMS Server:} stores data related to Users, Tournaments, Group, Badges and Battles. It acts as the repository for essential information.
     \item \textbf{Mail Server:} is responsible for sending confirmation eMails when a new User registers on CKB, enhancing the User registration process.
     \item \textbf{GitHub API:} is utilized for communication with GitHub, facilitating the creation of the Battle repository and allowing STGs to fork the repository to push their code.
     \item \textbf{External Tools API:} used to automatically test the STG code when a new push is made. It is also used to retrieve the results of the tests and update the Battle dashboard.
@@ -60,16 +60,16 @@ Here we represents an overview of how the entire CKB architecture is composed of
 
 \noindent The figure above represents the complete architecture of CKB website with each components inside the CKB Server:
 \begin{itemize}
-    \item \textbf{Dashboard Manager:} pivotal component that orchestrates all communication between users and the CKB website. Users interact with CKB through the Dashboard Interface, and the Dashboard Manager directs requests to the appropriate components. It serves as the central hub for user interactions.
+    \item \textbf{Dashboard Manager:} pivotal component that orchestrates all communication between Users and the CKB website. Users interact with CKB through the Dashboard Interface, and the Dashboard Manager directs requests to the appropriate components. It serves as the central hub for user interactions.
     \item \textbf{Model:} This high-level component represents the data on the server and acts as an interface to the database server. It acts as a mask to the database server, and every component needs to interface with it to access data from the DBMS through the DBMS API.
-    \item \textbf{Evaluation Manager:} component that handles the code evaluation both when a new push is made by a STG on GH or when an ED wants to manually evaluate a STG code during the consolidation stage of a Battle, more detailed information in the following section in \ckbautoref{fig:evaluation_manager}. This component communicates with the Dashboard manager through the Evaluation Interface, with the Model component through the Model Interface to add and modify the STG evaluation in the DBMS, with GitHub through the GitHub API when a new push is made by a STG and with the External Tools through the External Tools API to automatically evaluate a STG code.
-    \item \textbf{Registration Manager:} component that handles the registration of a new User. When a new User wants to create an account on CKB system it communicates with the Dashboard Manager that forwards the request to the Registration Manager through the registration interface. Then the Registration Manager handles the request and communicates through the Mail API to the Mail Server, to send a confirmation mail to the new User, and through the Model Interface to the Model component to add the new User’s information to the DBMS. This component also gives the permission to the User that registered as an Educator to create Tournaments, Battles and Badges.
+    \item \textbf{Evaluation Manager:} component that handles the code evaluation both when a new push is made by a STG on GH or when an ED wants to manually evaluate a STG code during the consolidation stage of a Battle, more detailed information in \ckbautoref{fig:evaluation_manager}. This component communicates with the Dashboard manager through the Evaluation Interface, with the Model component through the Model Interface to add and modify the STG evaluation in the DBMS, with GitHub through the GitHub API when a new push is made by a STG and with the External Tools through the External Tools API to automatically evaluate a STG code.
+    \item \textbf{Registration Manager:} component that handles the registration of a new User. When a new User wants to create an account on CKB system he communicates with the Dashboard Manager that forwards the request to the Registration Manager through the registration interface. Then the Registration Manager handles the request and communicates through the Mail API to the Mail Server, to send a confirmation mail to the new User, and through the Model Interface to the Model component to add the new User’s information to the DBMS. This component also gives the permission to the User that registered as an Educator to create Tournaments, Battles and Badges.
     \item \textbf{Login Manager:} component that handles the login process for registered Users. When a User attempts to log in, the Dashboard Manager forwards the request to the Login Manager through the Login Interface. The Login Manager communicates with the Model component through the Model interface to retrieve the User's data from the DBMS.
-    \item \textbf{Badge Manager:} component that handles the Badges creation and modification when a new Tournament is created. When the ED creates a new Tournament, the Badge Manager component receives a request from the Tournament Manager through the badge interface and lets the ED create new Badges or modify existing ones, more details in \ckbautoref{fig:badge_manager}. The new Badges are added in the DBMS through the communication between the Badge Manager and the Model component through the Model Interface.
-    \item \textbf{Profile Manager:} component that allows User profile search and profile open in both Tournament and Battle dashboard.  When a User initiates a search, the Dashboard Manager forwards the request to the Profile Manager using the Profile Interface. The Profile Manager communicates with the Model component through the Model Interface to retrieve relevant information from the DBMS.This component also manages the open profile operation within a Tournament or Battle dashboard, more detail in \ckbautoref{fig:profile_manager}.
-    \item \textbf{Tournament Manager:} component that manages all user actions related to Tournaments; more detailed information in \ckbautoref{fig:tournament_manager}. It communicates with the Dashboard Manager through the Tournament Interface, with the Notification Manager through the NotifTB Interface when a new Tournament is created and with the Model component through the Model Interface to add or retrieve data from the DBMS.
-    \item \textbf{Battle Manager:} component that manages all user actions related to Battles; more detailed information in \ckbautoref{fig:battle_manager}. It communicates with the Dashboard Manager through the battle interface, with the Notification Manager through the NotifTB Interface when a new Battle is created or when a ST invites other STs to join his STG and with the Model component through the Model Interface to add or retrieve data from the DBMS. It also communicates with GitHub through the GitHub API to create repositories and upload code katas for new Battles.
-    \item \textbf{Notification Manager:} component that handles each notification that has to be sent to the Users in particular when a new Tournament is created it sends a notification to all STs registered in CKB, when a new Battle is created it sends a notification to all the STs that have joined that specific Tournament, when a ST invites another ST to join his STG for a battle a notification is sent to the second ST and when a Tournaments is closed and the score are updated it sends a notification to all the STs that have joined the Tournament. All the communication from the Battle Manager and the Tournament Manager with the Notification manager is made through the NotifTB interface and the communication with the WebApp is made through the Notification Interface.
+    \item \textbf{Badge Manager:} component that handles the Badges creation and modification when a new Tournament is created. When the ED creates a new Tournament, the Badge Manager component receives a request from the Tournament Manager through the Badge Interface and lets the ED create new Badges or modify existing ones, more details in \ckbautoref{fig:badge_manager}. The new Badges are added in the DBMS through the communication between the Badge Manager and the Model component through the Model Interface.
+    \item \textbf{Profile Manager:} component that allows User profile search and profile open in both Tournament and Battle dashboard. When a User initiates a search, the Dashboard Manager forwards the request to the Profile Manager using the Profile Interface. The Profile Manager communicates with the Model component through the Model Interface to retrieve relevant information from the DBMS.This component also manages the open profile operation within a Tournament or Battle dashboard, more detail in \ckbautoref{fig:profile_manager}.
+    \item \textbf{Tournament Manager:} component that manages all Users' actions related to Tournaments; more detailed information in \ckbautoref{fig:tournament_manager}. It communicates with the Dashboard Manager through the Tournament Interface, with the Notification Manager through the NotifTB Interface when a new Tournament is created or closed and with the Model component through the Model Interface to add or retrieve data from the DBMS.
+    \item \textbf{Battle Manager:} component that manages all Users' actions related to Battles; more detailed information in \ckbautoref{fig:battle_manager}. It communicates with the Dashboard Manager through the Battle iIterface, with the Notification Manager through the NotifTB Interface when a new Battle is created or when a ST invites other STs to join his STG and with the Model component through the Model Interface to add or retrieve data from the DBMS. It also communicates with GitHub through the GitHub API to create repositories and upload code katas for new Battles.
+    \item \textbf{Notification Manager:} component that handles each notification that has to be sent to the Users in particular when a new Tournament is created it sends a notification to all STs registered in CKB, when a new Battle is created it sends a notification to all the STs that have joined that specific Tournament, when a ST invites another ST to join his STG for a battle a notification is sent to the second ST and when a Tournaments is closed and the score are updated it sends a notification to all the STs that have joined the Tournament. All the communication from the Battle Manager and the Tournament Manager with the Notification Manager is made through the NotifTB Interface and the communication with the WebApp is made through the Notification Interface.
 \end{itemize}
 
 \subsection{Evaluation Manager}
@@ -104,7 +104,7 @@ Here we represents an overview of how the entire CKB architecture is composed of
 \noindent The Badge Manager is the component used by the CKB system to handle the creation and the modification of the Badges during the Tournament creation:
 
 \begin{itemize}
-    \item \textbf{Create Badge component:} activated when an ED intends to create a new Badge for a newly generated Tournament. The initiation of this process is through the Create Tournament component, a sub-component of the Tournament Manager. The Create Tournament component, via the Badge Interface, sends a request to the Create Badge component, allowing the ED to define the Badge with its specific settings and parameters, such as the criteria STs must fulfill to obtain it. Following the Badge creation, the Create Badge component, through the Model Interface, communicates with the Model component, ensuring the newly created Badge is added to the DBMS.
+    \item \textbf{Create Badge component:} activated when an ED intends to create a new Badge for a newly created Tournament. The initiation of this process is through the Create Tournament component, a sub-component of the Tournament Manager. The Create Tournament component, via the Badge Interface, sends a request to the Create Badge component, allowing the ED to define the Badge with its specific settings and parameters, such as the criteria STs must fulfill to obtain it. Following the Badge creation, the Create Badge component, through the Model Interface, communicates with the Model component, ensuring the newly created Badge is added to the DBMS.
     \item \textbf{Modify Badge component:} engaged when an ED aims to modify an existing Badge that was previously created for another Tournament. The process is initiated by the Create Tournament component, a sub-component of the Tournament Manager. The Create Tournament component, via the Badge Interface, sends a request to the Modify Badge component, allowing the ED to adjust parameters associated with an existing Badge, specifying new criteria for STs to fulfill. Once the Badge is successfully modified, the Modify Badge component, through the Model Interface, communicates with the Model component. This communication ensures that the updated Badge information is reflected in the DBMS.
 \end{itemize}
 
@@ -119,10 +119,11 @@ Here we represents an overview of how the entire CKB architecture is composed of
     \end{center}
 \end{figure}
 
-\noindent The Badge Manager is the component used by the CKB system to handle the research of a User’s profile and the visualization of another User’s profile when the User clicks on a nickname within the Tournament or Battle dashboard:
+\noindent The Profile Manager is the component used by the CKB system to handle the research of a User’s profile and the visualization of another User’s profile when the User clicks on a nickname within the Tournament or Battle dashboard:
+
 \begin{itemize}
-    \item \textbf{Search component:} responsible for managing the profile search process when a User enters a nickname or keyword into the search bar across various CKB pages. When a User initiates a search by entering another User's nickname or a relevant keyword, the Dashboard Manager communicates with the Search component through the Profile Interface. The Search component then forwards the search request to the Model component via the Model Interface. Subsequently, the Model component retrieves the profile information from the DBMS. The retrieved information is then presented to the User, allowing them to visualize the searched User's profile.
-    \item \textbf{Open Profile component:} manages the retrieval of a User's profile when a User clicks on a nickname within a Tournament or Battle dashboard. When a User clicks on another User's nickname in a Tournament or Battle dashboard, the Dashboard Manager communicates with the View component within the Tournament or Battle Manager. The View component forwards the request to the Open Profile component through the Open Interface. The Open Profile component, in turn, communicates with the Model component via the Model Interface. This communication with the Model component facilitates the retrieval of the User's profile information from the DBMS. The retrieved profile information is then presented to the User, allowing them to view the selected User's profile.
+    \item \textbf{Search component:} responsible for managing the profile search process when a User enters a nickname or keyword into the search bar across various CKB pages. When a User initiates a search by entering another User's nickname or a relevant keyword, the Dashboard Manager communicates with the Search component through the Profile Interface. The Search component then forwards the search request to the Model component via the Model Interface. Subsequently, the Model component retrieves the profile information from the DBMS. The retrieved information is then presented to the User, allowing him to visualize the searched User's profile.
+    \item \textbf{Open Profile component:} manages the retrieval of a User's profile when a User clicks on a nickname within a Tournament or Battle dashboard. When a User clicks on another User's nickname in a Tournament or Battle dashboard, the Dashboard Manager communicates with the View component within the Tournament or Battle Manager. The View component forwards the request to the Open Profile component through the Open Interface. The Open Profile component communicates with the Model component via the Model Interface. This communication with the Model component facilitates the retrieval of the User's profile information from the DBMS. The retrieved profile information is then presented to the User, allowing them to view the selected User's profile.
 \end{itemize}
 
 \subsection{Tournament Manager}
@@ -139,9 +140,9 @@ Here we represents an overview of how the entire CKB architecture is composed of
 \noindent The Tournament Manager is the component used by the CKB system to handle every aspect of the Tournament, from the creation to the end going through the Join and the View sub-components:
 
 \begin{itemize}
-    \item \textbf{Create Tournament component:} utilized when an ED initiates the creation of a new Tournament. The ED communicates with the Dashboard Manager through the Dashboard Interface, which then directs the request to the Create Tournament component. This component sends back a creation form for the ED to fill. Once completed, the Create Tournament component communicates the data to the Model component through the Model Interface, adding the information to the DBMS via the DBMS API. If the ED grants permissions to other EDs, the Create Tournament component communicates with the Notification Manager through the NotifTB Interface to notify the specified EDs. Additionally, notifications are sent to all registered STs via the Notification Manager, informing them of the new tournament. Throughout the tournament creation process, the Create Tournament component also communicates with the Badge Manager through the Badge Interface, allowing the ED to create or modify Badges associated with the tournament.
-    \item \textbf{Join Tournament component:} activated when an ST wishes to join a tournament. The ST communicates with the Dashboard Manager through the Dashboard Interface, and the request is forwarded to the Join Tournament component. This component communicates through the Model Interface with the Model component to add the ST to the participant list in the DBMS through the DBMS API. 
-    \item \textbf{View Tournament component:} used by the CKB system to let the User visualize the Tournament page with all the information, like the available Battles and the Dashboard with the STs score . When a User wants to search a Tournament it writes the Tournament name or a keyword of it in search bar and it communicates with the Dashboard Manager through the Dashboard Interface that forwards the request to the View Tournament component that communicates with the Model component through the model interface to retrieve all the information from the DBMS through the DBMS API and let the User visualize the Tournament page. the same communication is made when a User clicks on a Tournament name in another User’s profile or in his main dashboard page. This component also manages the open profile operation when a User wants to visualize another User’s profile from the Tournament dashboard; when a User clicks on another User’s nickname in the Tournament dashboard the Dashboard Manager communicates through the Dashboard Interface with the View Tournament component that forwards the request to the the Profile Manager through the Open Interface.
+    \item \textbf{Create Tournament component:} utilized when an ED initiates the creation of a new Tournament. The ED communicates with the Dashboard Manager through the Dashboard Interface, which then directs the request to the Create Tournament component. This component sends back a creation form for the ED to fill. Once completed, the Create Tournament component communicates the data to the Model component through the Model Interface, adding the information to the DBMS via the DBMS API. If the ED grants permissions to other EDs, the Create Tournament component communicates with the Notification Manager through the NotifTB Interface to notify the specified EDs. Additionally, notifications are sent to all the STs via the Notification Manager, informing them of the new Tournament. Throughout the Tournament creation process, the Create Tournament component also communicates with the Badge Manager through the Badge Interface, allowing the ED to create or modify Badges associated with the Tournament.
+    \item \textbf{Join Tournament component:} activated when an ST wishes to join a Tournament. The ST communicates with the Dashboard Manager through the Dashboard Interface, and the request is forwarded to the Join Tournament component. This component communicates through the Model Interface with the Model component to add the ST to the Tournament participant list in the DBMS through the DBMS API. 
+    \item \textbf{View Tournament component:} used by the CKB system to let the User visualize the Tournament page with all the information, like the available Battles and the Dashboard with the STs score. When a User wants to search a Tournament it writes the Tournament name or a keyword in the search bar and it communicates with the Dashboard Manager through the Dashboard Interface that forwards the request to the View Tournament component that communicates with the Model component through the Model Interface to retrieve all the information from the DBMS through the DBMS API and let the User visualize the Tournament page. The same communication is made when a User clicks on a Tournament name in another User’s profile or in his main dashboard page. This component also manages the open profile operation when a User wants to visualize another User’s profile from the Tournament dashboard; when a User clicks on another User’s nickname in the Tournament dashboard the Dashboard Manager communicates through the Dashboard Interface with the View Tournament component that forwards the request to the the Profile Manager through the Open Interface.
     \item \textbf{End Tournament component:} triggered when an ED decides to close a Tournament, preventing further ST participation and ED creation of Battles within it. The ED communicates with the Dashboard Manager through the Dashboard Interface, which forwards the request to the Close Tournament component. The Close Tournament component communicates with the Model component through the Model Interface, modifying the Tournament's status to make it non-joinable in the DBMS through the DBMS API. Additionally, the Close Tournament component communicates through the NotifTB Interface to the Notification Manager, which sends notifications to all STs who participated in the Tournament, informing them that final scores are ready for viewing.
 \end{itemize}
 
@@ -159,11 +160,11 @@ Here we represents an overview of how the entire CKB architecture is composed of
 \noindent The Battle Manager is the component used by the CKB system to handle every aspect of the Battle, from the creation to the end going through the Join, the View and the Create Group sub-components:
 
 \begin{itemize}
-    \item \textbf{Create Battle component:} engaged when an ED wishes to create a new Battle within a Tournament. The ED communicates with the Dashboard Manager through the Dashboard Interface, forwarding the request to the Create Battle component. The Create Battle component responds by sending a creation form to be filled by the ED. Upon completion, the component communicates the data to the Model component through the Model Interface, adding the information to the DBMS through the DBMS API. Additionally, the Create Battle component communicates with the Notification Manager through the NotifTB Interface, notifying all STs who have joined the relevant Tournament about the new Battle. It also collaborates with the End Battle component to create a timer, ensuring that after the consolidation stage concludes, the End Tournament component notifies all STs about the availability of final grades. The Create Battle component also communicates with GitHub through the GitHub API to create a new repository and upload the code kata for the battle. This repository is later forked by all STGs to submit their code.
-    \item \textbf{Join Battle component:} activated when an ST intends to join a Battle. The ST communicates with the Dashboard Manager through the Dashboard Interface, and the request is forwarded to the Join Battle component. The Join Battle component, through the Model Interface, communicates with the Model component, adding the ST to the participant list of the battle in the DBMS through the DBMS API.
-    \item \textbf{View Battle component:} used by the CKB system to let the User visualize the Battle page with the dashboard including all the STGs score. When a User wants to visualize the  Battle page it communicates with the Dashboard Manager through the Dashboard Interface that forwards the request to the View Battle component that communicates with the Model component through the Model Interface to retrieve all the information from the DBMS through the DBMS API and finally let the User visualize the Battle page. This component also manages the open profile operation when a User wants to visualize another User’s profile from the Battle dashboard; when a User clicks on another User’s nickname in the Battle dashboard the Dashboard Manager communicates through the Dashboard Interface with the View Tournament component that forwards the request to the the Profile Manager through the Open Interface.
-    \item \textbf{Create Group component} engaged when STs want to create a new STG for a Battle. After joining a Battle before the registration deadline expires, an ST can create an STG to participate in the battle. The ST communicates with the Dashboard Manager through the Dashboard Interface, initiating a request to create a new STG. The request is forwarded to the Create Group component through the Battle Interface, allowing the ST to decide the STG name and invite other STs. Notifications are sent through the Notification Manager, which communicates with the Battle Manager through the NotifTB interface and with the WebApp through the notification interface. When the STG is confirmed, the Create Group component communicates through the Model Interface with the Model component to add the newly created STG to the DBMS through the DBMS API.
-    \item \textbf{End Battle component:} activated to notify all STGs that the final scores of the battle are available. When the consolidation stage concludes, and the timer created by the Create Battle component expires, the End Battle component communicates through the Model Interface with the Model component, updating the scores in the DBMS through the DBMS API. It also notifies all participating STs through the Notification Manager, communicating through the NotifTB Interface, that the final scores are accessible on the Battle page. Communication between the Notification Manager and the WebApp is facilitated through the Notification Interface.
+    \item \textbf{Create Battle component:} engaged when an ED wishes to create a new Battle within a Tournament. The ED communicates with the Dashboard Manager through the Dashboard Interface, forwarding the request to the Create Battle component. The Create Battle component responds by sending a creation form to be filled by the ED. Upon completion, the component communicates the data to the Model component through the Model Interface, adding the information to the DBMS through the DBMS API. Additionally, the Create Battle component communicates with the Notification Manager through the NotifTB Interface, notifying all STs who have joined the relevant Tournament about the new Battle. It also collaborates with the End Battle component to create a timer, ensuring that after the consolidation stage concludes, the End Tournament component notifies all STs about the availability of final grades. The Create Battle component also communicates with GitHub through the GitHub API to create a new repository and upload the code kata for the Battle. This repository is later forked by all STGs to submit their code.
+    \item \textbf{Join Battle component:} activated when an ST intends to join a Battle. The ST communicates with the Dashboard Manager through the Dashboard Interface, and the request is forwarded to the Join Battle component. The Join Battle component, through the Model Interface, communicates with the Model component, adding the ST to the participant list of the Battle in the DBMS through the DBMS API.
+    \item \textbf{View Battle component:} used by the CKB system to let the User visualize the Battle page with the dashboard including all the STGs score. When a User wants to visualize the Battle page it communicates with the Dashboard Manager through the Dashboard Interface that forwards the request to the View Battle component that communicates with the Model component through the Model Interface to retrieve all the information from the DBMS through the DBMS API and finally let the User visualize the Battle page. This component also manages the open profile operation when a User wants to visualize another User’s profile from the Battle dashboard; when a User clicks on another User’s nickname in the Battle dashboard the Dashboard Manager communicates through the Dashboard Interface with the View Tournament component that forwards the request to the the Profile Manager through the Open Interface.
+    \item \textbf{Create Group component} engaged when STs want to create a new STG for a Battle. After joining a Battle before the registration deadline expires, an ST can create an STG to participate in the battle. The ST communicates with the Dashboard Manager through the Dashboard Interface, initiating a request to create a new STG. The request is forwarded to the Create Group component through the Battle Interface, allowing the ST to decide the STG name and invite other STs. Notifications are sent through the Notification Manager, which communicates with the Battle Manager through the NotifTB interface and with the WebApp through the Notification Interface. When the STG is confirmed, the Create Group component communicates through the Model Interface with the Model component to add the newly created STG to the DBMS through the DBMS API.
+    \item \textbf{End Battle component:} activated to notify all STGs that the final scores of the Battle are available. When the consolidation stage concludes, and the timer created by the Create Battle component expires, the End Battle component communicates through the Model Interface with the Model component, updating the scores in the DBMS through the DBMS API. It also notifies all participating STs through the Notification Manager, communicating through the NotifTB Interface, that the final scores are accessible on the Battle page. Communication between the Notification Manager and the WebApp is facilitated through the Notification Interface.
 \end{itemize}
 
 
@@ -179,42 +180,217 @@ In this section it will be shown the Deployment diagram of the CKB system, follo
     \end{center}
 \end{figure}
 
-\paragraph{Personal Computer: }
-Students and Educators can access to the system by using any type of personal computer through their favorite web browser. The browser will communicate with the web server. Users can also use every device that allows them to search on a web browser, such as mobile phone, tablet, ecc.
+\paragraph{Personal Computer:}
+STs and EDs can access to the system by using any type of personal computer through their favorite web browser. The browser will communicate with the Web Server. Users can also use every device that allows them to search on a web browser, such as mobile phone, tablet, ecc.
 
-\paragraph{Web Server: }
-The Web Server provides access to the application server’s service to all the user that reaches the system through a web browser. In particular, the web server does not execute any business logic, but it simply does some load balancing on the receive requests from the client to the various application servers, in order to handle large user traffic.
+\paragraph{Web Server:}
+The Web Server provides access to the Application Server’s service to all the User that reaches the system through a web browser. In particular, the Web Server does not execute any business logic, but it simply does some load balancing on the receive requests from the client to the various Application Servers, in order to handle large User traffic.\\
 It also provides to the client's browsers the HTML, JSON, Javascript and CSS files for making the rendering of the pages.
 
-\paragraph{Firewall: }
+\paragraph{Firewall:}
 It provides a way to limit the attack surface of any potential intruder by providing strict access rules.
 
-\paragraph{Application Server: }
-The application server contains the business logic of the entire system. Moreover, it communicates to the client through HTTPS protocol managed by the Web Server. The various requests coming from the Web Server are routed to the corresponding module thanks to the Dashboard Manager.
-Furthermore, it communicates to the DataBase Server through the model gateway. This node is replicated in order to handle large user traffic.
+\paragraph{Application Server:}
+The application server contains the business logic of the entire system. Moreover, it communicates to the client through HTTPS protocol managed by the Web Server. The various requests coming from the Web Server are routed to the corresponding module thanks to the Dashboard Manager.\\
+Furthermore, it communicates to the Database Server through the model gateway. This node is replicated in order to handle large user traffic.
 
-\paragraph{Database Server: }
-All the Data about Tournaments, Battles, Users, Groups and Badges are stored into the Database Server and managed by MySQL.
-The various Application Servers can retrieve information on this node through the module model and the database driver.
+\paragraph{Database Server:}
+All the Data about Tournaments, Battles, Users, Groups and Badges are stored into the Database Server and managed by MySQL.\\
+The various Application Servers can retrieve information on this node through the model module and the database driver.
 
-\paragraph{Email Server: }
-After the registration, users have to click on the link sent by email to confirm their profile. The Application Server, immediately after the registration, contacts the Email Server through SMTP protocol for sending this link.
+\paragraph{Email Server:}
+After the registration, Users have to click on the link sent by eMail to confirm their profile. The Application Server, immediately after the registration, contacts the Email Server through SMTP protocol to send the confirmation eMail to the User.
 
-\paragraph{Github Server: }
-The dialogs with the Application Server node is during the different battle phases: when the ED creates a new battle also a github repository within the CodeKataBattle is created and it is subsequently forked from the various groups during the battle.
-The Github Server is also periodically contacted for retrieving new committed code on the main branch of the different groups repositories.
-For those scopes, the Application Server can communicate with the Github Server with the SSH protocol.
-
-
-\paragraph{Tool Server: }
-With the External Tool APIs the Application Server can contact the Tool Server and pass it the code retrieved from the Github Server for being evaluated.
+\paragraph{Github Server:}
+The dialogs with the Application Server node occur during the different Battle phases: when the ED creates a new Battle also a GitHub repository is created containing the code kata of the Battle and it is subsequently forked from the various STG.\\
+The GitHub Server is also periodically contacted for retrieving newly committed code on the main branch of the different STGs' repositories.
+For those scopes, the Application Server shall communicate with the Github Server through the SSH protocol.
 
 
+\paragraph{Tool Server:}
+With the External Tool APIs the Application Server can contact the Tool Server and pass to it the code retrieved from the Github Server to be tested and evaluated.
+
+\newpage
 \section{Runtime View}
 \label{sec:runtime_view}%
 
 \section{Component Interfaces}
 \label{sec:component_interfaces}%
+\begin{itemize}
+    \item \textbf{\textbf{Login}}
+    \begin{itemize}
+
+\item Login(\textit{String} nickname, \textit{String} password)
+\end{itemize}
+    \item \textbf{\textbf{SearchProfile}}
+
+
+    \begin{itemize}
+
+\item SearchUser(\textit{String} keyword)
+\end{itemize}
+
+
+    \item \textbf{\textbf{OpenProfile}}
+    \begin{itemize}
+
+\item SelectUser(\textit{String} nickname)
+
+\end{itemize}
+
+
+    \item \textbf{\textbf{RegistrationManager}}
+
+\begin{itemize}
+        \item CreateAnAccount()
+        \item Registration(\textit{String} name, \textit{String} surname, \textit{String} nickname, \textit{String} mail, \textit{String} password, \textit{Boolean}  ED tick)
+        \item Registration(\textit{String} name, \textit{String} surname, \textit{String} nickname, \textit{String} mail, \textit{String} password)
+\end{itemize}
+
+    \item \textbf{\textbf{Create Tournament}}
+
+\begin{itemize}
+        \item CreateATournament()
+        \item TournamentInformation(\textit{String} tournament name, \textit{Date} subscription deadline, \textit{List\textless Educator\textgreater}  list of educators, \textit{Boolean} create badge tick)
+        \item BadgeDetails(\textit{String} tournament name, \textit{String} badge name, \textit{String} description, \textit{String} rules of badge)
+        \item SelectedBadge(\textit{String} tournament name, \textit{String} badge name)
+        \item ChangeBadge(\textit{String} tournament name, \textit{String} badge name, \textit{String} description, \textit{String} rules of badge)
+\end{itemize}
+
+    \item \textbf{\textbf{Join Tournament}}
+\begin{itemize}
+        \item JoinTournament(\textit{String} tournament name)
+\end{itemize}
+
+    \item \textbf{\textbf{View Tournament}}
+
+\begin{itemize}
+        \item GetTournamentInformation(\textit{String} tournament name)
+        \item SearchTournament(\textit{String} keyword)
+\end{itemize}
+
+    \item \textbf{\textbf{CreateBadge}}
+\begin{itemize}
+
+    \item BadgeDetails(\textit{String} tournament name, \textit{String} badge name, \textit{String} description, \textit{String} rules of badge)
+\end{itemize}
+
+    \item \textbf{\textbf{ModifyBadge}}
+
+\begin{itemize}
+        \item SelectedBadge(\textit{String} tournament name, \textit{String} badge name)
+        \item ChangeBadge(\textit{String} tournament name, \textit{String} badge name, \textit{String} description, \textit{String} rules of badge)
+\end{itemize}
+
+    \item \textbf{\textbf{Model}}
+
+\begin{itemize}
+        \item CheckCredentials(\textit{String} nickname, \textit{String} password)
+        \item GetEducatorTournaments(\textit{String} nickname)
+        \item GetStudentTournaments(\textit{String} nickname)
+        \item GetNewBattlesFromTournaments(\textit{List\textless Tournament\textgreater} list tournament, \textit{String} nickname)
+        \item GetLastTournaments()
+        \item GetRepositoryLink(\textit{String} tournament name, \textit{String} battle name, \textit{String} group name)
+        \item GetAdditionalConfiguration(\textit{String} tournament name, \textit{String} battle name)
+        \item SaveScore(\textit{Int}  score, \textit{String} tournament name, \textit{String} battle name, \textit{String} group name)
+        \item CheckNickname(\textit{String} nickname)
+        \item CheckMail(\textit{String} mail)
+        \item SaveNewUserCredentials(\textit{String} name, \textit{String} surname, \textit{String} nickname, \textit{String} mail, \textit{String} password, \textit{Boolean}  ED tick)
+        \item GetAllStudents()
+        \item GetUser(\textit{String} nickname)
+        \item GetUsers(\textit{String} keyword)
+        \item GetDeadlineExpiration(\textit{String} tournament name)
+        \item GetDeadlineExpiration(\textit{String} tournament name, \textit{String} battle name)
+        \item GetRegistrationDeadline(\textit{String} tournament name, \textit{String} battle name)
+        \item CheckBadgeNameDoesNotExists(\textit{String} tournament name, \textit{String} badge name)
+        \item GetAllEducatorBadge(\textit{String} nickname)
+        \item SaveNewBadge(\textit{String} tournament name, \textit{String} badge name, \textit{String} description, \textit{String} rules of badge)
+        \item CheckBadgeBelongsToEducator(\textit{String} nickname, \textit{String} badge name)
+        \item SaveChangedBadge(\textit{String} tournament name, \textit{String} badge name, \textit{String} description, \textit{String} rules of badge)
+        \item GetTournamentName(\textit{String} tournament name)
+        \item GetTournamentInformation(\textit{String} tournament name)
+        \item GetTournamentFromSearch(\textit{String} keyWord)
+        \item GetStudentTournaments(\textit{String} nickname)
+        \item GetLastTournaments()
+        \item SaveStudentAsTournamentPartecipant(\textit{String} tournament name, \textit{String} nickname)
+        \item GetAllStudentsIntheTournament(\textit{String} tournament name)
+        \item CheckStudentAlreadyJoinedTournament(\textit{String} tournament name, \textit{List\textless String\textgreater} list nicknames)
+        \item CheckStudentAlreadyJoinedTouenament(\textit{String} tournament name, \textit{String} nickname)
+        \item CheckGroupAlreadyJoined(\textit{String} tournament name, \textit{String} battle name, \textit{String} group name)
+        \item CheckGroupNumber(\textit{String} tournament name, \textit{String} battle name, \textit{String} group name)
+        \item SaveGroupIntheBattleList(\textit{String} tournament name, \textit{String} battle name, \textit{String} group name)
+        \item CheckBattleName(\textit{String} tournament name, \textit{String} battle name)
+        \item GetBattleInformation(\textit{String} tournament name, \textit{String} battle name)
+        \item CheckGroupName(\textit{String} tournament name, \textit{String} battle name, \textit{String} group name)
+        \item CheckGroupParticipants(\textit{String} tournament name, \textit{String} battle name, \textit{String} group name)
+        \item AddStudentToGroup(\textit{String} nickname, \textit{String} tournament name, \textit{String} battle name, \textit{String} group name)
+        \item CreateNewBattle(\textit{String} tournament name, \textit{String} battle name, \textit{String} code kata, \textit{Int}  minimum member per group, \textit{Int}  maximum member per group, \textit{Date} registration deadline, \textit{Date} final submission deadline, \textit{List\textless String\textgreater} list additional configuration for scoring, \textit{String} repository link)
+        \item CheckStudentAlreadyJoinedBattle(\textit{String} battle name, \textit{String} tournament name, \textit{String} nickname)
+        \item GetEducatorsName(\textit{List\textless Educators\textgreater} list of educators)
+        \item SaveNewTournament(\textit{String} tournament name, \textit{String} subscription deadline, \textit{List\textless Educators\textgreater} list of educators)
+\end{itemize}
+
+    \item \textbf{\textbf{CreateBattle}}
+
+\begin{itemize}
+        \item NewBattle(\textit{String} tournament name)
+        \item CreateBattle(\textit{String} battle name, \textit{String} code kata, \textit{Int}  minimum member per group, \textit{Int}  maximum member per group, \textit{Date} registration deadline, \textit{Date} final submission deadline, \textit{List\textless String\textgreater} list additional configuration for scoring)
+\end{itemize}
+
+\end{itemize}
+
+\begin{itemize}
+    \item \textbf{\textbf{JoinBattle}}
+\begin{itemize}
+    \item ChooseBattle(\textit{String} tournament name, \textit{String} battle name)
+    \end{itemize}
+
+
+    \item \textbf{\textbf{CreateGroup}}
+
+\begin{itemize}
+        \item CreateGroupAndInvitation(\textit{String} tournament name, \textit{String} battle name, \textit{String} group name, \textit{List\textless String\textgreater} list nicknames)
+        \item acceptInvitation(Student student, \textit{String} tournament name, \textit{String} battle name, \textit{String} group name)
+        \item rejectInvitation(Student student, \textit{String} tournament name, \textit{String} battle name, \textit{String} group name)
+        \item JoinBattle(\textit{String} tournament name, \textit{String} battle name, \textit{String} group name)
+\end{itemize}
+
+    \item \textbf{\textbf{ViewBattle}}
+    \begin{itemize}
+        \item GetBattleInformation(\textit{String} tournament name, \textit{String} battle name)
+\end{itemize}
+
+    \item \textbf{\textbf{EndBattle}}
+\begin{itemize}
+        \item StartFinalBattleTimer(\textit{String} tournament name, \textit{String} battle name, \textit{Date} final submission deadline)
+\end{itemize}
+
+    \item \textbf{\textbf{NotificationManager}}
+
+\begin{itemize}
+        \item ChosenEducatorNotification(\textit{String} nickname, \textit{String} tournament name)
+        \item NewBattleNotification(\textit{String} nickname, \textit{String} tournament name, \textit{String} battle name)
+        \item NewTournamentNotification(\textit{String} nickname, \textit{String} tournament name)
+        \item SendInvitation(\textit{String} nickname, \textit{String} tournament name, \textit{String} battle name, \textit{String} group name)
+\end{itemize}
+
+    \item \textbf{\textbf{EvaluationManager}}
+
+\begin{itemize}
+        \item AnalyzeSourceCode(\textit{String} tournament name, \textit{String} battle name, \textit{String} group name)
+        \item ScoreAssignment(\textit{Int}  score, \textit{String} tournament name, \textit{String} battle name, \textit{String} group name)
+\end{itemize}
+
+    \item \textbf{\textbf{DashboardManager}} (contains all the interfaces belonging to other managers, apart from NotificationManager and Model)
+
+    \item \textbf{\textbf{WebServer}} (contains all the interfaces belonging to other managers, apart from NotificationManager and Model)
+    \begin{itemize}
+        \item GetSessionFromUser()
+        \item AddUserToTheSession(\textit{String} nickname, \textit{String} password)
+\end{itemize}
+
+\end{itemize}
+
 
 \section{Selected Architectural Styles and Patterns}
 \label{sec:selected_Srchitectural_styles_patterns}%
@@ -223,15 +399,15 @@ CodeKataBattle will be developed over a \textbf{3-Tier architecture}, which is a
 \\
 The system is modularized over three independent tiers:
 \begin{itemize}
-    \item Presentation Tier: this is the top-level tier, that directly interacts with the users. Its goal will be to collect the users’ inputs and show them the outputs produced by the lower tiers. 
-    \item Application Tier: this is the middle level tier. The application tier processes the users’ requests that arrive from the presentation tier, perform the necessary computation, even retrieving or storing data on the Data tier, and computes that data in order to complete specific tasks requested by the users. This tier needs to handle several requests by different users simultaneously, while guaranteeing the security and integrity of the stored data.
-    \item Data Tier: this is the lowest level tier. The Data tier stores, retrieves and manages data used or produced by the application tier by the DataBase System’s APIs.
+    \item Presentation Tier: this is the top-level tier, that directly interacts with the Users. Its goal will be to collect the Users’ inputs and show them the outputs produced by the lower tiers. 
+    \item Application Tier: this is the middle level tier. The Application Tier processes the Users’ requests that arrive from the Presentation Tier, perform the necessary computation, even retrieving or storing data on the Data Tier, and computes that data in order to complete specific tasks requested by the Users. This tier needs to handle several requests by different Users simultaneously, while guaranteeing the security and integrity of the stored data.
+    \item Data Tier: this is the lowest level tier. The Data Tier stores, retrieves and manages data used or produced by the Application Tier by the DataBase System’s APIs.
 \end{itemize}
 
-For a more detailed description of the tiers and their components, please refer to \hyperref[sec:deployment_view]{\textit{section 2.3}}.\\
-The behavior of the system will be mostly as a \textbf{Client-Server architecture}, in which the Client represents the front-end user interface, as it is the connection point between the final users of the system and the system itself, meanwhile the Server represents the backend platform, as it elaborates the users’ requests, computes and shows the answers. In a pure Client-Server architecture, the server is always the one to make the request, while the server is a passive element, which handles and elaborates the requests of the client and returns the answers to them. In some cases, as when the process of sending the Notifications or the interaction with the external tools, the server needs to perform operations without being invoked by the client first, which makes it an active component and having a moer Event Driven behavior.
+For a more detailed description of the tiers and their components, please refer to \ckbautoref{sec:deployment_view}.\\
+The behavior of the system will be mostly as a \textbf{Client-Server architecture}, in which the Client represents the front-end user interface, as it is the connection point between the final Users of the system and the system itself, meanwhile the Server represents the backend platform, as it elaborates the Users’ requests, computes and shows the answers. In a pure Client-Server architecture, the Server is always the one to make the request, while the server is a passive element, which handles and elaborates the requests of the Client and returns the answers to them. In some cases, such as when the process of sending the notifications or the interaction with the External Tools, the Server needs to perform operations without being invoked by the Client first, which makes it an active component and having a more Event Driven behavior.
 \\
-The Client-Server interactions are performed through \textbf{REST APIs}, a set of commands commonly used in the context of web transactions. The \textit{REpresentational State Transfer} consists in the use of a stateless Server, that means that the Client is the component that needs to communicate the state of the transaction to the Server. This approach allows the Server to be more scalable and helps with handling many requests that concern different states simultaneously. The components communicate by transferring a representation of a resource in a format that the server is able to process, this allows the usage of HTTP protocol to share data and to encode those using the JSON format.
+The Client-Server interactions are performed through \textbf{REST APIs}, a set of commands commonly used in the context of web transactions. The \textit{Representational State Transfer} consists in the use of a stateless Server, that means that the Client is the component that needs to communicate the state of the transaction to the Server. This approach allows the Server to be more scalable and helps with handling many requests that concern different states simultaneously. The components communicate by transferring a representation of a resource in a format that the Server is able to process, this allows the usage of HTTP protocol to share data and to encode those using the JSON format.
 \\
 The implementation of CKB will follow the \textbf{Model-View-Controller} pattern, which is a software design pattern that splits the software into three elements interconnected with each other: 
 \begin{itemize}
@@ -244,17 +420,17 @@ The implementation of CKB will follow the \textbf{Model-View-Controller} pattern
 \label{sec:other_design_decisions}%
 
 \subsection{Availability}
-The introduction of load balancing and replication mechanisms significantly enhances the reliability and availability of our system. Load balancing optimizes resource utilization by distributing requests evenly across servers, preventing performance bottlenecks. Concurrently, replication ensures fault tolerance by duplicating essential data and services. This redundancy minimizes the impact of potential failures, fortifying our system to maintain consistent data management and service availability even in challenging scenarios.
+The introduction of load balancing and replication mechanisms significantly enhances the reliability and availability of our system. Load balancing optimizes resource utilization by distributing requests evenly across servers, preventing performance bottlenecks.\\ Concurrently, replication ensures fault tolerance by duplicating essential data and services. This redundancy minimizes the impact of potential failures, fortifying our system to maintain consistent data management and service availability even in challenging scenarios.
 
 \subsection{Scalability}
 Microservices architecture, at its core, is meticulously crafted to be both independently deployable and inherently scalable. This design philosophy enables each microservice to be deployed autonomously, facilitating swift updates and modifications without disrupting the entire system. Beyond this, the scalability aspect of microservices empowers our system to gracefully handle increased demands by efficiently scaling specific services.
 
 
 \subsection{Notification Handling}
-Notification management plays a pivotal role in the CKB system, influencing every stage from Tournament, Battle or STG creation to their conclusion. Notifications in CKB are orchestrated to reach users upon login or, if a user is already logged in, immediately when they become available. This approach guarantees that users are promptly informed about key events, such as Tournament, Battle or STG creation, maximizing user engagement and system transparency. 
+Notification management plays a pivotal role in the CKB system, influencing every stage from Tournament, Battle or STG creation to their conclusion. Notifications in CKB are orchestrated to reach users upon login or, if a User is already logged in, immediately when they become available. This approach guarantees that Users are promptly informed about key events, such as Tournament, Battle or STG creation. 
 
 \subsection{Ease of Deployment} 
 The adoption of microservices architecture introduces a notable advantage in ease of deployment. This methodology empowers the implementation of changes to individual services independently, allowing for seamless deployment without impacting the entire system. In the event of issues, the microservices approach facilitates swift identification, isolation, and correction, eliminating the need to halt the entire system. This deployment flexibility not only accelerates the release of updates but also enhances the system's resilience and agility, enabling efficient troubleshooting and maintenance processes.
 
 \subsection{Data Storage} 
-To enhance operational efficiency and simplify data management, we've chosen a unified DBMS containing information about Users, Tournaments, and Battles. This approach reduces the time and complexity associated with retrieving and updating data, leveraging interconnected relationships among these components.
+To enhance operational efficiency and simplify data management, we've chosen a unified DBMS containing information about Users, Tournaments, Group, Badges and Battles. This approach reduces the time and complexity associated with retrieving and updating data, leveraging interconnected relationships among these components.

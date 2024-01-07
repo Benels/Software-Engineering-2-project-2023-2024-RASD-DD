@@ -1,25 +1,24 @@
 \section{Overview and Implementation Plan}
 
-In this last chapter, it will be described the Implementation of the system, the Integration and the Test Strategy that has to be followed. In general, the method that will be followed is a Bottom-Up strategy.
-\\By adopting this strategy, the implementation will start from the leaves of the ‘uses’ hierarchy, starting from the small functionalities that do not require other functionalities to work. These modules will require a Driver each that will be developed in order to be tested. Once a new module is developed and tested, it may be integrated into the system and replace a previously existing Driver, but the new module will require a new Driver in order to be tested. In this way several working subsystems are created, which will be eventually integrated into the final one. Bottom-Up strategy promotes an incremental integration, that makes it easier to track bugs and errors, given that the testing is going to be done on a reduced part of the system at the beginning and on every module once it is ready. This strategy also allows independent development teams to work in parallel on different functions.
+In this last chapter, it will be described the Implementation of the system, the Integration and the Test Strategy that has to be followed. In general, the method that will be followed is a Bottom-Up strategy.\\
+By adopting this strategy, the implementation will start from the leaves of the ‘uses’ hierarchy, starting from the small functionalities that do not require other functionalities to work. These modules will require a Driver each that will be developed in order to be tested. Once a new module is developed and tested, it may be integrated into the system and replace a previously existing Driver, but the new module will require a new Driver in order to be tested. In this way several working subsystems are created, which will be eventually integrated into the final one. Bottom-Up strategy promotes an incremental integration, that makes it easier to track bugs and errors, given that the testing is going to be done on a reduced part of the system at the beginning and on every module once it is ready. This strategy also allows independent development teams to work in parallel on different functions.
 
 
 \section{Features Identification}
 
+\paragraph{[F1] Login and Registration Features.} These are the basic features of CKB, that will be needed by every User, both Educators and Students. Though this set of features will require the least amount of time to be implemented, its role will be crucial to the proper functioning of the entire Web App. Since they are required for the correct workflow of the following features, they will also be the first to be implemented.
 
-\textbf{[F1] Login and Registration Features.} These are the basic features of CKB, that will be needed by every User, both Educators and Students. Though this set of features will require the least amount of time to be implemented, its role will be crucial to the proper functioning of the entire web app. Since they are required for the correct workflow of the following features, they will also be the first to be implemented.
-\\ \\
-\textbf{[F2] Creation Features.} This set of features includes every creation feature, such as the creation of Tournaments, Battles, Groups or Badge, whatever represents the creation of a new Bean or a write operation on the database. These features are required for the following features, since without them it wouldn’t be possible to visualize a Battle or Tournament.
-\\ \\
-\textbf{[F3] View Features.} These features include the possibility to open the page of a Tournament, a Battle, a User Profile, or the Home Page. They need the correspondent F2 feature in order to work and are essential for the Search and Join Features.
-\\ \\
-\textbf{[F4] Search Features.} These features include the use of the search bar on the website in order to retrieve the list of the ongoing Tournaments, Battles or Users. These features require that F2 and F3 are implemented but aren’t needed by other features.
-\\ \\
-\textbf{[F5] Join Features.} Include the operations that permit joining a Tournament, a Battle, or a Group. This set of features need the view and creation features to exist, before getting implemented.
-\\ \\
-\textbf{[F6] Evaluation Features.} Features that include Manual and Automated Evaluation using the External Tools. 
-\\ \\
-\textbf{[F7] Notification Features.} This is the last possible set of features to be developed, since the proper functioning of this feature requires that every other kind of feature properly functions too.  
+\paragraph{[F2] Creation Features.} This set of features includes every creation feature, such as the creation of Tournaments, Battles, Groups or Badge, whatever represents the creation of a new Bean or a write operation on the database. These features are required for the following features, since without them it wouldn’t be possible to visualize a Battle or Tournament.
+
+\paragraph{[F3] View Features.} These features include the possibility to open the page of a Tournament, a Battle, a User Profile, or the Home Page. They need the correspondent \textbf{F2} feature in order to work and are essential for the Search and Join Features.
+
+\paragraph{[F4] Search Features.} These features include the use of the search bar on the website in order to retrieve the list of the ongoing Tournaments, Battles or Users. These features require that \textbf{F2} and \textbf{F3} are implemented but aren’t needed by other features.
+
+\paragraph{[F5] Join Features.} Include the operations that permit joining a Tournament, a Battle, or a Group. This set of features need the view and creation features to exist, before getting implemented.
+
+\paragraph{[F6] Evaluation Features.} Features that include Manual and Automated Evaluation using the External Tools. 
+
+\paragraph{[F7] Notification Features.} This is the last possible set of features to be developed, since the proper functioning of this feature requires that every other kind of feature properly functions too.  
 
 \newpage
 \section{Integration Strategy}
@@ -36,7 +35,7 @@ Starting from the model, which will be tested alongside a proper driver,
 \end{figure}
 
 
-the integration of components will proceed with the Login and Registration features:
+The integration of components will proceed with the Login and Registration features:
 
 \begin{figure}[H]
     \begin{center}
@@ -54,7 +53,7 @@ Once they will be developed and tested, it will be the turn of the components th
     \end{center}
 \end{figure}
 
-Now it is possible to create tournaments, battles, groups and badges functions to view those elements’ pages or the search components can be integrated.
+Now it is possible to create Tournaments, Battles, Groups and Badges functions to view those elements’ pages or the search components can be integrated.
 
 
 \begin{figure}[H]
@@ -64,7 +63,7 @@ Now it is possible to create tournaments, battles, groups and badges functions t
     \end{center}
 \end{figure}
 
-The last missing components in the context of tournaments and battles are the Join features, which will be integrated in parallel with the possibility to open users’ profiles and to modify badges parameters for the Educators.
+The last missing components in the context of Tournaments and Battles are the Join features, which will be integrated in parallel with the possibility to open Users’ profiles and to modify Badges parameters for the EDs.
 
 
 \begin{figure}[H]
