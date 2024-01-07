@@ -281,7 +281,7 @@ There is a table with entry conditions, event flow, exit conditions and exceptio
 
 \begin{figure}[H]
     \begin{center}
-        \includegraphics[width=.5\linewidth]{SequenceDiagrams/login.png}
+        \includegraphics[width=.5\linewidth]{SequenceDiagrams/login v2.png}
         \caption{Login sequence diagram.}
         \label{fig:login_seqd}%
     \end{center}
@@ -319,7 +319,7 @@ There is a table with entry conditions, event flow, exit conditions and exceptio
 
 \begin{figure}[H]
     \begin{center}
-        \includegraphics[width=1\linewidth]{SequenceDiagrams/Create a Tournament.png}
+        \includegraphics[width=1\linewidth]{SequenceDiagrams/Create a Tournament v2.png}
         \caption{Create a Tournament diagram.}
         \label{fig:create_a_Tournament_seqd}%
     \end{center}
@@ -335,7 +335,7 @@ There is a table with entry conditions, event flow, exit conditions and exceptio
         \hline
         \textbf{Entry conditions} & The ST is correctly logged in. The ST has decided to join a Tournament.   \\
         \hline
-        \textbf{Event Flow}       & 1-\ The ST search the name of a Tournament into the search box \\
+        \textbf{Event Flow}       & 1-\ The ST search the keyword of a Tournament into the search box \\
         & 2-\ CKB returns the result from the search. \\
         & 3-\ The ST clicks on the new Tournament’s name.        \\
         & 4-\ CKB redirects the Student to the main page of the Tournament. \\
@@ -347,8 +347,8 @@ There is a table with entry conditions, event flow, exit conditions and exceptio
         \hline
         \textbf{Exceptions}        & \begin{itemize}
             \item Nothing is found from the research. In this case the ST will be redirectd back to the home page.
-            \item The Tournament already ended. In this case is shown an error message and the ST is redirected to the final Leaderboard of the Tournament.
-            \item The ST already joined the Tournament. In this case CKB will not show any error messages, but will redirect the ST to the current Leaderboard of the Tournament.
+            \item The Tournament already ended. In this case is shown an error message and the ST is redirected to the final Leaderboard of the Tournament (the Tournament main page).
+            \item The ST already joined the Tournament. In this case CKB will not show any error messages, but will redirect the ST to the current Leaderboard of the Tournament (the Tournament main page).
             \item The Deadline already expired. An error message is shown and the ST is redirected back to the Home Page.
         \end{itemize}    \\
         \hline
@@ -359,11 +359,13 @@ There is a table with entry conditions, event flow, exit conditions and exceptio
 
 \begin{figure}[H]
     \begin{center}
-        \includegraphics[width=.8\linewidth]{SequenceDiagrams/Join a tournament.png}
+        \includegraphics[width=.8\linewidth]{SequenceDiagrams/Join a tournament v2.png}
         \caption{Join a Tournament diagram.}
         \label{fig:join_a_Tournament_seqd}%
     \end{center}
 \end{figure}
+
+\newpage
 
 \subsubsection*{UC\cuc . Create a Battle}
 \begin{center}
@@ -404,7 +406,7 @@ There is a table with entry conditions, event flow, exit conditions and exceptio
 
 \begin{figure}[H]
     \begin{center}
-        \includegraphics[width=1\linewidth]{SequenceDiagrams/Create a Battle.png}
+        \includegraphics[width=1\linewidth]{SequenceDiagrams/Create a Battle v2.png}
         \caption{Create a Battle sequence diagram.}
         \label{fig:create_a_battle_seqd}%
     \end{center}
@@ -420,9 +422,9 @@ There is a table with entry conditions, event flow, exit conditions and exceptio
         \hline
         \textbf{Entry conditions} & The ST is correctly logged in and it is in the Tournament main page. The ST has decided to join a Battle.        \\
         \hline
-        \textbf{Event Flow}       & 1-\ The ST clicks on the button “Go to Battles”        \\
-        & 2-\ CKB redirects the ST to the page that has the list of all the Battles of the Tournament.        \\
-        & 3-\ The ST clicks on the “Subscribe” button near the Battle name.        \\
+        \textbf{Event Flow}       & 1-\ The ST clicks on a tournament        \\
+        & 2-\ CKB redirects the ST to the page that has the list of all the Battles of the Tournament (Tournament main page).        \\
+        & 3-\ The ST clicks on the “Join Battle” button near the Battle name.        \\
         & 4-\ CKB checks that the deadline has not expired.\\
         & 5-\ CKB checks that the ST joined the Tournament that contains this Battle.   \\
         & 6-\ CKB redirects the ST to the CreateGroup page of the Battle.        \\
@@ -442,7 +444,7 @@ There is a table with entry conditions, event flow, exit conditions and exceptio
 
 \begin{figure}[H]
     \begin{center}
-        \includegraphics[width=.8\linewidth]{SequenceDiagrams/Join a battle.png}
+        \includegraphics[width=.8\linewidth]{SequenceDiagrams/Join a battle v2.png}
         \caption{Join a battle sequence diagram.}
         \label{fig:join_a_battle_seqd}%
     \end{center}
@@ -613,7 +615,7 @@ There is a table with entry conditions, event flow, exit conditions and exceptio
 
 \begin{figure}[H]
     \begin{center}
-        \includegraphics[width=.6\linewidth]{SequenceDiagrams/Evaluate a code.png}
+        \includegraphics[width=.6\linewidth]{SequenceDiagrams/Evaluate a code v2.png}
         \caption{Evaluate a code sequence diagram.}
         \label{fig:evaluate_a_code_seqd}%
     \end{center}
@@ -649,6 +651,15 @@ There is a table with entry conditions, event flow, exit conditions and exceptio
     \end{longtable}
 \end{center}
 
+\begin{figure}[H]
+    \begin{center}
+        \includegraphics[width=.6\linewidth]{SequenceDiagrams/Create a new Badge.png}
+        \caption{Create a new Badge sequence diagram.}
+        \label{fig:create_a_new_badge_seqd}%
+    \end{center}
+\end{figure}
+
+\newpage
 
 \subsubsection*{UC\cuc . Modify an existing Badge}
 \begin{center}
@@ -680,8 +691,13 @@ There is a table with entry conditions, event flow, exit conditions and exceptio
     \end{longtable}
 \end{center}
 
-
-
+\begin{figure}[H]
+    \begin{center}
+        \includegraphics[width=.6\linewidth]{SequenceDiagrams/Modify an existing Badge.png}
+        \caption{Modify an existing Badge sequence diagram.}
+        \label{fig:modify_an_existing_badge_seqd}%
+    \end{center}
+\end{figure}
 
 \newpage
 
