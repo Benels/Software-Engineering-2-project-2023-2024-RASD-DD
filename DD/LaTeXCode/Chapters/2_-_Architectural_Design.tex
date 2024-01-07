@@ -214,6 +214,188 @@ With the External Tool APIs the Application Server can contact the Tool Server a
 \section{Runtime View}
 \label{sec:runtime_view}%
 
+\subsection{SignUp as ED}
+\begin{figure}[H]
+    \begin{center}
+        \includegraphics[width=0.8\linewidth]{RuntimeView/SignupED.png}
+        \caption{Runtime view for 'SignUp as ED'.}
+        \label{fig:runtime_signupasED}%
+    \end{center}
+\end{figure}
+
+This sequence diagram represents the ED registration process.
+The ED searches into the browser for the CKB Landing page and gets redirected to the “Login” page. After clicking on the "Create Account" button is redirected to the signup form. The ED fills out the form with his data, such as name, surname, nickname, mail and password and he ticks on the “Register as an Educator” option.
+This form is forwarded to the DashboardManager that redirects the request to the RegistrationManager component. It does various checks on the sended parameters and, if everything is correct, sends an eMail to confirm  the registration. If the link in the mail is clicked the RegistrationManager saves the new profile into the Database (passing through the Model component that connects the Application Server with the DBMS) and shows to the ED the ED Homepage.
+
+
+\subsection{SignUp as ST}
+\begin{figure}[H]
+    \begin{center}
+        \includegraphics[width=0.8\linewidth]{RuntimeView/SignupAsST.png}
+        \caption{Runtime view for 'SignUp as ST'.}
+        \label{fig:runtime_signupasST}%
+    \end{center}
+\end{figure}
+
+This sequence diagram represents the ST registration flow.
+The ST searches into the browser for the CKB Landing page and gets the “Login” page.
+After clicking on the "Create Account" button is redirected to the signup form.
+The ST fills out the form with its data, such as name, surname, nickname, mail and password. 
+This form is forwarded to the DashboardManager that redirects the request to the RegistrationManager component. It does various checks on the sended parameters and, if everything is correct, sends an eMail to confirm the registration.
+If the link in the mail is clicked the RegistrationManager saves the new profile into the Database (passing through the Model component that connects the Application Server with the DBMS) and shows to the ST the ST Homepage.
+
+\subsection{Login}
+\begin{figure}[H]
+    \begin{center}
+        \includegraphics[height=0.8\pdfpageheight]{RuntimeView/Login.png}
+        \caption{Runtime view for 'Login'.}
+        \label{fig:runtime_login}%
+    \end{center}
+\end{figure}
+In this sequence diagram is explained how the login operation works.
+The User searches into the browser for the CKB Landing page and gets the login page.
+The User fills out the form with his credentials (nickname and password) and he sends it to the DashboardManager that redirects the request to the LoginManager that checks the credentials through the Model component.
+The Model retrieves the User information from the DBMS and indicates to the LoginManager if the user is an ED or a ST.
+The LoginManager adds the User credentials into the User session and retrieves the notifications that the User has missed and shows them to him.
+After that the LoginManager gets from DBMS the information for creating the two types of User main page and sends them to the User.
+
+
+\subsection{Create a Tournament}
+\begin{figure}[H]
+    \begin{center}
+        \includegraphics[width=0.8\linewidth]{RuntimeView/CreateTournament.png}
+        \caption{Runtime view for 'Create a Tournament'.}
+        \label{fig:runtime_createtournament}%
+    \end{center}
+\end{figure}
+This sequence diagram represents the flow behind the create Tournament process.
+The ED clicks on the “Create a new Tournament” button into the “ED Homepage” for retrieving the create Tournament form from the CreateTournament module. The ED fills out the form with the new Tournament information (Tournament name, subscription deadline, list of EDs) and if he wants to create or modify some Badges he ticks the “Create Badges for this Tournament” option. The form is sent to the DashboardManager that redirects the request to the CreateTournament module that, if the all parameters are corrects, saves the new Tournament into the DBMS and sends a notifications through the NotificationManager to all the invited EDs and to all the STs.
+If the “Create Badges for this Tournament” option is ticked, the  CreateTournament module retrieves the ED’s Badges and redirects the ED to the “Create Badge” Page, if not the CreateTournament module calls the ViewTournament module in order to show the “ED Tournament” Page.
+
+
+\subsection{Join a Tournament}
+\begin{figure}[H]
+    \begin{center}
+        \includegraphics[height=0.8\pdfpageheight]{RuntimeView/JoinTournament.png}
+        \caption{Runtime view for 'Join a Tournament'.}
+        \label{fig:runtime_jointournament}%
+    \end{center}
+\end{figure}
+This sequence diagram represents the flow behind the ‘Join Tournament’ operation for a ST.
+The ST types a keyword into the search bar and sends it to the DashBoardManager that redirects the request to the ViewTournament module.
+The ViewTournament module retrieves from the DBMS the list of Tournaments that corresponds to the searched keyword and, if it is not empty, shows it to the ST. The ST clicks on a Tournament and the ViewTournament module retrieves the information of that tournament from DBMS and shows them to the ST. The ST clicks on the “Join Tournament” button and his request is sent to the JoinTournament module that does some checks on the ST and in the Tournament. If all checks are passed the ST is saved into the DBMS as a Tournament participant and the “ST Tournament” page is shown to him through the ViewTournament module.
+
+
+\subsection{Create a Battle}
+\begin{figure}[H]
+    \begin{center}
+        \includegraphics[width=0.8\linewidth]{RuntimeView/CreateBattle.png}
+        \caption{Runtime view for 'Create a Battle'.}
+        \label{fig:runtime_createbattle}%
+    \end{center}
+\end{figure}
+This sequence diagram represents the flow behind the ‘Battle creation’ 
+process. The ED clicks on the “Create a new Battle” button into the “ED Tournament” page. His request is processed by the CreateBattle module that redirects the ED to the Create Battle Form. The ED inserts the new Battle information (Battle name, code kata,  minimum member per group, maximum member per group, registrations deadlines, final submission deadline, list additional configuration for scoring) into the form and sends it to the CreateBattle module. The CreateBattle module does some checks on these informations and if they are all correct he creates a new GH repository and it retrieves the repository link. After this, The CreateBattle module saves the new Battle into the Database (passing through the Model and then the DBMS) and it shows the “ED Battle” page. The CreateBattle module also starts the timer on the EndBattle module and finally it contacts, through the Notification Manager, all the STs in the Tournament to notify them about the start of a new Battle.
+
+
+
+\subsection{Join a Battle}
+\begin{figure}[H]
+    \begin{center}
+        \includegraphics[width=0.8\linewidth]{RuntimeView/JoinBattle.png}
+        \caption{Runtime view for 'Join a Battle'.}
+        \label{fig:runtime_joinbattle}%
+    \end{center}
+\end{figure}
+This sequence diagram represents the flow behind the ‘Join Battle’ operation for a ST. The ST clicks on a Tournament and the ViewTournament module shows him the “ST Tournament” page. Then the ST clicks on the “Join Battle” button next to the Battle’s name and then the JoinBattle module does the proper checks on the Battle and ST data. If all checks are correct, then the JoinBattle module redirects the ST to the “Create Group” page.
+
+
+\subsection{Create a group and Battle confirmation}
+\begin{figure}[H]
+    \begin{center}
+        \includegraphics[height=0.8\pdfpageheight]{RuntimeView/CreateGroup.png}
+        \caption{Runtime view for 'Create a group and Battle confirmation'.}
+        \label{fig:runtime_creategroup}%
+    \end{center}
+\end{figure}
+This sequence diagram represents the flow behind the phase in which, after the fulfillment of the ‘Join Battle’ operations, the ST creates a STG and confirms his participation in the battle.
+The ST fills out the Create Group form with some group information (such as group name, list of invited STs nicknames) and then sends it to the CreateGroup module.
+The CreateGroup module does some checks on the information coming from the form and then it sends invitations through the Notification Manger to the other STs. If a ST accepts the invitation the CreateGroup module adds the ST to the group and shows to the group creator that the ST has accepted the invitation. If a ST rejects the invitation or if the STG is already full the CreateGroup module shows to the group creator that the ST has rejected the invitation. When the group is formed the ST can click on the “Confirm Group” button and the CreateGroup module adds the group into the Battle and calls the ViewBattle module for showing the Battle main page to the ST.
+
+
+\subsection{Open a profile}
+\begin{figure}[H]
+    \begin{center}
+        \includegraphics[width=0.8\linewidth]{RuntimeView/OpenProfile.png}
+        \caption{Runtime view for 'Open a profile'.}
+        \label{fig:runtime_openprofile}%
+    \end{center}
+\end{figure}
+This sequence diagram represents the User open profile process.
+The User selects a nickname from the User list and sends it to the DashBoardManager that redirects the request to the OpenProfile module.
+The OpenProfile module retrieves from the DBMS the information of the selected User and shows it to the User.
+
+
+\subsection{Search for a profile}
+\begin{figure}[H]
+    \begin{center}
+        \includegraphics[width=0.8\linewidth]{RuntimeView/SearchProfile.png}
+        \caption{Runtime view for 'Search for a profile'.}
+        \label{fig:runtime_searchprofile}%
+    \end{center}
+\end{figure}
+This sequence diagram represents the flow behind the profile search.
+The User types a keyword into the search bar and sends it to the DashBoardManager that redirects the request to the SearchProfile module.
+The SearchProfile module retrieves from the DBMS the list of Users that corresponds to the searched keyword and, if it is not empty, shows it to the User.
+
+
+\subsection{Search for a Tournament}
+\begin{figure}[H]
+    \begin{center}
+        \includegraphics[width=0.8\linewidth]{RuntimeView/SearchTour.png}
+        \caption{Runtime view for 'Search for a Tournament'.}
+        \label{fig:runtime_searchtournament}%
+    \end{center}
+\end{figure}
+This sequence diagram represents the flow behind the Tournament search.
+The User types a keyword into the search bar and sends it to the DashBoardManager that redirects the request to the ViewTournament module.
+The ViewTournament module retrieves from the DBMS the list of Tournaments that corresponds to the searched keyword and, if it is not empty, shows it to the User.
+
+\subsection{Evaluate a Code}
+\begin{figure}[H]
+    \begin{center}
+        \includegraphics[width=0.8\linewidth]{RuntimeView/EvaluateCode.png}
+        \caption{Runtime view for 'Evaluate Code'.}
+        \label{fig:runtime_evaluatecode}%
+    \end{center}
+\end{figure}
+This sequence diagram represents the flow behind the ED code evaluation.
+The ED clicks on a STG into the ED Battle page and sends his request to the EvaluateManger. The EvaluateManager retrieves the code of that group from GitHub and shows it to the ED. The ED assigns a score to the code and sends it to the EvaluateManger. Finally, the EvaluateManger saves into the Database the score of the STG.
+
+\subsection{Create a new Badge}
+\begin{figure}[H]
+    \begin{center}
+        \includegraphics[width=0.8\linewidth]{RuntimeView/CreateBadge.png}
+        \caption{Runtime view for 'Create a new Badge'.}
+        \label{fig:runtime_createbadge}%
+    \end{center}
+\end{figure}
+This sequence diagram represents the flow behind the creation of a new Badge. The ED inserts into the Create Badge form the information about a new Badge (such as Badge name, description, rules and variables of the Badge) and sends it to the CreateTournament module, which redirects the request to the CreateBadge module. The CreateBadge module checks the new Badge setup and, if they are all correct, saves them into the Database and then calls the ViewTournament module will show the Tournament main page to the ED.
+
+\subsection{Modify an existing Badge}
+\begin{figure}[H]
+    \begin{center}
+        \includegraphics[width=0.8\linewidth]{RuntimeView/ModifyBadge.png}
+        \caption{Runtime view for 'Modify an existing Badge'.}
+        \label{fig:runtime_modifybadge}%
+    \end{center}
+\end{figure}
+This sequence diagram represents the flow behind the modification of an existing Badge. The ED clicks on an already existing Badge and sends it to the CreateTournament module that redirects the request to the ModifyBadge module that gives to the ED the possibility of changing the badge variables and rules. The ED inserts into the Modify Badge form the new information about the Badge (such as description, rules and variables of the Badge) and sends it to the CreateTournament module, which redirects the request to the ModifyBadge module. The ModifyBadge module checks the new Badge setup and, if they are all correct, saves them into the Database and then calls the ViewTournament module will show the Tournament main page to the ED.
+
+
+
+
+
 \section{Component Interfaces}
 \label{sec:component_interfaces}%
 \begin{itemize}
