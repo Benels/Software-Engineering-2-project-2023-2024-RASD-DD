@@ -195,10 +195,26 @@ The Client-Server interactions are performed through \textbf{REST APIs}, a set o
 \\
 The implementation of CKB will follow the \textbf{Model-View-Controller} pattern, which is a software design pattern that splits the software into three elements interconnected with each other: 
 \begin{itemize}
-    \item Model
-    \item View
-    \item Controller
+    \item Model: contains the methods that manage the data. It provides methods for saving, retrieving and manipulating data from the database.
+    \item View: the view is the part that concerns the visual representation of the data for the final user.
+    \item Controller: acts as a connection point between the view and the model. The controller handles the users’ interactions with the view and processes the operations.
 \end{itemize}
 
 \section{Other Design Decisions}
 \label{sec:other_design_decisions}%
+
+\subsection{Availability}
+The introduction of load balancing and replication mechanisms significantly enhances the reliability and availability of our system. Load balancing optimizes resource utilization by distributing requests evenly across servers, preventing performance bottlenecks. Concurrently, replication ensures fault tolerance by duplicating essential data and services. This redundancy minimizes the impact of potential failures, fortifying our system to maintain consistent data management and service availability even in challenging scenarios.
+
+\subsection{Scalability}
+Microservices architecture, at its core, is meticulously crafted to be both independently deployable and inherently scalable. This design philosophy enables each microservice to be deployed autonomously, facilitating swift updates and modifications without disrupting the entire system. Beyond this, the scalability aspect of microservices empowers our system to gracefully handle increased demands by efficiently scaling specific services.
+
+
+\subsection{Notification Handling}
+Notification management plays a pivotal role in the CKB system, influencing every stage from Tournament, Battle or STG creation to their conclusion. Notifications in CKB are orchestrated to reach users upon login or, if a user is already logged in, immediately when they become available. This approach guarantees that users are promptly informed about key events, such as Tournament, Battle or STG creation, maximizing user engagement and system transparency. 
+
+\subsection{Ease of Deployment} 
+The adoption of microservices architecture introduces a notable advantage in ease of deployment. This methodology empowers the implementation of changes to individual services independently, allowing for seamless deployment without impacting the entire system. In the event of issues, the microservices approach facilitates swift identification, isolation, and correction, eliminating the need to halt the entire system. This deployment flexibility not only accelerates the release of updates but also enhances the system's resilience and agility, enabling efficient troubleshooting and maintenance processes.
+
+\subsection{Data Storage} 
+To enhance operational efficiency and simplify data management, we've chosen a unified DBMS containing information about Users, Tournaments, and Battles. This approach reduces the time and complexity associated with retrieving and updating data, leveraging interconnected relationships among these components.
