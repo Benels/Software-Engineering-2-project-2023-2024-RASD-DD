@@ -170,6 +170,46 @@ Here we represents an overview of how the entire CKB architecture is composed of
 \section{Deployment View}
 \label{sec:deployment_view}%
 
+In this section it will be shown the Deployment diagram of the CKB system, followed by a description of the components and their interactions:
+\begin{figure}[H]
+    \begin{center}
+        \includegraphics[width=1\linewidth]{CD_DD/DeploymentDiagram.png}
+        \caption{Deployment Diagram.}
+        \label{fig:Deployment_Diagram}%
+    \end{center}
+\end{figure}
+
+\paragraph{Personal Computer: }
+Students and Educators can access to the system by using any type of personal computer through their favorite web browser. The browser will communicate with the web server. Users can also use every device that allows them to search on a web browser, such as mobile phone, tablet, ecc.
+
+\paragraph{Web Server: }
+The Web Server provides access to the application server’s service to all the user that reaches the system through a web browser. In particular, the web server does not execute any business logic, but it simply does some load balancing on the receive requests from the client to the various application servers, in order to handle large user traffic.
+It also provides to the client's browsers the HTML, JSON, Javascript and CSS files for making the rendering of the pages.
+
+\paragraph{Firewall: }
+It provides a way to limit the attack surface of any potential intruder by providing strict access rules.
+
+\paragraph{Application Server: }
+The application server contains the business logic of the entire system. Moreover, it communicates to the client through HTTPS protocol managed by the Web Server. The various requests coming from the Web Server are routed to the corresponding module thanks to the Dashboard Manager.
+Furthermore, it communicates to the DataBase Server through the model gateway. This node is replicated in order to handle large user traffic.
+
+\paragraph{Database Server: }
+All the Data about Tournaments, Battles, Users, Groups and Badges are stored into the Database Server and managed by MySQL.
+The various Application Servers can retrieve information on this node through the module model and the database driver.
+
+\paragraph{Email Server: }
+After the registration, users have to click on the link sent by email to confirm their profile. The Application Server, immediately after the registration, contacts the Email Server through SMTP protocol for sending this link.
+
+\paragraph{Github Server: }
+The dialogs with the Application Server node is during the different battle phases: when the ED creates a new battle also a github repository within the CodeKataBattle is created and it is subsequently forked from the various groups during the battle.
+The Github Server is also periodically contacted for retrieving new committed code on the main branch of the different groups repositories.
+For those scopes, the Application Server can communicate with the Github Server with the SSH protocol.
+
+
+\paragraph{Tool Server: }
+With the External Tool APIs the Application Server can contact the Tool Server and pass it the code retrieved from the Github Server for being evaluated.
+
+
 \section{Runtime View}
 \label{sec:runtime_view}%
 
